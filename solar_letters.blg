@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: solar_letters.aux
+The style file: plainnat.bst
+Database file #1: solar_prod.bib
+Warning--empty publisher in stan_development_team_stan_2014
+You've used 21 entries,
+            2773 wiz_defined-function locations,
+            772 strings with 9612 characters,
+and the built_in function-call counts, 9760 in all, are:
+= -- 968
+> -- 458
+< -- 18
++ -- 156
+- -- 135
+* -- 837
+:= -- 1542
+add.period$ -- 108
+call.type$ -- 21
+change.case$ -- 107
+chr.to.int$ -- 21
+cite$ -- 43
+duplicate$ -- 420
+empty$ -- 787
+format.name$ -- 180
+if$ -- 2028
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 25
+newline$ -- 158
+num.names$ -- 84
+pop$ -- 151
+preamble$ -- 1
+purify$ -- 87
+quote$ -- 0
+skip$ -- 302
+stack$ -- 0
+substring$ -- 414
+swap$ -- 34
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 206
+warning$ -- 1
+while$ -- 93
+width$ -- 0
+write$ -- 372
+(There was 1 warning)

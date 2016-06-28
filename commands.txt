@@ -1,0 +1,4 @@
+commands.txt
+
+#diagram
+open /Users/johannesmauritzen/research/solar_prod/solar_prod_bayes_diag.pages

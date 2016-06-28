@@ -1,0 +1,46 @@
+csi_notes.txt
+
+The CSI Program pays solar consumers an incentive based on system performance. The incentives are either an upfront lump-sum payment based on expected performance, or a monthly payment based on actual performance over five years. The Expected Performance-Based Buydown (EPBB) is the upfront incentive available only for smaller systems. The EPBB incentive is a capacity-based incentive that is adjusted based on expected system performance calculated using an EPBB calculator that considers major design characteristics of the system, such as panel type, installation tilt, shading, orientation, and solar insolation available by location. The EPBB calculator estimates the expected performance of a solar system based various factors including the tilt, azimuth, location, PV module type and mounting type of a specific system.
+
+The Performance Based Incentive (PBI) is paid based on actual performance over the course of five years. The PBI is paid on a fixed dollar per kilowatt-hour ($/kWh) of generation basis and is the required incentive type for systems greater than 30 kW in size, although smaller systems may opt to be paid based on PBI. In the beginning of the CSI Program, all systems 100kW and greater were required to take the PBI incentive. In January 2008, all systems 50kW and greater were required to take the PBI incentive. As of January 2010, all systems 30kW and greater are required to take the PBI incentive.
+
+In the beginning of the CSI Program, all systems 100kW and greater were required to take the PBI incentive. In January 2008, all systems 50kW and greater were required to take the PBI incentive. As of January 2010, all systems 30kW and greater are required to take the PBI incentive.
+
+
+Incentive based on actual production produced - cut-offs at over or under 30, 50, 100. 
+
+PACE: Properaty Assessed Clean energy programs
+
+Property assessed clean energy, or PACE, financing allows property owners to fund energy efficiency, water efficiency and renewable energy projects with little or no up-front costs. With PACE, residential and commercial property owners living within a participating district can finance up to 100% of their project and pay it back over time as a voluntary property tax assessment through their existing property tax bill.
+
+Why use PACE financing?
+
+First, by offering up to 100% financing on qualifying improvements, PACE can eliminate the need to pay out of pocket for your project. Second, depending upon the type of improvements installed, repayment may be amortized for a period of up to 20 years, keeping your monthly payments low enough that your utility savings may exceed your payment, creating a net positive cash flow. Third, the interest may be tax deductible. Finally, because PACE ties the loan to the property and not an individual, the loan may transfer upon sale or refinancing of the property. In other words, you may not need to be concerned about recouping the cost of your improvements if you decide to sell the property before the loan is repaid.
+
+Who can take advantage of PACE?
+
+PACE financing is only available to property owners in certain cities or counties that have adopted a program. In general, PACE programs offer competitive financing terms to property owners with at least some equity in their home or business and have not been delinquent on their property tax or mortgage payments. For further details concerning property eligibility (residential, commercial and municipal) and financing terms, contact the individual PACE provider in your area.
+
+Which property types can access PACE?
+
+PACE financing can be used for residential, commercial or municipal properties, depending on what has been authorized by the local jurisdiction. Publicly owned or non-profit property owners should contact the local commercial PACE provider in your area.
+
+Which cities and counties have PACE programs?
+
+Click on the map to see which cities and counties have authorized PACE. (County PACE programs are available only to unincorporated parts of the county.) Many jurisdictions are working to bring PACE to their area, so be sure to check back for updates.
+
+What products and improvements can be financed with PACE?
+
+Eligible products that can be financed with PACE may vary by individual PACE providers and administrators. In general, most products that can be permanently affixed to a property and reduce on-site electric, gas or water consumption will be considered eligible. Some examples include attic insulation; heating, ventilation and air conditioning replacements; solar photovoltaic and thermal systems; and low-flow toilets. For questions regarding specific product eligibility, contact the individual PACE provider in your area. Often, your project must be performed by a contractor participating in the PACE program to be eligible.
+
+What is the history of PACE in California?
+
+In California, the first commercial and residential PACE programs were established in 2008.
+
+The residential programs soon encountered a significant hurdle. The Federal Housing Finance Agency (FHFA) was concerned that residential PACE assessments had a lien status superior to that of existing mortgages underwritten by Fannie Mae and Freddie Mac. This meant that, in the event of a default, any outstanding PACE assessments (though not the entire amount financed) would be paid off before other liens such as first deeds of trust. 
+
+In 2010, Fannie Mae and Freddie Mac stated that they would no longer purchase mortgage loans secured by properties with outstanding PACE loans. This effectively stopped residential PACE programs, with the exception of a few pilot programs.
+
+Since 2010, a number of developments have facilitated a resurgence of residential PACE programs in California – including the passage of state legislation (SB 555), the implementation of legal instruments to address FHFA concerns and disclose the consequence a PACE lien can have on an existing mortgage, and the establishment of a PACE loss reserve program. Many cities and counties now have PACE programs for all three sectors (residential, commercial and municipal).
+
+

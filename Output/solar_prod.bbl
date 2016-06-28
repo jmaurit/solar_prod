@@ -1,0 +1,62 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bollinger and Gillingham(2012)]{bollinger_peer_2012}
+Bryan Bollinger and Kenneth Gillingham.
+\newblock Peer {Effects} in the {Diffusion} of {Solar} {Photovoltaic} {Panels}.
+\newblock \emph{Marketing Science}, 31\penalty0 (6):\penalty0 900--912,
+  September 2012.
+\newblock ISSN 0732-2399.
+\newblock \doi{10.1287/mksc.1120.0727}.
+\newblock URL
+  \url{http://pubsonline.informs.org/doi/abs/10.1287/mksc.1120.0727}.
+
+\bibitem[Chan and Leland(1982)]{chan_prices_1982}
+Yuk-Shee Chan and Hayne Leland.
+\newblock Prices and {Qualities} in {Markets} with {Costly} {Information}.
+\newblock \emph{The Review of Economic Studies}, 49\penalty0 (4):\penalty0
+  499--516, October 1982.
+\newblock ISSN 0034-6527, 1467-937X.
+\newblock \doi{10.2307/2297283}.
+\newblock URL \url{http://restud.oxfordjournals.org/content/49/4/499}.
+
+\bibitem[Cooper and Ross(1984)]{cooper_prices_1984}
+Russell Cooper and Thomas~W. Ross.
+\newblock Prices, {Product} {Qualities} and {Asymmetric} {Information}: {The}
+  {Competitive} {Case}.
+\newblock \emph{The Review of Economic Studies}, 51\penalty0 (2):\penalty0
+  197--207, April 1984.
+\newblock ISSN 0034-6527.
+\newblock \doi{10.2307/2297687}.
+\newblock URL \url{http://www.jstor.org/stable/2297687}.
+
+\bibitem[Dastrup et~al.(2012)Dastrup, Graff~Zivin, Costa, and
+  Kahn]{dastrup_understanding_2012}
+Samuel~R. Dastrup, Joshua Graff~Zivin, Dora~L. Costa, and Matthew~E. Kahn.
+\newblock Understanding the {Solar} {Home} price premium: {Electricity}
+  generation and “{Green}” social status.
+\newblock \emph{European Economic Review}, 56\penalty0 (5):\penalty0 961--973,
+  July 2012.
+\newblock ISSN 0014-2921.
+\newblock \doi{10.1016/j.euroecorev.2012.02.006}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0014292112000244}.
+
+\bibitem[Mauritzen()]{mauritzen_whats_2015}
+Johannes Mauritzen.
+\newblock What's behind the surge in the {California} rooftop solar market?
+  {The} role of {Chinese} panels, uncertainty and new business models.
+\newblock \emph{Working Paper}.
+\newblock URL \url{http://jmaurit.github.io/#solar_lemons}.
+
+\bibitem[Tirole(1988)]{tirole_theory_1988}
+Jean Tirole.
+\newblock \emph{The {Theory} of {Industrial} {Organization}}.
+\newblock The MIT Press, Cambridge, Mass, 1st edition edition, 1988.
+\newblock ISBN 9780262200714.
+
+\end{thebibliography}

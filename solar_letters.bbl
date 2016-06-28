@@ -1,0 +1,194 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Adams et~al.(2009)Adams, Einav, and Levin]{adams_liquidity_2009}
+William Adams, Liran Einav, and Jonathan Levin.
+\newblock Liquidity {Constraints} and {Imperfect} {Information} in {Subprime}
+  {Lending}.
+\newblock \emph{The American Economic Review}, 99\penalty0 (1):\penalty0
+  49--84, March 2009.
+\newblock \doi{10.1257/aer.99.1.49}.
+
+\bibitem[Akerlof(1970)]{akerlof_market_1970}
+George~A. Akerlof.
+\newblock The {Market} for "{Lemons}": {Quality} {Uncertainty} and the {Market}
+  {Mechanism}.
+\newblock \emph{The Quarterly Journal of Economics}, 84\penalty0 (3):\penalty0
+  488--500, August 1970.
+\newblock \doi{10.2307/1879431}.
+\newblock URL \url{http://www.jstor.org/stable/1879431}.
+
+\bibitem[Chan and Leland(1982)]{chan_prices_1982}
+Yuk-Shee Chan and Hayne Leland.
+\newblock Prices and {Qualities} in {Markets} with {Costly} {Information}.
+\newblock \emph{The Review of Economic Studies}, 49\penalty0 (4):\penalty0
+  499--516, 1982.
+\newblock ISSN 0034-6527.
+\newblock \doi{10.2307/2297283}.
+\newblock URL \url{http://www.jstor.org/stable/2297283}.
+
+\bibitem[Dobbie and Skiba(2013)]{dobbie_information_2013}
+Will Dobbie and Paige~Marta Skiba.
+\newblock Information {Asymmetries} in {Consumer} {Credit} {Markets}:
+  {Evidence} from {Payday} {Lending}.
+\newblock \emph{American Economic Journal: Applied Economics}, 5\penalty0
+  (4):\penalty0 256--282, October 2013.
+\newblock \doi{10.1257/app.5.4.256}.
+
+\bibitem[Emons and Sheldon(2009)]{emons_market_2009}
+Winand Emons and George Sheldon.
+\newblock The market for used cars: new evidence of the lemons phenomenon.
+\newblock \emph{Applied Economics}, 41\penalty0 (22):\penalty0 2867--2885,
+  October 2009.
+\newblock ISSN 0003-6846.
+\newblock \doi{10.1080/00036840802277332}.
+\newblock URL \url{http://dx.doi.org/10.1080/00036840802277332}.
+
+\bibitem[Gelman and Hill(2006)]{gelman_data_2006}
+Andrew Gelman and Jennifer Hill.
+\newblock \emph{Data {Analysis} {Using} {Regression} and
+  {Multilevel}/{Hierarchical} {Models}}.
+\newblock Cambridge University Press, Cambridge ; New York, 1 edition edition,
+  December 2006.
+\newblock ISBN 9780521686891.
+
+\bibitem[Gelman et~al.(2008)Gelman, Jakulin, Pittau, and
+  Su]{gelman_weakly_2008}
+Andrew Gelman, Aleks Jakulin, Maria~Grazia Pittau, and Yu-Sung Su.
+\newblock A weakly informative default prior distribution for logistic and
+  other regression models.
+\newblock \emph{The Annals of Applied Statistics}, 2\penalty0 (4):\penalty0
+  1360--1383, December 2008.
+\newblock ISSN 1932-6157, 1941-7330.
+\newblock \doi{10.1214/08-AOAS191}.
+\newblock URL \url{http://projecteuclid.org/euclid.aoas/1231424214}.
+
+\bibitem[Gelman et~al.(2013)Gelman, Carlin, Stern, Dunson, Vehtari, and
+  Rubin]{gelman_bayesian_2013}
+Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald
+  Rubin.
+\newblock \emph{Bayesian {Data} {Analysis}, {Third} {Edition}}.
+\newblock Chapman and Hall/CRC, Boca Raton, 3 edition edition, November 2013.
+\newblock ISBN 9781439840955.
+
+\bibitem[Gilligan(2004)]{gilligan_lemons_2004}
+Thomas Gilligan.
+\newblock Lemons and {Leases} in the {Used} {Business} {Aircraft} {Market}.
+\newblock \emph{Journal of Political Economy}, 112\penalty0 (5):\penalty0
+  1157--1180, 2004.
+\newblock ISSN 0022-3808.
+\newblock \doi{10.1086/422561}.
+\newblock URL \url{http://www.jstor.org/stable/10.1086/422561}.
+
+\bibitem[Healy and Palepu(2001)]{healy_information_2001}
+Paul~M Healy and Krishna~G Palepu.
+\newblock Information asymmetry, corporate disclosure, and the capital markets:
+  {A} review of the empirical disclosure literature.
+\newblock \emph{Journal of Accounting and Economics}, 31\penalty0
+  (1–3):\penalty0 405--440, September 2001.
+\newblock ISSN 0165-4101.
+\newblock \doi{10.1016/S0165-4101(01)00018-0}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0165410101000180}.
+
+\bibitem[Hendel and Lizzeri(1997)]{hendel_adverse_1997}
+Igal Hendel and Alessandro Lizzeri.
+\newblock Adverse {Selection} in {Durable} {Goods} {Markets}.
+\newblock Working {Paper} 6194, National Bureau of Economic Research, September
+  1997.
+\newblock URL \url{http://www.nber.org/papers/w6194}.
+
+\bibitem[Johnson and Waldman(2003)]{johnson_leasing_2003}
+Justin~P. Johnson and Michael Waldman.
+\newblock Leasing, {Lemons}, and {Buybacks}.
+\newblock \emph{The RAND Journal of Economics}, 34\penalty0 (2):\penalty0
+  247--265, 2003.
+\newblock ISSN 0741-6261.
+\newblock \doi{10.2307/1593716}.
+\newblock URL \url{http://www.jstor.org/stable/1593716}.
+
+\bibitem[Johnson et~al.(2014)Johnson, Schneider, and
+  Waldman]{johnson_role_2014}
+Justin~P. Johnson, Henry~S. Schneider, and Michael Waldman.
+\newblock The {Role} and {Growth} of {New}-{Car} {Leasing}: {Theory} and
+  {Evidence}.
+\newblock \emph{The Journal of Law \& Economics}, 57\penalty0 (3):\penalty0
+  665--698, 2014.
+\newblock ISSN 0022-2186.
+\newblock \doi{10.1086/679338}.
+\newblock URL \url{http://www.jstor.org/stable/10.1086/679338}.
+
+\bibitem[Johnson and Waldman(2010)]{johnson_leasing_2010}
+Justin P. Johnson and Michael Waldman.
+\newblock Leasing, {Lemons}, and {Moral} {Hazard}.
+\newblock \emph{The Journal of Law \& Economics}, 53\penalty0 (2):\penalty0
+  307--328, 2010.
+\newblock ISSN 0022-2186.
+\newblock \doi{10.1086/648384}.
+\newblock URL \url{http://www.jstor.org/stable/10.1086/648384}.
+
+\bibitem[Kirmani and Rao(2000)]{kirmani_no_2000}
+Amna Kirmani and Akshay~R. Rao.
+\newblock No {Pain}, {No} {Gain}: {A} {Critical} {Review} of the {Literature}
+  on {Signaling} {Unobservable} {Product} {Quality}.
+\newblock \emph{Journal of Marketing}, 64\penalty0 (2):\penalty0 66--79, 2000.
+\newblock ISSN 0022-2429.
+\newblock URL \url{http://www.jstor.org/stable/3203443}.
+
+\bibitem[Kruschke(2014)]{kruschke_doing_2014}
+John~K. Kruschke.
+\newblock \emph{Doing {Bayesian} {Data} {Analysis}, {Second} {Edition}: {A}
+  {Tutorial} with {R}, {JAGS}, and {Stan}}.
+\newblock Academic Press, Boston, 2 edition edition, November 2014.
+\newblock ISBN 9780124058880.
+
+\bibitem[Michaely and Shaw(1994)]{michaely_pricing_1994}
+Roni Michaely and Wayne~H. Shaw.
+\newblock The {Pricing} of {Initial} {Public} {Offerings}: {Tests} of
+  {Adverse}-{Selection} and {Signaling} {Theories}.
+\newblock \emph{Review of Financial Studies}, 7\penalty0 (2):\penalty0
+  279--319, April 1994.
+\newblock ISSN 0893-9454, 1465-7368.
+\newblock \doi{10.1093/rfs/7.2.279}.
+\newblock URL \url{http://rfs.oxfordjournals.org/content/7/2/279}.
+
+\bibitem[Petersen and Rajan(1994)]{petersen_benefits_1994}
+Mitchell~A. Petersen and Raghuram~G. Rajan.
+\newblock The {Benefits} of {Lending} {Relationships}: {Evidence} from {Small}
+  {Business} {Data}.
+\newblock \emph{The Journal of Finance}, 49\penalty0 (1):\penalty0 3--37, March
+  1994.
+\newblock ISSN 1540-6261.
+\newblock \doi{10.1111/j.1540-6261.1994.tb04418.x}.
+\newblock URL
+  \url{http://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1994.tb04418.x/abstract}.
+
+\bibitem[Peterson and Schneider(2014)]{peterson_adverse_2014}
+Jonathan~R. Peterson and Henry~S. Schneider.
+\newblock Adverse selection in the used-car market: evidence from purchase and
+  repair patterns in the {Consumer} {Expenditure} {Survey}.
+\newblock \emph{The RAND Journal of Economics}, 45\penalty0 (1):\penalty0
+  140--154, March 2014.
+\newblock ISSN 1756-2171.
+\newblock \doi{10.1111/1756-2171.12045}.
+\newblock URL
+  \url{http://onlinelibrary.wiley.com/doi/10.1111/1756-2171.12045/abstract}.
+
+\bibitem[{Stan Development Team}(2014)]{stan_development_team_stan_2014}
+{Stan Development Team}.
+\newblock \emph{Stan {Modeling} {Language} {Users} {Guide} and {Reference}
+  {Manual}, {Version} 2.2}.
+\newblock 2014.
+\newblock URL \url{http://mc-stan.org/}.
+
+\bibitem[Tirole(1988)]{tirole_theory_1988}
+Jean Tirole.
+\newblock \emph{The {Theory} of {Industrial} {Organization}}.
+\newblock The MIT Press, Cambridge, Mass, 1st edition edition, 1988.
+\newblock ISBN 9780262200714.
+
+\end{thebibliography}

@@ -1,0 +1,1147 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sys_size",
+				"sys_size_dc"
+			],
+			[
+				"intercept",
+				"intercept"
+			],
+			[
+				"sd",
+				"sd_prod_index"
+			],
+			[
+				"sd_",
+				"sd_months_operation"
+			],
+			[
+				"mean_",
+				"mean_months_operation"
+			],
+			[
+				"gamm_mc",
+				"gamm_mc_0"
+			],
+			[
+				"peak",
+				"peak_to_end"
+			],
+			[
+				"time_to",
+				"time_to_peak_cu"
+			],
+			[
+				"gam_price_invest",
+				"gam_price_invest_over"
+			],
+			[
+				"lar",
+				"large_field"
+			],
+			[
+				"border-bottom-",
+				"border-bottom-width"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"SED",
+				"SEDataZ"
+			],
+			[
+				"SEprice",
+				"SEPrice_work_tplus1"
+			],
+			[
+				"oil",
+				"oil_price_real_l6"
+			],
+			[
+				"perc",
+				"perc_75_price"
+			],
+			[
+				"perc_",
+				"perc_25_price"
+			],
+			[
+				"av",
+				"avg_price"
+			],
+			[
+				"var_",
+				"var_quantity"
+			],
+			[
+				"mean",
+				"mean_quantity"
+			],
+			[
+				"series",
+				"series_lag"
+			],
+			[
+				"field",
+				"field_inspection"
+			],
+			[
+				"gam_price_over_",
+				"gam_price_over_2d_s_price"
+			],
+			[
+				"summar",
+				"summary_over_gamma"
+			],
+			[
+				"summary",
+				"summary_comp_under"
+			],
+			[
+				"smooth",
+				"smooth_price_2"
+			],
+			[
+				"statfjord",
+				"statfjord_plot"
+			],
+			[
+				"size",
+				"size_vs_init_prod"
+			],
+			[
+				"reco",
+				"recoverable_oil"
+			],
+			[
+				"invest_per_prd",
+				"invest_per_prod_l5"
+			],
+			[
+				"real",
+				"oil_price_real"
+			],
+			[
+				"fields",
+				"fields_p"
+			],
+			[
+				"res",
+				"res_fit_se"
+			],
+			[
+				"smooth_ben",
+				"smooth_bench_split"
+			],
+			[
+				"year",
+				"year_prod"
+			],
+			[
+				"min",
+				"min_time_to_peak"
+			],
+			[
+				"invest",
+				"investmentMillNOK_real"
+			],
+			[
+				"fitted",
+				"fitted_year_prod"
+			],
+			[
+				"time",
+				"time_to_peak"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "analysis_wide.r",
+			"settings":
+			{
+				"buffer_size": 3226,
+				"line_ending": "Unix",
+				"name": "analysis_wide.r"
+			}
+		},
+		{
+			"file": "stan_analysis.py",
+			"settings":
+			{
+				"buffer_size": 7097,
+				"line_ending": "Unix",
+				"name": "stan_analysis.py"
+			}
+		},
+		{
+			"file": "solar_prod.tex",
+			"settings":
+			{
+				"buffer_size": 34088,
+				"line_ending": "Unix",
+				"name": "solar_prod.tex"
+			}
+		},
+		{
+			"file": "solar_letters.tex",
+			"settings":
+			{
+				"buffer_size": 17129,
+				"line_ending": "Unix",
+				"name": "solar_letters.tex"
+			}
+		},
+		{
+			"file": "solar_letters_cover.tex",
+			"settings":
+			{
+				"buffer_size": 1361,
+				"line_ending": "Unix",
+				"name": "solar_letters_cover.tex"
+			}
+		},
+		{
+			"file": "data_clean.py",
+			"settings":
+			{
+				"buffer_size": 3461,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "stan_helpers.py",
+			"settings":
+			{
+				"buffer_size": 1423,
+				"line_ending": "Unix",
+				"name": "stan_helpers.py"
+			}
+		},
+		{
+			"file": "solar_prod_MLM.py",
+			"settings":
+			{
+				"buffer_size": 9696,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "table.tex",
+			"settings":
+			{
+				"buffer_size": 1707,
+				"line_ending": "Unix",
+				"name": "table.tex"
+			}
+		},
+		{
+			"file": "tabel2.tex",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "tabel2.tex"
+			}
+		},
+		{
+			"file": "solar_prod.stan",
+			"settings":
+			{
+				"buffer_size": 1377,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "csi_notes.txt",
+			"settings":
+			{
+				"buffer_size": 6125,
+				"line_ending": "Unix",
+				"name": "csi_notes.txt"
+			}
+		},
+		{
+			"file": "solar_prod.bib",
+			"settings":
+			{
+				"buffer_size": 61959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "commands.txt",
+			"settings":
+			{
+				"buffer_size": 100,
+				"line_ending": "Unix",
+				"name": "commands.txt"
+			}
+		},
+		{
+			"file": "pres_solar_prod.tex",
+			"settings":
+			{
+				"buffer_size": 7454,
+				"line_ending": "Unix",
+				"name": "pres_solar_prod.tex"
+			}
+		}
+	],
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"late",
+				"LaTeXTools: Reset user settings to default"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"latex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"package on",
+				"Package Control: Install Package"
+			],
+			[
+				"latexing",
+				"LaTeXing: Check System"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"prefer",
+				"LaTeXing: Open User Preferences"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"ife",
+				"Snippet: Ifelse"
+			],
+			[
+				"snippet ife",
+				"Snippet: Ifelse"
+			],
+			[
+				"snippetife",
+				"Snippet: Ifelse"
+			],
+			[
+				"snippet",
+				"Snippet: Length"
+			],
+			[
+				"sn",
+				"Snippet: For Loop"
+			],
+			[
+				"package Control: Install",
+				"Package Control: Install Package"
+			],
+			[
+				"package Control: List ",
+				"Package Control: List Packages"
+			],
+			[
+				"PACKAGE CONTROL: INSTALL",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/johannesmauritzen/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/johannesmauritzen/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/johannesmauritzen/Library/Application Support/Sublime Text 2/Packages/User/LaTeXTools.sublime-settings",
+		"/Users/johannesmauritzen/Library/Application Support/Sublime Text 2/Packages/User/LaTeXing.sublime-settings",
+		"/Users/johannesmauritzen/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/johannesmauritzen/Library/Application Support/Sublime Text 2/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/johannesmauritzen/research/solar_prod/analysis_wide.py",
+		"/Users/johannesmauritzen/research/solar_prod/descriptives.py",
+		"/Users/johannesmauritzen/research/solar_prod/data_clean.py",
+		"/Users/johannesmauritzen/research/solar_prod/solar_prod_simp.stan",
+		"/Users/johannesmauritzen/research/solar_prod/analysis.py",
+		"/Users/johannesmauritzen/research/solar_prod/analysis.r",
+		"/Users/johannesmauritzen/research/solar_prod/analysis_wide1.stan",
+		"/Users/johannesmauritzen/Google Drive/Research/rOil/ej_RR/modeling.py",
+		"/Users/johannesmauritzen/Google Drive/Research/rOil/oil_modeling_prep.r",
+		"/Users/johannesmauritzen/Google Drive/Research/rOil/ej_RR/oil_pres_new.tex",
+		"/Users/johannesmauritzen/Google Drive/Research/rOil/ej_RR/oil_prices_old.tex",
+		"/Users/johannesmauritzen/Google Drive/Research/rOil/presentations/oil_geilo_2014.tex",
+		"/Users/johannesmauritzen/Google Drive/Research/rOil/ej_RR/thomasnotes.txt",
+		"/Users/johannesmauritzen/Google Drive/Research/rOil/presentations/oil_prices.pdf",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/NYIAEE_Mauritzen.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_geilo_2014.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_prices_old.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/simulation.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/simulation_text.pdf",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/simulation.Snw.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/simulation.Snw",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_clean.R",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_forecasting.r",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/price_modeling.R",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_prices.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_pres_fibe_jan2014.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_modeling_prep.r",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_prices.bib",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_prices.bib",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_descriptives.R",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/price_modeling_alt.r",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_todo.txt",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_modeling_eko.r",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/Oil_spatial.R",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_temp.r",
+		"/Users/johannesmauritzen/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/apa_example.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_pres_fibe_jan2014.txt",
+		"/Users/johannesmauritzen/Google Drive/price-spikes/r-price-spikes/AnalysisMay2013.R",
+		"/Users/johannesmauritzen/Google Drive/price-spikes/AnalysisMay2013.R",
+		"/Users/johannesmauritzen/Google Drive/price-spikes/priceSpikeAnalysis.R",
+		"/Users/johannesmauritzen/Google Drive/elbas_efficiency/elbas_ACD.r",
+		"/Users/johannesmauritzen/Google Drive/marketPower/marketPowerSeptember2013.r",
+		"/Users/johannesmauritzen/Google Drive/marketPower/Analysis_may_2013.R",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_pres_ifn.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_pres1.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/oil_pres_ifn.txt",
+		"/Users/johannesmauritzen/Desktop/website_copy/jmaurit.github.io/index.html",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentation/oil_pres1.tex",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil.R",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/brownbag.txt",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_pres1.tex",
+		"/Users/johannesmauritzen/Desktop/extract.r",
+		"/Users/johannesmauritzen/Google Drive/marketPower/cleaning.R",
+		"/Users/johannesmauritzen/Google Drive/github/state_space/statespace.r",
+		"/Users/johannesmauritzen/Google Drive/github/elec_wavelet/wavelet.r",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/reserve_forecasts.r",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_modeling.R",
+		"/Users/johannesmauritzen/Google Drive/github/rOil/oil_bootstrap.r",
+		"/Users/johannesmauritzen/Google Drive/Oil/rOil/oil.R",
+		"/Users/johannesmauritzen/Google Drive/Oil/rOil/oil_modeling_prep",
+		"/Users/johannesmauritzen/Google Drive/Oil/rOil/#oil_modeling_prep.r",
+		"/Users/johannesmauritzen/Google Drive/website/jmaurit.github.io/index.html",
+		"/Users/johannesmauritzen/Google Drive/Oil/rOil/oil_clean.R",
+		"/Users/johannesmauritzen/Google Drive/marketPower/MarketPowerAugust2013.R",
+		"/Users/johannesmauritzen/Google Drive/Oil/rOil/oil_modeling.R"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"litterature",
+			"gelman",
+			"multi-level",
+			"sector",
+			"hdi",
+			"\\n",
+			"\\n\\",
+			"\\\\\\n",
+			"\\\\",
+			"\\\\\\n",
+			"\\\\",
+			"param_sim[j]",
+			"par_case",
+			"param_sim[j]",
+			"contractor",
+			"mlm_new",
+			"solar_data",
+			"prod_long",
+			"$",
+			"oil_price",
+			"str",
+			"&=",
+			"()\n",
+			"̃",
+			"ˆ",
+			"̃",
+			"_",
+			"as",
+			"res=100",
+			"res=300",
+			"width=.8",
+			"width=1",
+			"\\end{multline}",
+			"\\begin{multline}",
+			")))\n",
+			"\\caption*{}",
+			"\\caption",
+			"\\textwidth]{",
+			"[h]",
+			"over",
+			"under",
+			"1",
+			"under",
+			"_",
+			"nirupama_s._rao",
+			"_",
+			"\\_",
+			"multiline",
+			"percent",
+			"\\_",
+			"mohn		",
+			"fields_p",
+			"time_to_peak",
+			"build_out",
+			"postpeak",
+			"gam_price_short",
+			"gam_price_chart",
+			"chart_over_short",
+			"chart_under_short",
+			"gam_price_over_2d_short",
+			"gam_price_under_2d_short",
+			"fields_p",
+			"gam_price_pooled",
+			"chart_pooled",
+			"8",
+			"oil_price_real_l2",
+			"max_prod",
+			"large_field",
+			"pos_price",
+			"pos_dif",
+			"fields",
+			"vinterdekk",
+			">vinterdekk\n",
+			">\n",
+			"/Users/johannesmauritzen/Google Drive/oil/figures/",
+			"fields_p"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"literature",
+			"hierarchical",
+			"tracking",
+			"ci",
+			"",
+			"\\",
+			"",
+			"\\",
+			"par_case",
+			"param_sim[j]",
+			"par_case",
+			"app_num",
+			"mlm_production",
+			"prod_wide",
+			"",
+			"oil_price_real",
+			"^",
+			"~",
+			"\\_",
+			"res=50",
+			"res=100",
+			"width=1",
+			"width=.8",
+			"\\end{equation}",
+			"\\begin{equation}",
+			"",
+			"\\caption*",
+			"\\textwidth]{figures/",
+			"",
+			"under",
+			"over",
+			"2",
+			"over",
+			"",
+			"rao",
+			"",
+			"multline",
+			"\\%",
+			"",
+			"fields_old",
+			"peak_to_end",
+			"decline",
+			"prepeak",
+			"gam_postpeak",
+			"gam_postpeak_chart",
+			"chart_postpeak_large",
+			"chart_postpeak_small",
+			"gam_postpeak_large",
+			"gam_postpeak_small",
+			"fields_old",
+			"invest_pooled",
+			"chart_invest",
+			"short",
+			"large_field",
+			"max_prod",
+			"after_peak",
+			"neg_price",
+			"neg_dif",
+			"oil_long",
+			"varmeovn",
+			"/Users/johannesmauritzen/Google Drive/github/rOil/presentations/",
+			"fields_eko"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "analysis_wide.r",
+					"settings":
+					{
+						"buffer_size": 3226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1133,
+								899
+							]
+						],
+						"settings":
+						{
+							"auto_name": "analysis_wide.r",
+							"syntax": "Packages/R/R.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1098.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "stan_analysis.py",
+					"settings":
+					{
+						"buffer_size": 7097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								623,
+								503
+							]
+						],
+						"settings":
+						{
+							"auto_name": "stan_analysis.py",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "solar_prod.tex",
+					"settings":
+					{
+						"buffer_size": 34088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								430,
+								430
+							]
+						],
+						"settings":
+						{
+							"auto_name": "solar_prod.tex",
+							"keep_focus": false,
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2919.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "solar_letters.tex",
+					"settings":
+					{
+						"buffer_size": 17129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								545,
+								458
+							]
+						],
+						"settings":
+						{
+							"auto_name": "solar_letters.tex",
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 5,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "solar_letters_cover.tex",
+					"settings":
+					{
+						"buffer_size": 1361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1267,
+								1267
+							]
+						],
+						"settings":
+						{
+							"auto_name": "solar_letters_cover.tex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 673.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "data_clean.py",
+					"settings":
+					{
+						"buffer_size": 3461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								109,
+								109
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "stan_helpers.py",
+					"settings":
+					{
+						"buffer_size": 1423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								252,
+								1422
+							]
+						],
+						"settings":
+						{
+							"auto_name": "stan_helpers.py",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "solar_prod_MLM.py",
+					"settings":
+					{
+						"buffer_size": 9696,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6835,
+								7109
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "table.tex",
+					"settings":
+					{
+						"buffer_size": 1707,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "table.tex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "tabel2.tex",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "tabel2.tex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "solar_prod.stan",
+					"settings":
+					{
+						"buffer_size": 1377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								1372
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "csi_notes.txt",
+					"settings":
+					{
+						"buffer_size": 6125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								249,
+								283
+							]
+						],
+						"settings":
+						{
+							"auto_name": "csi_notes.txt",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "solar_prod.bib",
+					"settings":
+					{
+						"buffer_size": 61959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33738,
+								33738
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 27588.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "commands.txt",
+					"settings":
+					{
+						"buffer_size": 100,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								100,
+								100
+							]
+						],
+						"settings":
+						{
+							"auto_name": "commands.txt",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "pres_solar_prod.tex",
+					"settings":
+					{
+						"buffer_size": 7454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2513,
+								2513
+							]
+						],
+						"settings":
+						{
+							"auto_name": "pres_solar_prod.tex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 199.0
+	},
+	"output.latex_log":
+	{
+		"height": 203.0
+	},
+	"replace":
+	{
+		"height": 100.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true
+}
