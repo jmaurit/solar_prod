@@ -1,0 +1,11 @@
+df	AIC
+solar_sys	17	8942.538
+solar_nested	20	8562.240
+solar_lease	20	8940.131
+
+
+
+Df	AIC	BIC	logLik	deviance	Chisq	Chi Df	Pr(>Chisq)
+solar_sys	17	8805.874	8976.717	-4385.937	8771.874	NA	NA	NA
+solar_nested	20	8430.670	8631.662	-4195.335	8390.670	381.2038	3	2.607913e-82
+solar_lease	20	8805.652	9006.643	-4382.826	8765.652	0.0000	0	1.000000e+00

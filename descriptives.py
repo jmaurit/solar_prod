@@ -1,5 +1,5 @@
 #descriptives.py
-
+#%%
 import pandas as pd
 import numpy as np
 import matplotlib as mpt
@@ -14,73 +14,77 @@ pd.options.display.max_rows = 999
 pd.options.display.max_columns = 50
 
 
-#larger sample but fewer covariates
-prod_long=pd.read_csv("research/solar_prod/prod_long.csv")
-prod_long["prod_end_date"]=pd.to_datetime(prod_long["prod_end_date"])
+# %%
+def set_graphics_params():
+    plt.rcParams['xtick.labelsize'] = 14
+    plt.rcParams['ytick.labelsize'] = 14
+    plt.rcParams['axes.facecolor'] ="white"
+    plt.rcParams['grid.color'] ="grey"
+    plt.rcParams['grid.linestyle'] = "dotted"
+    plt.rcParams["axes.labelsize"]= 14
+    #plt.rcParams['figure.savefig.dpi'] = 100
+    plt.rcParams['savefig.edgecolor'] = "#f2f2f2"
+    plt.rcParams['savefig.facecolor'] ="white"
+    plt.rcParams["figure.figsize"] = [15,8]
+    plt.rcParams['savefig.bbox'] = "tight"
+    plt.rcParams['font.size'] = 14
+    greens = ['#66c2a4','#41ae76','#238b45','#006d2c','#00441b']
+    multi =['#66c2a4','#1f78b4','#a6cee3','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f']
 
+#%%
 
 
 #data file with many covariates, but limited sample
-prod_wide=pd.read_csv("research/solar_prod/prod_wide.csv")
+prod_wide=pd.read_csv("prod_wide.csv")
+prod_wide.head()
+
 prod_wide["prod_end_date"]=pd.to_datetime(prod_wide["prod_end_date"])
-prod_wide["complete_date"]=pd.to_datetime(prod_wide["complete_date"])
+#prod_wide["complete_date"]=pd.to_datetime(prod_wide["complete_date"])
+
 
 wide_cross = prod_wide.groupby("app_num").apply(lambda x: x.iloc[0])
 wide_cross.groupby("program").size()
 
-#just the individual cells
 
+#%%
 
+grouped_solar = solar_data.groupby("app_num")
 
-
-#create max-production variable
-prod_long.reset_index(inplace=True)
-prod_long["prod_max"]=prod_long.groupby("app_num")["prod_kwh"].transform(max)
-prod_long["prod_index"] = prod_long["prod_kwh"]/prod_long["prod_max"]
-
-#create months of operation variable
-count_index = lambda v: [i+1 for i, x in enumerate(v)]
-prod_long["months_operation"] = prod_long["index"].groupby(prod_long["app_num"]).transform(count_index)
-
-prod_long["month"] = prod_long["prod_end_date"].dt.month
-month_dummies = pd.get_dummies(prod_long["month"])
-month_dummies.columns = ["jan","feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct" ,"nov", "dec"]
-prod_long["year"]=prod_long["prod_end_date"].dt.year
-year_dummies = pd.get_dummies(prod_long["year"])
-year_dummies.columns = ["y2007", "y2008", "y2009","y2010", "y2011", "y2012", "y2013", "y2014", "y2015"]
-
-solar_data=pd.concat([prod_long, month_dummies], axis=1)
-solar_data=pd.concat([solar_data, year_dummies], axis=1)
-
-solar_data["installation_year"] = solar_data.groupby("app_num")["year"].transform(np.min)
-
-solar_data["installation_year"] = solar_data["installation_year"]-2007
-
-#check for bad data
-solar_data[["app_num", "prod_kwh"]].head(2000)
-
-#scatter plots
-
-fig, ax = plt.subplots()
-ax.scatter(solar_data["months_operation"], solar_data["prod_index"], alpha=.01)
+fig,ax=plt.subplots()
+for plant_data in grouped_solar:
+    ax.plot(plant_data[1]["months_operation"], plant_data[1]["prod_index"], alpha=.1, color="blue")
 plt.show()
 
+#%%
 
+
+
+
+#%%
 #model with fixed effects (pooled model)
 fe_formula = """prod_index ~ months_operation*installation_year +
- cust_county + feb + mar + apr + may + jun + jul + aug + sep + 
- oct + nov + dec + y2008 + y2009 + y2010 + y2011 + y2012 +
-  y2013 + y2014 + y2015"""
-fe_model = smf.glm(formula=fe_formula, data=solar_data, 
+ cust_county + feb + mar + apr + may + jun + jul + aug + sep +
+ oct + nov + dec"""
+fe_model = smf.glm(formula=fe_formula, data=solar_data,
 	family=sm.families.Gaussian(sm.families.links.log)).fit()
 fe_model.summary()
 
+
 del solar_data["index"]
 
-mixed_model = smf.mixedlm("prod_index ~ months_operation", solar_data, 
+
+#Mixed Modelling:
+#%%
+mixed_model = smf.mixedlm("prod_index ~ months_operation + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec", solar_data,
  groups=solar_data["host_cust_sect"], missing="drop")
 mixed_model_fit = mixed_model.fit()
-predicted = fitted.predict()
+predicted = mixed_model_fit.predict()
+
+#%%
+result_DF = solar_data.copy()
+result_DF["predicted1"] = predicted
+result_DF.head()
+#%%
 
 fig, ax = plt.subplots()
 ax.plot(single.months_operation.iloc[1:], predicted)
@@ -88,14 +92,14 @@ ax.plot(single.months_operation, single.prod_index)
 plt.show()
 
 #group several
-prod_long=prod_long.set_index(["app_num", "prod_end_date"])
-prod_long=prod_long.sort()
-multi=prod_long.loc['PGE-CSI-00001':'PGE-CSI-00010'].copy()
+prod_wide=prod_wide.set_index(["app_num", "prod_end_date"])
+prod_wide=prod_wide.sort()
+multi=prod_wide.loc['PGE-CSI-00001':'PGE-CSI-00010'].copy()
 
 multi.reset_index(inplace=True)
 multi=multi[multi.app_num!='PGE-CSI-00007']
 
-	
+
 fig, ax = plt.subplots()
 for system, i in multi.groupby("app_num"):
 	ax.plot(i["prod_end_date"], i["prod_index"])
@@ -109,35 +113,35 @@ plt.show()
 
 multi["months"] = multi["index"].groupby(multi["app_num"]).transform(count_index)
 
-sns.lmplot(x="months", y="prod_index", col="app_num", 
+sns.lmplot(x="months", y="prod_index", col="app_num",
 	data=multi, col_wrap=3)
 
 
 #For full dataset
 
-sns.lmplot(x="months_operation", y="prod_index", 
-	data=prod_long, hue="own_sect", scatter=False)
+sns.lmplot(x="months_operation", y="prod_index",
+	data=prod_wide, hue="own_sect", scatter=False)
 plt.show()
 
-sns.lmplot(x="months_operation", y="prod_index", 
-	data=prod_long, hue="program", scatter=False)
+sns.lmplot(x="months_operation", y="prod_index",
+	data=prod_wide, hue="program", scatter=False)
 plt.show()
 
-sns.lmplot(x="months_operation", y="prod_index", 
-	data=prod_long, row="program", col = "own_sect", scatter=False)
+sns.lmplot(x="months_operation", y="prod_index",
+	data=prod_wide, row="program", col = "own_sect", scatter=False)
 plt.show()
 
 #some general descriptives
-prod_long.groupby(["program"]).describe()
+prod_wide.groupby(["program"]).describe()
 
 #get cross-section of data
-prod_long.reset_index(inplace=True)
-cross_section=prod_long.groupby("app_num").apply(lambda x: x.iloc[0])
+prod_wide.reset_index(inplace=True)
+cross_section=prod_wide.groupby("app_num").apply(lambda x: x.iloc[0])
 del cross_section["app_num"]
 cross_section.reset_index(inplace=True)
-cross_section=cross_section.rename(columns={'prod_end_date': 'first_prod', 
+cross_section=cross_section.rename(columns={'prod_end_date': 'first_prod',
 	'prod_kwh': 'avg_prod_kwh'})
-cross_section["avg_prod_kwh"]=prod_long.groupby("app_num")["prod_kwh"].mean()
+cross_section["avg_prod_kwh"]=prod_wide.groupby("app_num")["prod_kwh"].mean()
 
 cross_section.groupby("program").size()
 
@@ -170,7 +174,7 @@ fig, ax = plt.subplots()
 fig.set_size_inches(9,7)
 for sect in sectorsZ:
 	own_sect, color = sect
-	ax.plot_date(x=cross_section.loc[cross_section["own_sect"]==own_sect,"first_prod"], 
+	ax.plot_date(x=cross_section.loc[cross_section["own_sect"]==own_sect,"first_prod"],
 		y=cross_section.loc[cross_section["own_sect"]==own_sect,"cost_per_max_kwh"],
 		alpha=.2, color=color, label=own_sect)
 	col_patch = mpatches.Patch(color=color, label=own_sect)
@@ -185,7 +189,3 @@ plt.show()
 #are newer ones better over time?
 
 #are chinese worse than others?
-
-
-
-
