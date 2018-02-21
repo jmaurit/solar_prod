@@ -16,7 +16,7 @@
 
 \doublespacing % from package setspacs
 
-\title{Are Solar Panels Commodities? Evidence of Quality Differences and Assymetric Information from California}
+\title{Are Solar Panels Commodities? Evidence of Quality Differences and Asymmetric Information from California}
 
 \date{\today}
 
@@ -27,7 +27,7 @@
 	\maketitle
 
 \begin{abstract}
- Solar panels should not be considered commodities. Considerable quality differences, as measured by average production over time, are found between manufacturers. This has implications for pricing and competition in the market for solar panel systems. I test two implications from the the theory of asymmetric information of quality and find: 1.) Solar systems with third party owners display higher quality than those owned directly. 2.) Prices of solar panels are not related to quality for solar panels that are owned directly. I use multilevel models estimated by both maximum likelihood and Bayesian Markov Chain Monte-Carlo.
+ Solar panels should not be considered commodities. Considerable quality differences, as measured by degradation of production over time, are found between manufacturers. This has implications for pricing and competition in the market for solar panel systems. I test two implications from the the theory of asymmetric information of quality and find: 1.) Solar systems with third party owners display higher quality than those owned directly. 2.) Prices of solar panels are less correlated to quality for solar panels that are owned directly. I use multilevel models estimated by both maximum likelihood and Bayesian Markov Chain Monte-Carlo.
 \end{abstract}
 
 % \thanks{*I would like to thank...}
@@ -40,9 +40,9 @@ Solar panels have been referred to colloquially in the power industry as being c
 
 However, a more thorough definition of a commodity generally includes a certain degree of fungibility. That is, the good from a certain producer will be largely interchangeable with the good of another producer. Brent crude oil produced by Statoil from the Norwegian North Sea and that produced by BP from the UK North Sea is sold at the same price, as established by an exchange. In a similar manner, the electricity produced by a solar panel at a certain location and time can also be considered a commodity.
 
-However, an important differentiating characteristic between solar panels is the quality of these solar panels. This can be measured as both the failure rate of these panels as well as the degree of degradation of the panels over time. This can imply that certain manufacturers with superior quality could extract a premium.
+However, an important differentiating characteristic between solar panels is the quality of these solar panels. This can be measured as both the failure rate of these panels as well as the degree of degradation of the panels over time. This can imply that certain manufacturers with superior quality could extract a premium in the market.
 
-The combination of quality differences between panel manufacturers and the distributed nature of solar panel generation also opens up the issue of asymmetric information in the market for solar panels. 
+The combination of quality differences between panel manufacturers and the distributed nature of solar panel generation also opens up the issue of asymmetric information in the market for solar panels.
 
 In an earlier paper \citep{mauritzen_whats_2015} I show that the boom in rooftop solar panel investment in California coincided with an adoption of a leasing business model by contractors. With leased panels, homeowners and small businesses do not pay upfront or own the panels on their roof. Instead, the contractor or a third-party own the panels and either collect a fixed monthly payment from the owner or charge a fixed price per kilowatt-hour (kWh) of electricity produced.\footnote{Charging for energy produced is often referred to as a power purchase agreement (PPA), but I here refer to all arrangements where the home- or business-owner does not own the solar panel system as a lease.}
 
@@ -60,7 +60,7 @@ However, over the period from 2010 to 2014, many of the larger solar contractors
 
 A testable implication that emerges is then that the quality of panels - as measured by degradation of output over time - is better in systems that are leased.  In this paper, I use a data set of California solar power systems that includes monthly production data. I measure the average degradation of production over time as a proxy for the inherent quality of solar panel system.
 
-Testing for the degradation in production of nearly 1000 panels is however problematic using traditional econometric models based on frequentist approaches. The production patterns of the solar panels could be expected to vary greatly depending on location, equipment, size as well as other factors. The inclusion of many fixed effects to control for these factors would likely lead to over-fitting. That is, the model may have a good fit to the data, but will tend to have poor out-of-sample predictive power \citep{gelman_bayesian_2013}.
+Testing for the degradation in production of more than 3000 panels is however problematic using traditional econometric models based on frequentist approaches. The production patterns of the solar panels could be expected to vary greatly depending on location, equipment, size as well as other factors. The inclusion of many fixed effects to control for these factors would likely lead to over-fitting. That is, the model may have a good fit to the data, but will tend to have poor out-of-sample predictive power \citep{gelman_bayesian_2013}.
 
 As a solution, I use a Bayesian hierarchical model estimated using Markov Chain Monte Carlo (MCMC) simulation techniques. The main benefit of using a Bayesian multilevel model is that we can fit a complex model with many hundreds of parameters, while avoiding problems of over-fitting and issues of multiple comparison in inference by relying on partial pooling of the parameters. The main finding is that solar panel systems that were leased tend to show significantly less degradation over time than those that were sold outright.
 
@@ -84,7 +84,7 @@ For example \citet{dastrup_understanding_2012} argue that solar panels can not b
 
 Despite the growth of the literature on investments in distributed energy, to my knowledge this is the first paper to identify and directly test implications of information asymmetry in the expanding industry. The paper has implications for regulation and subsidy policy for the expanding distributed energy industry.
 
-\section{California Solar Initiative, Data and Empirical Model}
+\section{California Solar Initiative, Data}
 
 The data used in this paper is an intersection of two datasets from the California Solar Initiative (CSI). The California Solar Initiative is a state-wide program that gives incentives for installing grid-connected solar panels systems. The incentives are based on performance. For smaller systems, typical of most residential and small business installations, this incentive was given in the form of an upfront payout based on the capacity and the expected performance of the system.
 
@@ -105,7 +105,7 @@ Below are the key variables present in the CSI installation data:
 \item Year of installation
 \end{itemize}
 
-The installation data can be matched with the production data for those installations receiving a production subsidy. I include only those installations that have been producing for at least 4 years (48 monthly observations), where the maximum number of observations in this data is 5 years (60 months) of production data. The data then covers similar vintage of solar panels - those that were installed from 2007 through 2009 and which continued to produce through 2013.
+The installation data can be matched with the production data for those installations receiving a production subsidy. I include only those installations that have been producing for at least 3 years (36 monthly observations), where the maximum number of observations in this data is 5 years (60 months) of production data.
 
 I removed systems from the dataset that may have had reporting errors. for example I removed systems where production was reported to be higher than what would be theoretically possible from a solar power system with a given nameplate capacity. I also removed systems that reported 0 production in a period. This could also be an indication of quality if zero production indicates a malfunction in the system. However it is not possible to identify which zero observations reflect malfunctions versus reporting issues or other non-quality issues.
 
@@ -128,79 +128,142 @@ A simple example of fitting a straight lines through two production series is sh
 
 The question of interest and the structure of the available data suggests a hierarchical structure to the empirical model. The individual production data are grouped by the different solar panel systems. Each system is then in turn grouped into categories of leased or host-owned. As mentioned, seasonality must also be adequately accounted for as well as other factors such as geographic location, use of tracking and idiosyncratic variation from one solar panel system to another.
 
-For later comparison, consider results from a traditional single-level regression of production over time estimated by maximum likelihood shown in table \ref{table:max_likelihood}. Fixed effects are included for month, host sector, county\footnote{coefficients for county are not shown}, and an indicator variable for leased systems. Variables for year of installation and size of the system are also included. The variable of interest is the interaction of the lease indicator with the time variable - which is transformed from monthly to fractional year units.
+\section{Linear Mixed Effects Models Estimated by Maximum Likelihood}
 
-The results indicate a good fit with an $R^2$ of 90 percent. The coefficient of interest indicates that leased systems show 4\% less degradation over time than those sold outright - with a p-value of .001. However, even with the relatively large number of fixed effects included in this regression, much of the idiosyncratic variation from one photovoltaic system to another is not accounted for. I will show that when the full idiosyncratic variation is better accounted for, the evidence for a substantial difference in performance over time between leased and systems sold outright is substantially weaker than the below regression results indicate.
+\subsection{Testing for differences between module manufacturer}
+Following the notation of \citet{bates_fitting_2015}, the conditional distribution of the response variables, $y$ in a multilevel model can be written compactly as in equation \ref{equation:lme_simple}. Here $\mathbf{\beta}$ is a p-dimensional coefficient vector (or "fixed effects") of the $n times p$ matrix of (p-1) explanatory variables $\mathbf{X}$ plus intercept term. $\mathbf{Z}$ is an $n \times q$ model matrix of the variables whose groups are to be modelled directly with corresponding vector of coefficients, or "random effects" $\mathbf{B}$ that are fixed at values $\mathbf{b}$.\footnote{The use of "random" refers to the fact that these groups are assumed to be specific to the sample. Many applications of mixed effects model thus treat the varying group coefficients as group-level error-terms, thus the "random" label. Still, interpreting coefficients as group varying or as group error terms is mathematically equivalent.} Here $q$ is a dependent on the number of terms, $k$, that are allowed to vary by group and the number of groups, $l$ for each term: $q=\sum_i^k q_i = \sum_i^k l_i p_i$.  $\mathbf{W}$ is a diagonal matrix of known prior weights. $B$ is distributed as multivariable normal with zero mean and where $\Sigma$ is variance-covariance matrix.
+
+\begin{align}
+(y|\mathbf{B=b} &\sim \mathcal{N}(\mathbf{X\beta + Zb}, \sigma^2\mathbf{W^{-1}}))\\
+B &\sim \mathcal{N}(\mathbf{0,\Sigma})
+\label{equation:lme_simple}
+\end{align}
+
+Models of this form can be solved efficiently using a penalized maximum likelihood routine. For further details of both the model and routine, I refer to \citet{bates_fitting_2015}.
+
+To test whether I can detect quality differences between module manufacturers, I need to first estimate a restricted comparison model. I write the restricted comparison model explicitly in equations \ref{eqn:observation_level_rest} and \ref{eqn:system_level_rest}.
+
+In this model, the transformed production variable, $prod\_scaled_{i}$ for observation $i$ is distributed normally with the mean modelled as a linear function of an intercept term $a_s$, a slope term, $b_s$ on the transformed months of operation variable $months\_operation\_scaled$, and a set of dummy variables representing the month of year, $\mathbf{month}$. Notice that the intercept and slope are indexed by $s$, indicating that they are allowed to vary by the individual system. Thus in this model formulation I take into account the groupings by system, explicitly modelling varying relative initial production values (intercepts) and degradation over time (slope). Moving up a level, the estimated $a$ and $b$ parameters are in turn modelled as multivariate normal.
+
+\begin{align}
+prod\_scaled_{i} &\sim N(\mathbf{month} + a_s + b_s months\_operation\_scaled_{i}, \sigma^2)\\
+\label{eqn:observation_level_rest}
+\begin{pmatrix}
+  a\\
+  b
+\end{pmatrix}
+&\sim N
+\begin{pmatrix}
+  \mu_a\\
+  \mu_b
+\end{pmatrix},
+\begin{pmatrix}
+  \sigma_a^2 & \rho \sigma_a \sigma_b \\
+  \rho \sigma_a \sigma_b & \sigma_b^2
+\end{pmatrix}
+\label{eqn:system_level_rest}
+\end{align}
+
+The inclusion of the matrix of month dummies $\mathbf{month}$ controls for seasonal variation across all systems. This is a simplified way to model seasonality, but because the data is itself at a monthly frequency, and the seasonality is not of direct importance, this should suffice. As long as un-modeled variation in seasonality is not correlated with the long-run slope of production, the point estimates for the slope should be unbiased.
+
+To test whether quality varies among module manufacturers, I simply add panel manufacturer as an extra hierarchy to the model. In this model, the observation level regression is identical to the restricted comparison model as in equation \ref{eqn:observation_level_rest}. The system-level intercepts, $a$, and slope, $b$, terms are also modelled as a multivariate normal. But the mean values of the multivariate normal distribution, $mu_a$ and $mu_b$, are now indexed by $m$, representing that they are allowed to vary by module manufacturer.
+\begin{align}
+\begin{pmatrix}
+  a\\
+  b
+\end{pmatrix}
+&\sim N
+\begin{pmatrix}
+  \mu_{a[m]}\\
+  \mu_{b[m]}
+\end{pmatrix},
+\begin{pmatrix}
+  \sigma_{a[m]}^2 & \rho \sigma_{a[m]} \sigma_{b[m]} \\
+  \rho \sigma_a \sigma_b & \sigma_b^2
+\end{pmatrix} \\
+\mu_{a} &\sim N(\theta_a, \sigma_{mu_a}^2) \\
+\mu_{b} & \sim N(\theta_b), \sigma_{mu_b}^2)
+\end{align}
+
+If there is no significant variation between the module manufacturer groupings, this model collapses into the restricted comparison model, which is the null hypothosis. Figure \ref{sfig:sys_slope_fig} gives a visual summary of the system-level slope terms ordered from lowest to highest. The lines represent approximate 95\% confidence intervals around the point estimate. One anomaly we can notice is that a handful of the systems have slopes that are estimated to be positive. This is clearly problematic if we wish to interpret the slope coefficient as degradation over time. I address this in the full Bayesian model without resorting to excluding data.
+
+\begin{figure}
+\begin{minipage}{.48\textwidth}
+  \includegraphics[width=1\linewidth]{figures/sys_slope_fig.png}
+  \caption{Approximate 95\% confidence intervals around maximum likelihood point estimates of system-level slope terms, ordered from lowest to highest.}
+  \label{sfig:sys_slope_fig}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+  \includegraphics[width=1\linewidth]{figures/nested_manuf_fig_final.png}
+  \caption{Approximate 95\% confidence intervals around maximum likelihood estimators of manufacturer-level slope terms $\mu_b$, ordered from lowest to highest.}
+  \label{sfig:nested_manuf_fig}
+\end{minipage}
+\end{figure}
+
+\ref{sfig:nested_manuf_fig} gives a summary of the estimated manufacturer-level mean slopes. Again the lines represent 95\% confidence intervals around the point estimates. Visually, we can see substantial variation in quality between the manufacturer groups. We can more formally test the hypothesis that manufacturer groupings improve the explanatory power of the model by comparing to the restricted model with an LM test. The results are shown in table \ref{tbl:lm_commodity}. The information criteria measures (AIC, BIC) are both lower, indicating a better predictive power of the model with manufacturer groupings. The chis-square statistic also indicates that the model with manufacturer groupings substantially improves model performance.
 
 \begin{table}
-\begin{center}
-\begin{tabular}{l c }
-\hline
- & Maximum Likelihood Results\\
-\hline
-(Intercept)                                            & $8.62^{***}$  \\
-                                                       & $(0.08)$      \\
-I(months\_operation/12)                                & $-0.03^{***}$ \\
-                                                       & $(0.00)$      \\
-Leased                         & $0.19^{***}$  \\
-                                                       & $(0.01)$      \\
-sys\_size\_dc                                          & $0.00^{***}$  \\
-                                                       & $(0.00)$      \\        & $(0.08)$      \\
-February                                         & $0.14^{***}$  \\
-                                                       & $(0.02)$      \\
-March                                        & $0.27^{***}$  \\
-                                                       & $(0.02)$      \\
-April                                        & $0.59^{***}$  \\
-                                                       & $(0.02)$      \\
-May                                         & $0.70^{***}$  \\
-                                                       & $(0.02)$      \\
-June                                         & $0.79^{***}$  \\
-                                                       & $(0.02)$      \\
-July                                         & $0.75^{***}$  \\
-                                                       & $(0.02)$      \\
-August                                         & $0.70^{***}$  \\
-                                                       & $(0.02)$      \\
-September                                         & $0.69^{***}$  \\
-                                                       & $(0.02)$      \\
-October                                       & $0.54^{***}$  \\
-                                                       & $(0.01)$      \\
-November                                       & $0.41^{***}$  \\
-                                                       & $(0.01)$      \\
-December                                        & $0.15^{***}$  \\
-                                                       & $(0.01)$      \\
-Fixed Array                            & $-0.52^{***}$ \\
-                                                       & $(0.03)$      \\
-Mixed                                  & $-0.34^{***}$ \\
-                                                       & $(0.06)$      \\
-Single-Axis Tracker                    & $-0.31^{***}$ \\
-                                                       & $(0.04)$      \\
-Government                               & $0.07^{***}$  \\
-                                                       & $(0.01)$      \\
-Non-Profit                               & $-0.17^{***}$ \\
-                                                       & $(0.02)$      \\
-Residential                              & $-2.12^{***}$ \\
-                                                       & $(0.01)$      \\
-I(months\_operation/12):leased & $0.04^{***}$  \\
-                                                       & $(0.01)$      \\
-\hline
-R$^2$                                                  & 0.90          \\
-Adj. R$^2$                                             & 0.90          \\
-Num. obs.                                              & 32979         \\
-RMSE                                                   & 0.57          \\
-\hline
-\multicolumn{2}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
-\end{tabular}
-\caption{Results from a standard linear regression model with fixed effects for }
-\label{table:max_likelihood}
-\end{center}
+  \begin{tabular}{rllllllll}
+  \toprule
+    Model &  DF &   AIC &   BIC &  logLik &  deviance &  Chisq &  Chi df &  Pr(>Chisq) \\
+    \midrule
+             Null &  17 &  8805 &  8976 &   -4385 &      8771 &     -- &      -- &          -- \\
+    Grouped Manuf. &  20 &  8430 &  8631 &   -4195 &      8390 &    381 &       3 &     2.6e-82 \\
+  \bottomrule
+  \end{tabular}
+  \label{tbl:lm_commodity}
 \end{table}
 
-Instead of standard single-level maximum likelihood estimation,  I use a hierarchical Bayesian model where parameters can be estimated through Markov Chain Monte Carlo (MCMC) simulation techniques. The main advantage of such models are the flexibility of taking into account the multi-level structure of the data and improved inference that comes from partial pooling.
+The first result, of which the evidence appears to be quite strong is that solar panel systems do appear to vary substantially in quality between module manufacturers. Given that module quality is an important differentiating characteristic of panels, it is then difficult to formally define solar panels as commodities.
 
-Consider first a no pooling model. The slope of production over time from each solar panel system would be estimated independently - allowing for large amounts of solar-power-system level variance, but excluding information from data on all the other plants from each of the individual system-level inferences. On the other hand, in a fully pooled model, the data from all of the observations of all the solar power systems in each group (leased, sold outright) are used in the estimation, but idiosyncratic variation between solar-power-systems are not taken into account. An outlying solar power system may, for instance, have too much influence and bias the results.
+\subsection{testing for differences in quality between leased and host-owned solar power systems}
 
-A hierarchical model with partial pooling is a compromise between these two extremes. Individual estimators of the solar-power-system slopes make use of the information in the full dataset with weights established by the relative variance between and within solar power systems. A full discussion of partial pooling can be found in \citet{gelman_bayesian_2013} or \citet{kruschke_doing_2014}.
+Provided the evidence that solar panel systems are not commodities and that substantial differences in quality do exist between manufacturers, we can now move on to the testable implication that comes from a combination of standard economic theory of asymmetric information and a descriptive understanding of the market that suggests the market for solar panels could plausibly be subject to issues of asymmetric information of quality.
 
+From our informal model of asymmetric information where we see host owners of solar systems as being low-information types, while owners of leased panels as being high information types, we would predict that on average leased panels will display higher quality over time. To test this directly with the data, I only need to do a slight modification of the model in the previous subsection. Instead of grouping the system-level coefficients by manufacturer, I now group into whether the solar power system was leased or not, as indexed by $l$. We can then compare the average slopes between these groups. For convenience the model is presented in full in equations \ref{eqn:observation_level_rest2}.
+
+\begin{align}
+prod\_scaled_{i} &\sim N(\mathbf{month} + a_s + b_s months\_operation\_scaled_{i}, \sigma^2)\\
+\label{eqn:observation_level_rest2}
+\begin{pmatrix}
+  a\\
+  b
+\end{pmatrix}
+&\sim N
+\begin{pmatrix}
+  \mu_{a[l]}\\
+  \mu_{b[l]}
+\end{pmatrix},
+\begin{pmatrix}
+  \sigma_{a[l]}^2 & \rho \sigma_{a[l]} \sigma_{b[l]} \\
+  \rho \sigma_a \sigma_b & \sigma_b^2
+\end{pmatrix} \\
+\mu_{a} &\sim N(\theta_a, \sigma_{mu_a}^2) \\
+\mu_{b} & \sim N(\theta_b), \sigma_{mu_b}^2)
+\label{eqn:lease_model}
+\end{align}
+
+A visual summary of the results are shown in figure \ref{lease_sys_fig}. Again, the vertical lines represent approximate 95\% confidence intervals over the point estimates for the system-level slope terms, $b_s$. But here the the slope estimates are grouped into host-owned (left) and leased (right). The estimated group means are shown as horizontal lines. At the scale of the figure, the effect appears small, but the average slopes are estimated to be significantly different from each other at the 95\% confidence interval. The difference is also economically significant. Extrapolating out from the difference in the point estimates between leased and host-owned suggests that on average a leased system can expect to be producing 11\% more power after 10 years compared to an otherwise identical solar panel systems.
+
+\begin{figure}
+	\includegraphics[width=.8\textwidth]{figures/lease_sys_fig.png}
+	\caption{A visual summary of the estimation results. The vertical lines again represent the estimated system-level slope coefficients.}
+	\label{lease_sys_fig}
+\end{figure}
+
+
+
+\section{Full Bayesian multilevel model estimated by Markov Chain Monte Carlo}
+
+Until now, I have used relatively parsimonious models with few fixed-effects covariates and only one or maximum two hierarchies ("random effects").  Ideally, I would like to estimate a full probability model with all relevant and available covariates and hierarchies. First and foremost so that the parameters of interests to the testable implications can be estimated from one model. But also, citet{bar_random_2013} shows using monte-carlo simulations that mixed effects models that have the maximum random effects structure justified by the model and data, provide the best out-of-sample prediction. Estimating mixed effects model by maximum likelihood is efficient and straight-forward. However, convergence of the maximum likelihood routine is not guaranteed under richer models with more hierarchies and larger number of paramaters to be estimated.
+
+Specific to my model, I wish to estimate a model where the variable for cost per-kw is included as an interaction that varies by system and module manufacturer. I also wish to have a model where both system, module manufacturer and leasing hierarchies are estimated simultaneously. I am not able to obtain convergence of the maximum likelihood routines under this rich model.
+
+As a solution, I build a fully Bayesian multilevel model\footnote{I purposefully change my nommenklature here and refer to the Bayesian model as a "multilevel model" to distinquish it from the models estimated by maximum likelihood, which I refer to as a linear mixed effects model. This distinction is however mostly artificial. Both models resemble each other closely in structure. "Multilevel model" is however a broader term. There is no restriction to linearity, for example. Models with non-linear or non-parametric components can also be incorporated and estimated with MCMC.} estimated by Markov Chain Monte Carlo (MCMC) simulation techniques.
+
+The main advantage to using the Bayesian techniques here are practical rather than philosophical. Models up to levels of nearly arbitrary richness can be estimated, with computation time and available data being the main constraints. Inference is also well defined and exact,\footnote as opposed to the approximate inference from maximum likelihood.
+
+A Bayesian MCMC approach does also have some attractive properties. Results are presented estimates of marginal posterior distributions over coefficients of interest, which can be interpreted directly and intuitively as probabilities. Group-level variances are not constrained to be equal and assumptions of normality of the likelihood and posterior distributions can be loosened. Several excellent discussions of Bayesian techniques are available, see \citet{gelman_bayesian_2013}, \citet{kruschke_doing_2014}, or \citet{mc}
 
 Figure \ref{solar_prod_bayes_diag} shows the structure of the model. Starting from the bottom, the individual production data are log transformed and modeled as having a Cauchy distribution with mean $y_hat$ and variance $sigma^2$. $sigma^2$ is in turn given a half-Cauchy prior.
 
@@ -230,87 +293,10 @@ With Bayesian multilevel model, I also have greater flexibility in specifying th
 Another advantage is that the posterior distributions of the parameters have a natural and direct interpretation as probabilities, as opposed to standard hypothesis testing where the concepts of p-values and significance are often ill-defined. See \citet{kruschke_doing_2014} or \citet{gelman_bayesian_2013} for further discussion.
 
 
-% \begin{align}
-% 		log(production_{ij}) &\sim N(\hat{y}, \sigma^2), \quad i=1,...,n \\
-% 		\hat{y} &= \beta_{0j} + \beta_{1j}*time_{ij} + month_{m}
-% 		\beta_{1,j} &= \mu_{\beta, l} + \zeta_{b1, j}, \quad j=1...j, \quad l = 0,1 \\
-% 		\mu_{\beta1, l} &\sim N(0,10) \\
-% 		\beta_{0,j} &\sim N(\mu_{b0}, \sigma_{b0}) \\
-% 		\month_{m} &\sim N(1,10)\\
-% 		\sigma &\sim uniform(0,100) \\
-% 		\zeta_{b1, j} &\sim N(0,\sigma_{b1})
-% 		\label{equation:model}
-% 		\caption{}
-% \end{align}
-
-\section{Results}
-
-I run 1000 iterations with 4 chains of the Hamiltonian MCMC algorithm in order to sample the joint posterior probability distribution of the model. I can then extract the the estimates of the marginal posterior distributions of the individual parameters in the form of a list of simulated parameter estimates.
-
-Summary statistics for the posterior distributions of the main parameters of the model are shown in table \ref{table_results}. The parameters of interest are $\mu_{own}, \mu_{lease}$ which are the average slope of production over time in, respectively, systems that were sold outright and systems that were leased. These coefficients as well as the other component coefficients of $\beta1$, should be interpreted for a marginal change of 1 standard deviation change in time. Intuitive illustrations of the magnitudes of the coefficients of interest are shown further below.
-
-\begin{table}
-\resizebox{12cm}{!} {
-\begin{tabular}{lrrrr}
-\toprule
-{} &  2.5\%&   97.5\% &   mean &  median \\
-params           &          &          &         &          \\
-\midrule
-apr              &   0.1452 &  -0.0838 &  0.0069 &  -0.0013 \\
-aug              &   0.2065 &  -0.0223 &  0.0681 &   0.0594 \\
-dec              &  -0.1005 &  -0.3295 & -0.2386 &  -0.2471 \\
-feb              &  -0.1037 &  -0.3346 & -0.2437 &  -0.2523 \\
-jan              &  -0.1935 &  -0.4234 & -0.3319 &  -0.3404 \\
-jul              &   0.2364 &   0.0058 &  0.0968 &   0.0886 \\
-jun              &   0.2584 &   0.0282 &  0.1191 &   0.1105 \\
-mar              &  -0.0257 &  -0.2535 & -0.1631 &  -0.1717 \\
-may              &   0.2067 &  -0.0225 &  0.0687 &   0.0602 \\
-nov              &   0.0546 &  -0.1748 & -0.0839 &  -0.0923 \\
-oct              &   0.1256 &  -0.1034 & -0.0124 &  -0.0211 \\
-sep              &   0.2094 &  -0.0205 &  0.0704 &   0.0619 \\
-mu1\_commercial   &   0.0014 &  -0.0041 & -0.0007 &  -0.0005 \\
-mu1\_government   &   0.0035 &  -0.0026 &  0.0004 &   0.0002 \\
-mu1\_non\_profit   &   0.0018 &  -0.0057 & -0.0008 &  -0.0003 \\
-mu1\_not\_tracking &   0.0044 &  -0.0074 & -0.0016 &  -0.0009 \\
-mu1\_residential  &   0.0039 &  -0.0023 &  0.0005 &   0.0003 \\
-mu1\_tracking     &   0.0039 &  -0.0092 & -0.0021 &  -0.0014 \\
-mu\_lease         &  -0.0001 &  -0.0115 & -0.0045 &  -0.0042 \\
-mu\_own           &  -0.0001 &  -0.0125 & -0.0054 &  -0.0054 \\
-beta0\_size       &   0.7501 &   0.6948 &  0.7173 &   0.7141 \\
-beta1\_ins\_year   &  -0.0007 &  -0.0032 & -0.0020 &  -0.0020 \\
-beta1\_size       &  51.1251 & -45.7583 &  0.1312 &   0.0594 \\
-sigma            &   0.0295 &   0.0287 &  0.0291 &   0.0291 \\
-\bottomrule
-\end{tabular}
-}
-\label{table_results}
-\caption{Summary statistics of the distributions over the main parameters in the model. Confidence intervals are estimated as quantiles at 2.5 and 97.5 percent of the estimated posterior distribution of the parameters.}
-\end{table}
-
-I display the histograms representing the posterior distributions of these two parameters in the top panel of figure \ref{diff_lease}. The histograms indicate that the posterior distributions appear to have means that are different from each other.
-
-In the lower panel, I show a histogram of the posterior of the difference between the two parameters, $\mu_{b1,l=1} - \mu_{b1,l=2} $ which is the direct test of the question of interest. 95\% of the probability lies below the vertical line, which stands at approximately zero. A direct interpretation is then that there is a 95 \% probability that on average solar power systems that are sold outright have a higher rate of degradation than those that are leased.
-
-\begin{figure}
-	\includegraphics[width=1\textwidth]{figures/diff_lease.png}
-	\caption{The figure shows the distribution of the difference of $\mu_{lease}$ and $\mu_{own} $. The black vertical line is placed at zero. The distribution of the difference of the two parameters suggests that leased panels had about a 80\% chance of being higher quality than those sold outright, as measured by the slope of production over time.}
-	\label{diff_lease}
-\end{figure}
-
-The magnitude of the effect can best be seen by plotting average predicted values over time, which are shown for systems that are leased and sold-outright in figure \ref{predicted_deg}. The solid lines represent the median value of the posterior distribution on the $mu_lease$ and $mu_old$ parameters, where the light lines represent random draws from the respective posterior distributions to represent uncertainty. The model suggests that a leased solar panel system will on average experience degradation of about 6\% after 20 years while those owned outright experience on average of 5\% of degradation. However, as the figure makes clear, the average values hide significant variation in the overall distribution.
-
-\begin{figure}
-	\includegraphics[width=1\textwidth]{figures/predicted_deg.png}
-	\caption{The figure shows the average predicted values of degradation over time of solar panel systems that are leased and sold out-right. The solid lines represent the mean value of the posterior where the lighter lines represent random draws from the posterior distribution}
-	\label{predicted_deg}
-\end{figure}
-
 \section{Discussion and Conclusion}
 The theoretical literature on information asymmetry and quality is established and deep. The empirical literature for consumer durable investments is, however, more sparse, reflecting the difficulty of getting reliable data on purchases and long-term reliability. This article provides one of few case studies that both identifies a market that could be expected to have issues of information asymmetry of quality, and provides an indirect empirical test for the presence of information asymmetry of quality.
 
 The structure of the emerging solar industry in the US, as well as other parts of the world suggests that issues of information asymmetry may play an important role. The established theory on the subject suggests that under information asymmetry of quality, poor quality products may push out good quality products, at least in some sub-markets. In this article I have tested an implication of that theory for the case of solar panels in California. The results provide some weak evidence for the existence of information asymmetry issues of quality.
-
-The use of Bayesian MCMC simulation techniques in this article also provides an illustrative example of the use and usefullnes of a powerful emerging toolset. The Bayesian frameworks and recently developed software such as Stan provide major practical and theoretical advantages over many traditional econometric methods. These methods and tools are also increasingly accessible to the practicioner. \citet{kruschke_doing_2014} and \citet{stan_development_team_stan_2014} provide accessible and thorough introductions and guides.
 
 This article should also be considered as part of a broader literature on the special characteristics of new distributed energy generation technologies. The energy investment behavior of home owners, farmers, and small cooperatives are bound to be substantially different than those of large, specialized energy companies that have traditionally done most of the investment in electricity generation. Understanding the quickly evolving energy and power industry requires taking into account informational and behavioral factors, and this is a rich field for further empirical research
 

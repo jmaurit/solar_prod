@@ -9,12 +9,12 @@ def get_cent_interval(sample, conf=.95):
 	high_ci = sample[round(n_sample*(1-p/2))]
 	return([low_ci, high_ci])
 
-def summary_info(post_sample, lim=5):	
+def summary_info(post_sample, lim=5):
 	#post_sample = solar_params
 	#lim=5
 	"""
 	Input extracted STAN model sample: post_sample
-	lim - confidence interval ie lim = 5 => 95 central posterior interval  
+	lim - confidence interval ie lim = 5 => 95 central posterior interval
 	"""
 
 	params = []
@@ -34,7 +34,7 @@ def summary_info(post_sample, lim=5):
 			param_sim=np.sort(param_sim)
 			low_ci.append(param_sim[n_tail])
 			high_ci.append(param_sim[n_samples-n_tail])
-		else:	
+		else:
 			for par_case in param_sim.T:
 				params.append(i)
 				means.append(np.mean(par_case))

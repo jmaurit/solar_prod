@@ -33,6 +33,15 @@ def set_graphics_params():
 
 #%%
 
+set_graphics_params()
+solar_data = pd.read_csv("data/prod_csi.csv")
+
+comm_table = [["Model",	"DF",	"AIC",	"BIC",	"logLik",	"deviance",	"Chisq",	"Chi df",	"Pr(>Chisq)"],
+["Null",	"17",	"8805",	"8976",	"-4385",	"8771",	"--",	"--",	"--"],
+["Grouped Manuf.", 	"20",	"8430",	"8631",	"-4195",	"8390",	"381",	"3",	"2.6e-82"]]
+
+comm_table_df = pd.DataFrame(comm_table)
+comm_table_df.to_latex(buf="table3.tex")
 
 #data file with many covariates, but limited sample
 prod_wide=pd.read_csv("prod_wide.csv")

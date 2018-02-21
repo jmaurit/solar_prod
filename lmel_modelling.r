@@ -137,9 +137,23 @@ lease_model = function(solar_data){
 }
 
 lease_model2 = function(solar_data){
-  solar_lme4 = lmer(prod_scaled ~ month + months_operation_scaled + cost_per_kw (months_operation_scaled + cost_per_kw |third_party_owned) + (months_operation_scaled|third_party_owned:app_num), solar_data)
+  #test if prices are more correlated with
+  solar_lme4 = lmer(prod_scaled ~ month + months_operation_scaled*third_party_owned + (months_operation_scaled*third_party_owned|app_num), solar_data)
   return(solar_lme4)
 }
+
+#useing GAM from GAMM4
+gamm_model_man = function(solar_data){
+
+  solar_data["month"] = as.numeric(as.character(solar_data$month))
+  solar_gamm4 = gamm4(prod_scaled ~ s(month) + months_operation_scaled, dat=solar_data, random=~(months_operation_scaled|module_manufacturer))
+  return(solar_gamm4)
+
+}
+
+
+
+
 
 main = function(){
   load_libraries()
@@ -150,9 +164,16 @@ main = function(){
   lm_model = lm(prod_scaled~months_operation, data=solar_data)
   lm_coef = coef(lm_model)
 
-  prod_fig + geom_abline(intercept=lm_coef[1], slope=lm_coef[2], color="red") + xlim(0,60) + ylim(-1.5,1.5) + labs(x="months",y="Production, de-scaled")
+  prod_fig = prod_fig + geom_abline(intercept=lm_coef[1], slope=lm_coef[2], color="red") + xlim(0,60) + ylim(-1.5,1.5) + labs(x="months",y="Production, de-scaled")
 
-  ggsave("figures/production.png", plot=prod_fig, dpi=300)
+  ggsave("figures/production.png", plot=prod_fig, dpi=100,width = 9, height = 5)
+
+  #sum summary statistics
+  solar_data[c("prod_kwh", "first_prod_year", "cost_per_kw", "csi_rating")]
+  table(solar_data["third_party_owned"])
+
+
+  59108/(111919+59108)
 
   #model with manufacturers
   solar_lme2 = lme2_model(solar_data)
@@ -160,7 +181,17 @@ main = function(){
   man_fig = slope_plot(slopes_df_man, no_xlabs=TRUE)
   man_fig_final = man_fig + geom_hline(yintercept=0, color="red") + labs(x="Module Manufacturers", y="Slope over time, descaled")
   man_fig_final
-  ggsave("figures/manufacturer_slope.png", plot=man_fig_final, dpi=300)
+  ggsave("figures/manufacturer_slope.png", plot=man_fig_final, dpi=300, width = 10, height = 5)
+
+
+  #Module with manufacturer using gamms
+  solar_gamm4 = gamm_model_man(solar_data)
+  slopes_df_gamm = extract_slopes(solar_gamm4)
+  gamm_fig = slope_plot(slopes_df_gamm, no_xlabs=TRUE)
+  gamm_fig_final = gamm_fig + geom_hline(yintercept=0, color="red") + labs(x="Module Manufacturers", y="Slope over time, descaled")
+  man_fig_final
+
+
 
   #model with systems
   solar_sys = sys_model(solar_data)
@@ -168,7 +199,7 @@ main = function(){
   sys_slope_fig = slope_plot(slopes_df_sys, no_xlabs=TRUE)
   sys_slope_fig_final = sys_slope_fig + geom_hline(yintercept=0, color="red") + labs(x="Solar panel systems", y="Slope over time, descaled")
   sys_slope_fig_final
-  ggsave("figures/sys_slope_fig.png", plot=sys_slope_fig_final, dpi=300)
+  ggsave("figures/sys_slope_fig.png", plot=sys_slope_fig_final, dpi=300, width = 9, height = 5)
 
   #nested model with manufacturer and system
   solar_nested = nested_model(solar_data)
@@ -177,7 +208,7 @@ main = function(){
   nested_manuf_fig_final = nested_manuf_fig + geom_hline(yintercept=0, color="red") + labs(x="Module Manufacturers", y="Slope over time, descaled")
   nested_manuf_fig_final
 
-  ggsave("figures/nested_manuf_fig_final.png", plot=nested_manuf_fig_final, dpi=300)
+  ggsave("figures/nested_manuf_fig_final.png", plot=nested_manuf_fig_final, dpi=300, width = 9, height = 5)
 
 
   nested_sys_fig = slope_plot(slopes_df_nest[slopes_df_nest$grpvar=="module_manufacturer:app_num", ], no_xlabs=TRUE)
@@ -186,7 +217,7 @@ main = function(){
 
   nested_sys_fig_final
 
-  ggsave("figures/nested_sys_fig.png", plot=nested_sys_fig_final, dpi=300)
+  ggsave("figures/nested_sys_fig.png", plot=nested_sys_fig_final, dpi=100, width = 9, height = 5)
 
 #Now model also with lease no lease:
 
@@ -203,6 +234,12 @@ main = function(){
 
   leased_re_slopes = slopes_df_lease[slopes_df_lease$grpvar=="third_party_owned",]
   leased_re_slopes
+
+  #magnitude
+  .0405 - .0256
+
+
+
   slopes_df_lease =  slopes_df_lease[slopes_df_lease$grpvar=="third_party_owned:app_num",]
 
   re_slopes_list = list("no" = leased_re_slopes$slopes[leased_re_slopes$third_party_owned=="no"],
@@ -223,6 +260,7 @@ main = function(){
   str(slopes_df_lease)
 
 
+
   lease_sys_fig = slope_plot(slopes_df_lease, order_slopes=FALSE,  no_xlabs=TRUE, alpha=.1)
 
   lease_sys_fig_final = lease_sys_fig +
@@ -230,11 +268,18 @@ main = function(){
   geom_ribbon(aes(ymin=re_ci_minus, ymax=re_ci_plus, group=third_party_owned) ,alpha=.5) +
   geom_hline(yintercept=0, color="red") + labs(x="Solar panel systems", y="Slope over time, descaled", linetype="Leased")
 
-  ggsave("figures/lease_sys_fig.png", plot=lease_sys_fig_final, dpi=300)
+  ggsave("figures/lease_sys_fig.png", plot=lease_sys_fig_final, dpi=300, width = 9, height = 5)
 
-  
 
-  #With varying prices as well.
+  #leased as an interaction effect.
+  solar_lease2 = lease_model2(solar_data)
+  slopes_df_lease2 = extract_slopes(solar_lease2)
+  slopes_df_lease2["names"]= as.character(slopes_df_lease2$names)
+
+  slopes_df_lease2 = slopes_df_lease %>% separate(names, c("third_party_owned", "names"), sep=":")
+
+  #manually change ordering:
+  slopes_df_lease2["names"] = factor(slopes_df_lease2$names, levels=slopes_df_lease2$names[order(slopes_df_lease2$third_party_owned, slopes_df_lease2$slopes)])
 
 
   #table results of nested and non-nested
@@ -244,6 +289,8 @@ main = function(){
   AIC(solar_sys, solar_nested, solar_lease)
 
   anova_results = anova(solar_sys, solar_nested, solar_lease)
+  anova_results
+
   stargazer(anova_results)
 
   anova(solar_nested)

@@ -1,10 +1,5 @@
 #stan_analysis_new.py
-#stan MCMC analysis from 2.5.2017
-
-
-# coding: utf-8
-
-# In[2]:
+#stan MCMC analysis from 2.6.2017
 
 import pandas as pd
 import tabulate as tab
@@ -20,15 +15,13 @@ import pystan
 import scipy
 import pickle
 
-
-# In[3]:
-
 pd.options.display.max_rows = 999
 pd.options.display.max_columns = 50
+
+
+
 #get_ipython().magic('matplotlib inline')
 
-
-# In[4]:
 
 def get_percentiles(ser):
     return(np.percentile(ser, [2.5,15,50,85,97.5]))
@@ -36,252 +29,433 @@ def get_percentiles(ser):
 def logit_to_prob(value):
     return(math.exp(value)/(1+math.exp(value)))
 
+def load_data():
+    solar_data = pd.read_csv("data/prod_csi.csv")
+    return(solar_data)
 
-# In[5]:
+def format_data(solar_data):
+    solar_data = solar_data[solar_data.prod_scaled.notnull()]
+    solar_data = solar_data[solar_data.months_operation_scaled.notnull()]
+    #limit to data over three years
+    solar_data = solar_data[solar_data.total_months_operation>=36]
+    return(solar_data)
 
-solar_data = pd.read_csv("/Users/johannesmauritzen/research/solar_files/prod_csi.csv")
+def descale_data(solar_series):
+    return((solar_series - np.mean(solar_series))/(2*np.std(solar_series)))
 
-solar_data = solar_data[solar_data.prod_index.notnull()]
-solar_data = solar_data[solar_data.months_operation.notnull()]
+def transform_log(solar_data):
+    solar_data.loc[:,"log_prod_kwh"] = np.log(solar_data.prod_kwh+ 0.00001)
+    solar_data.loc[:,"log_cost_per_kw"] = np.log(solar_data.cost_per_kw + 0.00001)
+    solar_data.loc[:,"log_csi_rating"] = np.log(solar_data.csi_rating + 0.00001)
+    return(solar_data)
 
-app_nums  = solar_data.app_num.unique()
-installation=[i + 1 for i in range(0,len(app_nums))]
-installations = pd.DataFrame({"app_num":app_nums, "installation":installation})
-solar_data = solar_data.merge(installations, how="left", on="app_num")
+def create_num_dict(sseries):
+    skeys  = sseries.unique()
+    #numbered from 1 to N
+    svalues=[i + 1 for i in range(0,len(skeys))]
+    #create dict with both
+    sys_dict = dict(zip(skeys, svalues))
+    return(sys_dict)
 
+def create_stan_data(solar_data):
+    """
+    Takes in dataframe and returns dict of stan data
+    """
+    #Observation level data (size N)
+    #age of panel system in data
+    N = solar_data.count(axis=0)[0]
+    app_num = solar_data["app_num"]
+    log_prod_kwh = solar_data["log_prod_kwh"]
+    month = solar_data["month"]
+    months_operation = solar_data["months_operation"]
 
-# In[6]:
+    #create system_id from 1 to J for N data points
+    sys_dict = create_num_dict(solar_data["app_num"])
+    system_id =app_num.map(sys_dict)
 
-#age of panel system in data
-N = solar_data.count(axis=0)[0]
+    system_level_df = solar_data[["app_num", "owner_sector", "log_csi_rating", "third_party_owned","module_manufacturer", "first_prod_year", "incentive_step", "log_cost_per_kw"]][~solar_data.app_num.duplicated()]
 
-app_num = solar_data["app_num"]
-unique_app_num = app_num.unique()
-J = unique_app_num.size
-L = 2
+    unique_system_id = system_level_df["app_num"].map(sys_dict)
+    J = unique_system_id.size
 
-solar_data["log_prod_kwh"] = np.log(solar_data["prod_kwh"])
+    #continuous variables at system level
+    log_csi_rating = system_level_df["log_csi_rating"]
+    log_cost_per_kw = system_level_df["log_cost_per_kw"]
+    first_prod_year = system_level_df["first_prod_year"]
+    incentive_step = system_level_df["incentive_step"]
 
+    #solar_data["incentive_step"].unique()
 
-# In[7]:
+    #module_manufacturer data
+    module_dict = create_num_dict(system_level_df["module_manufacturer"])
+    module_id = system_level_df["module_manufacturer"].map(module_dict)
+    M = module_id.unique().size
 
-#observation data
-log_prod_kwh = solar_data["log_prod_kwh"]
-month = solar_data["month"]
+    #sector categories
+    owner_sect_dict = create_num_dict(system_level_df["owner_sector"])
+    #for varying effects
+    owner_sect_id = system_level_df["owner_sector"].map(owner_sect_dict)
+    #for dummy variables
+    owner_sect_dummies = pd.get_dummies(system_level_df.owner_sector)
+    S=4
 
+    #lease variables
+    L = 2
+    lease_dict = create_num_dict(system_level_df["third_party_owned"])
+    leased = system_level_df["third_party_owned"].map(lease_dict)
 
-# In[8]:
+    solar_stan_data={
+    "N":N, #observations
+    "J":J, #systems
+    "M":M, #module Manufacturers
+    "L":L, #leased or not
+    "S":S,
+    #observation data
+    "system_id":system_id,
+    "log_prod_kwh": log_prod_kwh,
+    "months_operation": months_operation,
+    "month": month,
 
-#installation level variables
-installations = solar_data[["app_num", "installation", "cust_county", "sector", "tracking", "sys_size_dc", "third_party_owned", "installation_year"]][~solar_data.installation.duplicated()]
+    #system level data,
+    "log_cost_per_kw":log_cost_per_kw,
+    "log_csi_rating": log_csi_rating,
+    "first_prod_year": first_prod_year,
+    #"incentive_step": incentive_step,
+    "module_id": module_id,
+    "owner_sect_id": owner_sect_id,
+    "leased":leased
+    }
+    return(solar_stan_data)
 
+def solar_stan_model():
+    solar_stan_model1 = """
+    data{
+    	int<lower = 0> N; //number of observations
+    	int<lower = 0> J; //number of groups
+        int<lower = 0> M; //number of manufacturers
+    	int<lower = 0> L; //lease/not lease =2
+        int<lower=0> S; //Number of sectors
 
-# In[9]:
+        //Observation Data
+    	int system_id[N]; //Which of J installations does it belong too
+    	vector[N] log_prod_kwh; //response variable
+    	vector[N] months_operation; //main predictor
+    	int month[N]; // which of 12 months does it belong too.
 
-#lease variables
-pd.get_dummies(solar_data["third_party_owned"])["yes"]
-lease = pd.get_dummies(installations.third_party_owned)
-lease = [int(i+1) for i in lease.yes]
+    	int leased[J]; //indicator variable for lease
+        vector[J] log_cost_per_kw; //cost per kw log
+        vector[J] log_csi_rating; //size of system
+        vector[J] first_prod_year; //year of first operation
+        //vector[J] incentive_step;
 
-
-# In[10]:
-
-#Add installation level effects county, sector random effect
-counties = installations["cust_county"][~installations.cust_county.duplicated()]
-C = len(counties)
-county_num = [i + 1 for i in range(0,len(counties))]
-county_dict = dict(zip(counties , county_num))
-county_var = [county_dict[i] for i in installations.cust_county]
-
-sector = installations["sector"][~installations.sector.duplicated()]
-S = len(sector)
-sector_num = [i + 1 for i in range(0,len(sector))]
-sector_dict = dict(zip(sector, sector_num))
-sector_var = [sector_dict[i] for i in installations.sector]
-
-tracking = installations["tracking"][~installations.tracking.duplicated()]
-T = len(tracking)
-tracking_num = [i + 1 for i in range(0,len(tracking))]
-tracking_dict = dict(zip(tracking, tracking_num))
-tracking_var = [tracking_dict[i] for i in installations.tracking]
-
-
-# In[ ]:
-
-
-
-
-# In[11]:
-
-solar_stan_data = {"log_prod_kwh":solar_data["log_prod_kwh"],
-"months_operation":solar_data["months_operation"],
-"month": month,
-"installation":solar_data["installation"],
-"sys_size": installations["sys_size_dc"],
-"installation_year":installations["installation_year"],
-"lease":lease,
-"county":county_var,
-"tracking":tracking_var,
-"sector":sector_var,
-"N":N,
-"J":J,
-"L":L,
-"M":12,
-"C":C,
-"S":S,
-"T":T
-}
-
-
-# In[12]:
-
-# def initfun():
-# 	return dict(a=.9, b_1=0, sigma=sd_prod_index, nuMinusOne=1)
-
-
-# In[19]:
-
-solar_stan = """
-
-data{
-	int<lower = 0> N; // number of observations
-	int<lower = 0> J; //number of groups
-	int<lower = 0> L; //lease/not lease =2
-	int<lower = 0> M; //number of months
-    int<lower = 0> C; //number of different counties
-    int<lower = 0> S; //number of different sectors
-    int<lower = 0> T; //number of different trackers
-
-	int installation[N]; //Which of J installations does it belong too
-	vector[N] log_prod_kwh; //response variable
-	vector[N] months_operation; //main predictor
-	int month[N]; // which of 12 months does it belong too.
-
-	int lease[J]; //indicator variable for lease
-    int county[J];
-    int tracking[J];
-    int sector[J];
-
-    vector[J] sys_size; //size of system
-    vector[J] installation_year; //year of installation
-
-}
-
-transformed data{
-    vector[N] st_log_prod_kwh;
-    vector[N] st_months_operation;
-
-    vector[J] st_sys_size;
-    vector[J] st_installation_year;
-
-    st_log_prod_kwh <- (log_prod_kwh - mean(log_prod_kwh))/sd(log_prod_kwh);
-    st_months_operation <- (months_operation - mean(months_operation))/sd(months_operation);
-    st_sys_size <- (sys_size - mean(sys_size))/sd(sys_size);
-    st_installation_year <- (installation_year - mean(installation_year))/sd(installation_year);
-}
-
-parameters{
-    real  mu_b0;
-	real<upper =0> mu_lease[2]; //varying slope, grouped by lease
-	real re_b1[J];
-    real re_b0[J];
-	real mu_mon[M];
-    real beta0_size;
-    real beta1_size;
-    real beta1_ins_year;
-
-    real mu1_c[C];
-    real mu1_s[S];
-    real mu1_t[T];
-
-    real mu0_c[C];
-    real mu0_t[T];
-
-	real<lower=0> sigma; //standard deviation
-	real<lower=0> sigma_b0; //st.dev group level intercept
-	real<lower=0> sigma_b1; //st. dev group level lease
-    real<lower=0> sigma_mu_lease; //st. dev, mu
-
-    real<lower=0> sigma_mu0_c; //st. dev, mu
-    real<lower=0> sigma_mu0_t; //st. dev, mu
-
-    real<lower=0> sigma_mu1_c; //st. dev, mu
-    real<lower=0> sigma_mu1_s; //st. dev, mu
-    real<lower=0> sigma_mu1_t; //st. dev, mu
-
-    real<lower=0> sigma_mon; //
-
-}
-
-transformed parameters {
-	real b1[J]; // varying slopes by group
-    real b0[J]; // varying intercept by group
-	real y_hat[N]; //individual means
-
-	for (j in 1:J){
-		b1[j]<-mu_lease[lease[j]] + mu1_s[sector[j]] + mu1_c[county[j]] + mu1_t[tracking[j]] + beta1_ins_year*st_installation_year[j] + re_b1[j];
-	}
-
-    for (j in 1:J){
-        b0[j]<-beta0_size*st_sys_size[j] + mu0_c[county[j]] + mu0_t[tracking[j]] + re_b0[j];
+        int module_id[J];
+        int owner_sect_id[J];
     }
 
-	for (i in 1:N){
-		y_hat[i] <- b0[installation[i]] + b1[installation[i]]*st_months_operation[i] + mu_mon[month[i]];
-	}
-}
+    transformed data{
+        vector[N] st_log_prod_kwh;
+        vector[N] st_months_operation;
+        vector[J] st_log_cost_per_kw;
+        vector[J] st_log_csi_rating;
+        //vector[J] st_incentive_step;
+        vector[J] st_first_prod_year;
 
-model{
-    sigma_mu_lease ~ cauchy(0,5);
-    sigma_mu0_c ~ cauchy(0, 5);
-    sigma_mu0_t ~ cauchy(0, 5);
+        st_log_prod_kwh = (log_prod_kwh - mean(log_prod_kwh))/(2*sd(log_prod_kwh));
 
-    sigma_mu1_c ~ cauchy(0, 5);
-    sigma_mu1_s ~ cauchy(0, 5);
-    sigma_mu1_t ~ cauchy(0, 5);
+        st_months_operation = (months_operation - mean(months_operation))/(2*sd(months_operation));
 
-  	sigma_b1 ~ cauchy(0, 5);
-  	sigma_b0 ~ cauchy(0, 5); // mu and sigma on b0 param.
+        st_log_csi_rating = (log_csi_rating - mean(log_csi_rating))/(2*sd(log_csi_rating));
 
-    sigma_mon ~ cauchy(0,5);
-	sigma ~ cauchy(0,5);
+        //st_incentive_step = (incentive_step - mean(incentive_step))/(2*sd(incentive_step));
 
-    to_vector(re_b0) ~ cauchy(0, sigma_b0); //vectorized, j
-  	to_vector(re_b1) ~ cauchy(0, sigma_b1); //vectorized, j
-	to_vector(mu_mon) ~ cauchy(0,sigma_mon); // vectorized, m
-    to_vector(mu_lease) ~ cauchy(0, sigma_mu_lease); //vectorized,l
+        st_first_prod_year = (first_prod_year - mean(first_prod_year))/(2*sd(first_prod_year));
 
-    beta0_size~cauchy(0, 5);
-    beta1_size~cauchy(0, 5);
-    beta1_ins_year~cauchy(0, 5);
-
-    to_vector(mu1_c)~ cauchy(0, sigma_mu1_c);
-    to_vector(mu1_s)~ cauchy(0, sigma_mu1_s);
-    to_vector(mu1_t)~ cauchy(0, sigma_mu1_t);
-
-    to_vector(mu0_c)~ cauchy(0, sigma_mu0_c);
-    to_vector(mu0_t)~ cauchy(0, sigma_mu0_t);
-
-	st_log_prod_kwh ~ cauchy(y_hat, sigma);
-}
-"""
+        st_log_cost_per_kw = (log_cost_per_kw-mean(log_cost_per_kw))/(2*sd(log_cost_per_kw));
 
 
-solar_fit = pystan.stan(model_code=solar_stan,
-            data = solar_stan_data, iter=1000, chains=4)
+    }
 
-solar_extr = solar_fit.extract(permuted=True)
+    parameters{
+        real meta_mu;
+        real meta_beta;
+        real meta_mu_mon;
 
-pickle.dump(solar_extr, open("/Users/johannesmauritzen/research/solar_files/solar6.pkl", 'wb'))
+        real<lower=0> sigma_mu1;
+        //real<lower=0> sigma_b1;
 
-solar_fit.plot(["mu_lease"])
+        real mu_b0;
+        //real mu_b1;
+        real<lower=0> sigma_b0;
+        real<lower=0> sigma_mon;
+        real<lower=0> sigma_beta;
+        real<lower=0> sigma;
+
+        real b0[J];
+        //real b1_re[J];
+
+        real mu_mon[12];
+
+        real mu1_lease[L];
+        real mu1_m[M];
+        real mu1_s[S];
+
+        real beta1_cost[L];
+
+        real beta1_size;
+        real beta1_fy;
+    }
+
+    transformed parameters {
+    	real b1[J]; // varying slopes by group
+    	real y_hat[N]; //individual means
+
+        //system level regression for slopes
+    	//for (j in 1:J){
+    	  //b1[j]=mu1_lease[leased[j]] +
+          //beta1_cost[leased[j]]*st_log_cost_per_kw[j] +
+          //mu1_m[module_id[j]] +
+          //mu1_s[owner_sect_id[j]] +
+          //beta1_size*st_log_csi_rating[j] +
+          //beta1_fy*st_first_prod_year[j] +
+          //b1_re[j];
+    	//}
+
+        for (j in 1:J){
+    		b1[j]=mu1_lease[leased[j]] + mu1_s[owner_sect_id[j]]  +
+            mu1_m[module_id[j]] + beta1_fy*st_first_prod_year[j] +
+            beta1_size*st_log_csi_rating[j] +
+            beta1_cost[leased[j]]*st_log_cost_per_kw[j];
+            }
+
+    	for (i in 1:N){
+    		y_hat[i] = b0[system_id[i]] + b1[system_id[i]]*st_months_operation[i] + mu_mon[month[i]];
+    	}
+    }
+
+    model{
+        //highest level meta variables
+        meta_mu ~ cauchy(0,5);
+        meta_beta ~ cauchy(0,5);
+        sigma_beta ~ cauchy(0,5);
+
+        meta_mu_mon ~ cauchy(0,5);
+        sigma_mon ~ cauchy(0,5);
+
+        //meta parameters on system level coefficients.
+        sigma_mu1 ~ cauchy(0, 5);
+      	//sigma_b1 ~ cauchy(0, 5);
+
+        mu_b0 ~ cauchy(0,5);
+        sigma_b0 ~ cauchy(0,5);
+
+    	sigma ~ cauchy(0,5);
+
+        to_vector(b0) ~ normal(mu_b0, sigma_b0);
+
+        //delete these when adding b1 earlier
+        //mu_b1 ~ cauchy(0, 5);
+        //to_vector(b1_re) ~ normal(mu_b1, sigma_b1);
+
+        to_vector(mu_mon) ~ normal(meta_mu_mon, sigma_mon);
+
+        to_vector(mu1_lease)~ cauchy(meta_mu, sigma_mu1);
+        to_vector(mu1_m)~ cauchy(meta_mu, sigma_mu1);
+        to_vector(mu1_s)~ cauchy(meta_mu, sigma_mu1);
+
+        to_vector(beta1_cost)~cauchy(0, 5);
+
+        beta1_size~cauchy(meta_beta, sigma_beta);
+        beta1_fy~cauchy(meta_beta, sigma_beta);
+
+    	st_log_prod_kwh ~ normal(y_hat, sigma);
+    }
+    """
+    return(solar_stan_model1)
+
+def solar_stan_model2():
+    """
+    Try to optimize:
+    From stan reference manual 9.13
+    """
+    solar_stan_model1 = """
+    data{
+    	int<lower = 0> N; //number of observations
+    	int<lower = 0> J; //number of groups
+        int<lower = 0> M; //number of manufacturers
+    	int<lower = 0> L; //lease/not lease =2
+        int<lower=0> S; //Number of sectors
+
+        //Observation Data
+    	int system_id[N]; //Which of J installations does it belong too
+    	vector[N] log_prod_kwh; //response variable
+    	vector[N] months_operation; //main predictor
+    	int month[N]; // which of 12 months does it belong too.
+
+    	int leased[J]; //indicator variable for lease
+        vector[J] log_cost_per_kw; //cost per kw log
+        vector[J] log_csi_rating; //size of system
+        vector[J] first_prod_year; //year of first operation
+        //vector[J] incentive_step;
+
+        int module_id[J];
+        int owner_sect_id[J];
+    }
+
+    transformed data{
+        vector[N] st_log_prod_kwh;
+        vector[N] st_months_operation;
+        vector[J] st_log_cost_per_kw;
+        vector[J] st_log_csi_rating;
+        //vector[J] st_incentive_step;
+        vector[J] st_first_prod_year;
+
+        st_log_prod_kwh = (log_prod_kwh - mean(log_prod_kwh))/(2*sd(log_prod_kwh));
+
+        st_months_operation = (months_operation - mean(months_operation))/(2*sd(months_operation));
+
+        st_log_csi_rating = (log_csi_rating - mean(log_csi_rating))/(2*sd(log_csi_rating));
+
+        //st_incentive_step = (incentive_step - mean(incentive_step))/(2*sd(incentive_step));
+
+        st_first_prod_year = (first_prod_year - mean(first_prod_year))/(2*sd(first_prod_year));
+
+        st_log_cost_per_kw = (log_cost_per_kw-mean(log_cost_per_kw))/(2*sd(log_cost_per_kw));
 
 
+    }
 
-import pickle
-pp_extr = pickle.load(open("/Users/johannesmauritzen/research/solar_files/solar4.pkl", 'rb'))
+    parameters{
+        real meta_mu;
+        real meta_beta;
+        real meta_mu_mon;
+
+        real<lower=0> sigma_mu1;
+        //real<lower=0> sigma_b1;
+
+        real mu_b0;
+        //real mu_b1;
+        real<lower=0> sigma_b0;
+        real<lower=0> sigma_mon;
+        real<lower=0> sigma_beta;
+        real<lower=0> sigma;
+
+        real b0[J];
+        //real b1_re[J];
+
+        real mu_mon[12];
+
+        real mu1_lease[L];
+        real mu1_m[M];
+        real mu1_s[S];
+
+        real beta1_cost[L];
+
+        real beta1_size;
+        real beta1_fy;
+    }
+
+    transformed parameters {
+    	vector[J] b1; // varying slopes by group
+    	vector[N] y_hat; //individual means
+
+        //system level regression for slopes
+    	//for (j in 1:J){
+    	  //b1[j]=mu1_lease[leased[j]] +
+          //beta1_cost[leased[j]]*st_log_cost_per_kw[j] +
+          //mu1_m[module_id[j]] +
+          //mu1_s[owner_sect_id[j]] +
+          //beta1_size*st_log_csi_rating[j] +
+          //beta1_fy*st_first_prod_year[j] +
+          //b1_re[j];
+    	//}
+
+        for (j in 1:J){
+    		b1[j]=mu1_lease[leased[j]] + mu1_s[owner_sect_id[j]]  +
+            mu1_m[module_id[j]] + beta1_fy*st_first_prod_year[j] +
+            beta1_size*st_log_csi_rating[j] +
+            beta1_cost[leased[j]]*st_log_cost_per_kw[j];
+            }
+
+    	for (i in 1:N){
+    		y_hat[i] = b0[system_id[i]] + b1[system_id[i]]*st_months_operation[i] + mu_mon[month[i]];
+    	}
+    }
+
+    model{
+        //highest level meta variables
+        meta_mu ~ cauchy(0,5);
+        meta_beta ~ cauchy(0,5);
+        sigma_beta ~ cauchy(0,5);
+
+        meta_mu_mon ~ cauchy(0,5);
+        sigma_mon ~ cauchy(0,5);
+
+        //meta parameters on system level coefficients.
+        sigma_mu1 ~ cauchy(0, 5);
+      	//sigma_b1 ~ cauchy(0, 5);
+
+        mu_b0 ~ cauchy(0,5);
+        sigma_b0 ~ cauchy(0,5);
+
+    	sigma ~ cauchy(0,5);
+
+        to_vector(b0) ~ normal(mu_b0, sigma_b0);
+
+        //delete these when adding b1 earlier
+        //mu_b1 ~ cauchy(0, 5);
+        //to_vector(b1_re) ~ normal(mu_b1, sigma_b1);
+
+        to_vector(mu_mon) ~ normal(meta_mu_mon, sigma_mon);
+
+        to_vector(mu1_lease)~ cauchy(meta_mu, sigma_mu1);
+        to_vector(mu1_m)~ cauchy(meta_mu, sigma_mu1);
+        to_vector(mu1_s)~ cauchy(meta_mu, sigma_mu1);
+
+        to_vector(beta1_cost)~cauchy(0, 5);
+
+        beta1_size~cauchy(meta_beta, sigma_beta);
+        beta1_fy~cauchy(meta_beta, sigma_beta);
+
+    	st_log_prod_kwh ~ normal(y_hat, sigma);
+    }
+    """
+    return(solar_stan_model1)
 
 
-#traceplot for single parameter
-solar_fit.plot(["mu_b1"])
-plt.show()
+#run:
+solar_data = load_data()
+solar_data = format_data(solar_data)
+solar_data = transform_log(solar_data)
+
+np.std(solar_data["months_operation"])
+
+.0149/16*12*10
+
+
+solar_data[["log_prod_kwh", "months_operation", "month"]].apply(np.mean, axis=0)
+
+solar_stan_data = create_stan_data(solar_data);
+
+solar_stan_data.keys()
+
+solar_stan_data["N"]
+solar_stan_data["J"]
+solar_stan_data["M"]
+
+
+stan_model_code = solar_stan_model()
+solar_stan_model = pystan.StanModel(model_code=stan_model_code)
+solar_stan_fit = solar_stan_model.sampling(data=solar_stan_data, iter=1000, chains=4)
+
+solar_extr = solar_stan_fit.extract(permuted=True)
+
+solar_extr.keys()
+
+rel_keys = ('meta_mu', 'meta_beta', 'meta_mu_mon', 'sigma_mu1', 'mu_b0', 'sigma_b0', 'sigma_mon', 'sigma_beta', 'sigma', 'b0', 'mu_mon', 'mu1_lease', 'mu1_m', 'mu1_s', 'beta1_cost', 'beta1_size', 'beta1_fy', 'b1')
+
+solar_extr_small = {k: solar_extr[k] for k in rel_keys}
+
+pickle.dump(solar_extr_small, open("/Users/johannesmauritzen/research/solar_prod_data/stan_extracts/solar_extr_mac_small.pkl", 'wb'), protocol=4)
+
+yhats = solar_extr["y_hat"]
+pickle.dump(yhats, open("/Users/johannesmauritzen/research/solar_prod_data/stan_extracts/yhats.pkl", 'wb'), protocol=4)
