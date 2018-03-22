@@ -1,0 +1,144 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Akerlof(1970)]{akerlof_market_1970}
+George~A. Akerlof.
+\newblock The {Market} for "{Lemons}": {Quality} {Uncertainty} and the {Market}
+  {Mechanism}.
+\newblock \emph{The Quarterly Journal of Economics}, 84\penalty0 (3):\penalty0
+  488--500, August 1970.
+\newblock \doi{10.2307/1879431}.
+\newblock URL \url{http://www.jstor.org/stable/1879431}.
+
+\bibitem[Bollinger and Gillingham(2012)]{bollinger_peer_2012}
+Bryan Bollinger and Kenneth Gillingham.
+\newblock Peer {Effects} in the {Diffusion} of {Solar} {Photovoltaic} {Panels}.
+\newblock \emph{Marketing Science}, 31\penalty0 (6):\penalty0 900--912,
+  September 2012.
+\newblock ISSN 0732-2399.
+\newblock \doi{10.1287/mksc.1120.0727}.
+\newblock URL
+  \url{http://pubsonline.informs.org/doi/abs/10.1287/mksc.1120.0727}.
+
+\bibitem[Chan and Leland(1982)]{chan_prices_1982}
+Yuk-Shee Chan and Hayne Leland.
+\newblock Prices and {Qualities} in {Markets} with {Costly} {Information}.
+\newblock \emph{The Review of Economic Studies}, 49\penalty0 (4):\penalty0
+  499--516, 1982.
+\newblock ISSN 0034-6527.
+\newblock \doi{10.2307/2297283}.
+\newblock URL \url{http://www.jstor.org/stable/2297283}.
+
+\bibitem[Dastrup et~al.(2012)Dastrup, Graff~Zivin, Costa, and
+  Kahn]{dastrup_understanding_2012}
+Samuel~R. Dastrup, Joshua Graff~Zivin, Dora~L. Costa, and Matthew~E. Kahn.
+\newblock Understanding the {Solar} {Home} price premium: {Electricity}
+  generation and “{Green}” social status.
+\newblock \emph{European Economic Review}, 56\penalty0 (5):\penalty0 961--973,
+  July 2012.
+\newblock ISSN 0014-2921.
+\newblock \doi{10.1016/j.euroecorev.2012.02.006}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0014292112000244}.
+
+\bibitem[Gelman et~al.(2008)Gelman, Jakulin, Pittau, and
+  Su]{gelman_weakly_2008}
+Andrew Gelman, Aleks Jakulin, Maria~Grazia Pittau, and Yu-Sung Su.
+\newblock A weakly informative default prior distribution for logistic and
+  other regression models.
+\newblock \emph{The Annals of Applied Statistics}, 2\penalty0 (4):\penalty0
+  1360--1383, December 2008.
+\newblock ISSN 1932-6157, 1941-7330.
+\newblock \doi{10.1214/08-AOAS191}.
+\newblock URL \url{http://projecteuclid.org/euclid.aoas/1231424214}.
+
+\bibitem[Gelman et~al.(2013)Gelman, Carlin, Stern, Dunson, Vehtari, and
+  Rubin]{gelman_bayesian_2013}
+Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald
+  Rubin.
+\newblock \emph{Bayesian {Data} {Analysis}, {Third} {Edition}}.
+\newblock Chapman and Hall/CRC, Boca Raton, 3 edition edition, November 2013.
+\newblock ISBN 978-1-4398-4095-5.
+
+\bibitem[Healy and Palepu(2001)]{healy_information_2001}
+Paul~M Healy and Krishna~G Palepu.
+\newblock Information asymmetry, corporate disclosure, and the capital markets:
+  {A} review of the empirical disclosure literature.
+\newblock \emph{Journal of Accounting and Economics}, 31\penalty0
+  (1–3):\penalty0 405--440, September 2001.
+\newblock ISSN 0165-4101.
+\newblock \doi{10.1016/S0165-4101(01)00018-0}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0165410101000180}.
+
+\bibitem[Kirmani and Rao(2000)]{kirmani_no_2000}
+Amna Kirmani and Akshay~R. Rao.
+\newblock No {Pain}, {No} {Gain}: {A} {Critical} {Review} of the {Literature}
+  on {Signaling} {Unobservable} {Product} {Quality}.
+\newblock \emph{Journal of Marketing}, 64\penalty0 (2):\penalty0 66--79, 2000.
+\newblock ISSN 0022-2429.
+\newblock URL \url{http://www.jstor.org/stable/3203443}.
+
+\bibitem[Kruschke(2014)]{kruschke_doing_2014}
+John~K. Kruschke.
+\newblock \emph{Doing {Bayesian} {Data} {Analysis}, {Second} {Edition}: {A}
+  {Tutorial} with {R}, {JAGS}, and {Stan}}.
+\newblock Academic Press, Boston, 2 edition edition, November 2014.
+\newblock ISBN 978-0-12-405888-0.
+
+\bibitem[Mauritzen(2015)]{mauritzen_whats_2015}
+Johannes Mauritzen.
+\newblock What's behind the surge in the {California} rooftop solar market?
+  {The} role of {Chinese} panels, uncertainty and new business models.
+\newblock \emph{Working Paper}, July 2015.
+\newblock URL \url{http://jmaurit.github.io/#solar_lemons}.
+
+\bibitem[Michaely and Shaw(1994)]{michaely_pricing_1994}
+Roni Michaely and Wayne~H. Shaw.
+\newblock The {Pricing} of {Initial} {Public} {Offerings}: {Tests} of
+  {Adverse}-{Selection} and {Signaling} {Theories}.
+\newblock \emph{Review of Financial Studies}, 7\penalty0 (2):\penalty0
+  279--319, April 1994.
+\newblock ISSN 0893-9454, 1465-7368.
+\newblock \doi{10.1093/rfs/7.2.279}.
+\newblock URL \url{http://rfs.oxfordjournals.org/content/7/2/279}.
+
+\bibitem[Petersen and Rajan(1994)]{petersen_benefits_1994}
+Mitchell~A. Petersen and Raghuram~G. Rajan.
+\newblock The {Benefits} of {Lending} {Relationships}: {Evidence} from {Small}
+  {Business} {Data}.
+\newblock \emph{The Journal of Finance}, 49\penalty0 (1):\penalty0 3--37, March
+  1994.
+\newblock ISSN 1540-6261.
+\newblock \doi{10.1111/j.1540-6261.1994.tb04418.x}.
+\newblock URL
+  \url{http://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1994.tb04418.x/abstract}.
+
+\bibitem[Shapiro(1982)]{shapiro_consumer_1982}
+Carl Shapiro.
+\newblock Consumer {Information}, {Product} {Quality}, and {Seller}
+  {Reputation}.
+\newblock \emph{The Bell Journal of Economics}, 13\penalty0 (1):\penalty0
+  20--35, 1982.
+\newblock ISSN 0361-915X.
+\newblock \doi{10.2307/3003427}.
+\newblock URL \url{http://www.jstor.org/stable/3003427}.
+
+\bibitem[{Stan Development Team}(2014)]{stan_development_team_stan_2014}
+{Stan Development Team}.
+\newblock \emph{Stan {Modeling} {Language} {Users} {Guide} and {Reference}
+  {Manual}, {Version} 2.2}.
+\newblock 2014.
+\newblock URL \url{http://mc-stan.org/}.
+
+\bibitem[Tirole(1988)]{tirole_theory_1988}
+Jean Tirole.
+\newblock \emph{The {Theory} of {Industrial} {Organization}}.
+\newblock The MIT Press, Cambridge, Mass, 1st edition edition, 1988.
+\newblock ISBN 978-0-262-20071-4.
+
+\end{thebibliography}

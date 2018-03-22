@@ -161,7 +161,7 @@ prod\_scaled_{i} &\sim N(\mathbf{month} + a_s + b_s months\_operation\_scaled_{i
   \sigma_a^2 & \rho \sigma_a \sigma_b \\
   \rho \sigma_a \sigma_b & \sigma_b^2
 \end{pmatrix}
-\label{eqn:system_level_rest}
+%\label{eqn:system_level_rest}
 \end{align}
 
 The inclusion of the matrix of month dummies $\mathbf{month}$ controls for seasonal variation across all systems. This is a simplified way to model seasonality, but because the data is itself at a monthly frequency, and the seasonality is not of direct importance, this should suffice. As long as un-modeled variation in seasonality is not correlated with the long-run slope of production, the point estimates for the slope should be unbiased.
@@ -251,50 +251,143 @@ A visual summary of the results are shown in figure \ref{lease_sys_fig}. Again, 
 	\label{lease_sys_fig}
 \end{figure}
 
-
-
 \section{Full Bayesian multilevel model estimated by Markov Chain Monte Carlo}
+Until now, I have used relatively parsimonious models with few fixed-effects covariates and only one or maximum two hierarchies ("random effects").  Ideally, I would like to estimate a full probability model with all relevant and available covariates and hierarchies. First and foremost so that the parameters of interests to the testable implications can be estimated from one model. But also, \citet{bar_random_2013} shows, using Monte-Carlo simulations, that mixed effects models that have the maximum random effects structure justified by the model and data, provide the best out-of-sample prediction. Estimating mixed effects model by maximum likelihood is efficient and straight-forward. However, convergence of the maximum likelihood routine is not guaranteed under richer models with more hierarchies and larger number of parameters to be estimated.
 
-Until now, I have used relatively parsimonious models with few fixed-effects covariates and only one or maximum two hierarchies ("random effects").  Ideally, I would like to estimate a full probability model with all relevant and available covariates and hierarchies. First and foremost so that the parameters of interests to the testable implications can be estimated from one model. But also, citet{bar_random_2013} shows using monte-carlo simulations that mixed effects models that have the maximum random effects structure justified by the model and data, provide the best out-of-sample prediction. Estimating mixed effects model by maximum likelihood is efficient and straight-forward. However, convergence of the maximum likelihood routine is not guaranteed under richer models with more hierarchies and larger number of paramaters to be estimated.
+Specific to my model, I wish to estimate a model where the variable for cost per-kW is included as an interaction that varies by system and module manufacturer. I also wish to have a model where both system, module manufacturer and leasing hierarchies are estimated simultaneously. I am not able to obtain convergence of the maximum likelihood routines under this rich model.
 
-Specific to my model, I wish to estimate a model where the variable for cost per-kw is included as an interaction that varies by system and module manufacturer. I also wish to have a model where both system, module manufacturer and leasing hierarchies are estimated simultaneously. I am not able to obtain convergence of the maximum likelihood routines under this rich model.
+As a solution, I build a fully Bayesian multilevel model\footnote{I purposefully change my nomenclature here and refer to the Bayesian model as a "multilevel model" to distinguish it from the models estimated by maximum likelihood, which I refer to as a linear mixed effects model. This distinction is however mostly artificial. Both models resemble each other closely in structure. "Multilevel model" is however a broader term. There is no restriction to linearity, for example. Models with non-linear or non-parametric components can also be incorporated and estimated with MCMC.} estimated by Markov Chain Monte Carlo (MCMC) simulation techniques.
 
-As a solution, I build a fully Bayesian multilevel model\footnote{I purposefully change my nommenklature here and refer to the Bayesian model as a "multilevel model" to distinquish it from the models estimated by maximum likelihood, which I refer to as a linear mixed effects model. This distinction is however mostly artificial. Both models resemble each other closely in structure. "Multilevel model" is however a broader term. There is no restriction to linearity, for example. Models with non-linear or non-parametric components can also be incorporated and estimated with MCMC.} estimated by Markov Chain Monte Carlo (MCMC) simulation techniques.
+The main advantage to using the Bayesian techniques here are practical rather than philosophical. Models up to levels of nearly arbitrary richness can be estimated, with computation time and available data being the main constraints. Inference is also well defined and exact.\footnote{Exact in the sense that given a correctly specified probability model, then an MCMC routine that is given infinite time to sample, will in theory converge to the correct posterior probability distribution. Maximum likelihood is approximate in the sense that inference is based on asymptotic theory and assumptions of normality.}
 
-The main advantage to using the Bayesian techniques here are practical rather than philosophical. Models up to levels of nearly arbitrary richness can be estimated, with computation time and available data being the main constraints. Inference is also well defined and exact,\footnote as opposed to the approximate inference from maximum likelihood.
+A Bayesian MCMC approach has some additional attractive properties. Results are presented as estimates of marginal posterior distributions over coefficients of interest, which can be interpreted directly and intuitively as probabilities. Group-level variances are not constrained to be equal and assumptions of normality of the likelihood and posterior distributions can be loosened. For further discussion of the Bayesian frameworks and techniques, I refer to the excellent discussions in \citet{gelman_bayesian_2013}, \citet{kruschke_doing_2014}, or \citet{mcelreath_statistical_2017}.
 
-A Bayesian MCMC approach does also have some attractive properties. Results are presented estimates of marginal posterior distributions over coefficients of interest, which can be interpreted directly and intuitively as probabilities. Group-level variances are not constrained to be equal and assumptions of normality of the likelihood and posterior distributions can be loosened. Several excellent discussions of Bayesian techniques are available, see \citet{gelman_bayesian_2013}, \citet{kruschke_doing_2014}, or \citet{mc}
+The model is presented in equations x through y. The response variable is production data that has been log transformed and scaled as described earlier. This response variable is assumed to have a normal likelihood with mean, $\hat{y}$ and standard deviation, $\sigma$. At the observation level, the fitted values, $\hat{y}$, are modelled as in equation \ref{obslevel}. This observation level regression, as before, is a simple linear regression with an intercept $\alpha$, and a slope $\beta$ which are both allowed to vary by system. In addition a vector of month dummies, $\mathbf{month}$ is included in order to control for seasonality.
 
-Figure \ref{solar_prod_bayes_diag} shows the structure of the model. Starting from the bottom, the individual production data are log transformed and modeled as having a Cauchy distribution with mean $y_hat$ and variance $sigma^2$. $sigma^2$ is in turn given a half-Cauchy prior.
+Equations \ref{eqn:sysa} and \ref{eqnsysb} describe the model at the system level. The intercept terms, $a_s$ are given a common higher level normal distribution with mean $\mu^a$ and standard deviation $sigma^a$. But because the intercept term is not of direct economic importance, it is not modelled further.
 
-The use of the Cauchy and half-Cauchy distribution reflects that a large in magnitude effect of around 5 or greater on the logit scale is highly unlikely in logistic regressions where all non-binary data has been transformed to have mean zero and standard deviation 1 - which I have done. In addition, the Cauchy distribution will give answers even under complete separation, and avoids computational problems inherent in assigning completely non-informative priors in multilevel models \citep{gelman_weakly_2008}.
+The slope terms, $b_s$ are again modelled directly. I decompose the variation into three mean terms that vary by lease, $\mu^{lease}_l$, host sector $\mu^{sect}_c$, and manufacturer $\mu^m_m$. In addition three continuous variables are included in the system-level equation: the year of first production, $first\_prod\_year_s$, log capacity, $log\_capacity_s$ and the log system cost per kilowatt, $log\_cost_s$ with corresponding coefficients $\beta^{fy}$, $\beta^{size}$, and $\beta^{cost}$.
 
-Going up a level, $y_hat$ is modeled as having random group-level intercepts $\beta_{0,j}$, where j represents the j-th of $J$ solar panel system. The $\beta_{0,j}s$ are in turn modeled as function of system size, county, whether solar trackers are used, and a random effects term $re_j^0$.
+\begin{align}
+log_prod &\sim N(\hat{y}, \sigma)\\ %\label{eqn:likelihood}
+\hat{y} &= a_s + b_s months\_operation_i + \mathbf{month}\\ %\label{eqn:obslevel}
+a_s &\sim N(\mu^a, \sigma^a)\\ %\label{eqn:sysa}
+b_s & = \mu^{lease}_l + \mu^{sect}_s + \mu^{manuf}_m + \beta^{fy} first\_prod\_year_s + beta^{size} log\_csi\__rating_s + \beta^{cost} log\_cost_s %\label{eqn:sysb}
+\end{align}
 
-In a similar manner the J $B_j$ coefficients are modeled as a function of whether the system is leased, $\mu_{lease}^1$, the host sector of the installation, the county, use of tracking, installation year and a random effects term $re^1_j$.  The question of interest - whether leased solar systems display a lower degree of degradation over time than those sold outright - can then be expressed as the distribution of the difference of the $mu_{lease}$ parameters: $\mu_{lease=1} - \mu_{lease=0}$.
+The $\mu$ terms are all in term modelled as coming from a Cauchy distribution with a location meta-parameter $\mu^{meta}$ and scale parameter $\sigma^{mu}$, which are also estimated by the model. These meta-parameters are in turn given Cauchy prior distributions with location 0 and scale 5.
 
-Finally, to take into account the seasonality of the monthly data, random effects for each of the 12 months are estimated with a $Cauchy(0,4)$ prior on each parameter. The remaining hyper-parameters are given Cauchy or half-Cauchy priors.
+The $cauchy(0,5)$ prior is what is referred to as a weakly-informative prior. It provides some information to the MCMC algorithm for where to explore for probability mass, but does not impose any strong prior knowledge that meaningfully effects the posterior distribution. The Cauchy distribution, which is a T-distribution with 1 degree of freedom, has wide tails and thus allows for the occasional large coefficient in a lower level regression, but still provides some shrinkage towards zero. \citep{gelman_weakly_2008} The coefficients $\beta^{fy}$, $\beta^{size}$, $\beta^{cost}$ and $\mathbf{month}$ are all also given $Cauchy(0,5)$ prior distributions.
+
+\begin{align}
+\mu^{lease} &\sim Cauchy(\mu^{meta}, \sigma^{\mu}) \\ % \label{eqn:meta1}
+\mu^{sect} &\sim Cauchy(\mu^{meta}, \sigma^{\mu}) \\ %\label{eqn:meta2}
+\mu^{manuf} &\sim Cauchy(\mu^{meta}, \sigma^{\mu}) \\ %\label{eqn:meta3}
+\mu^{meta} &\sim Cauchy(0, 5) \\ %\label{eqn:meta4}
+\sigma^{mu} &\sim half-Cauchy(0,5) %\label{eqn:meta5}
+\end{align}
+
+
+\subsection{Computation and Results from Bayesian multilevel model}
+
+The model is estimated using the Stan probabilistic programming language and sampler, which implements Hamiltonian MCMC and a No U-turn sampler (NUTS) \citep{stan_development_team_stan_2014}. The sampler was run with four chains and 1000 iterations. R-statistics of 1 indicate convergence in the model. 2000 samples are taken from the estimated posterior distribution, and model results for the marginal distributions of the parameters of interest are presented in the form of histograms of the samples.
+
+Recall, the testable implications from the theory of asymmetric information and quality were that 1.) average quality should be higher in the panels owned by the high-information type (leased panels). 2.) Price should be more highly correlated with quality in the panels owned by the high-information type.
+
+The parameters of interest in our model are then the higher level parameters $\mu_{lease}$ and $\beta$. The first represents the mean value of the system level slope terms, $b$ grouped by whether the systems were leased or host-owned. The latter is a measure of the correlation between the cost of the system and the system slope terms. The $\beta$ parameter is also allowed to vary by leased or host-owned. It is important to note, that the estimated $\beta$ paramaters are estimated conditional on the installation date of the solar panels, thus they do not reflect changes in price over time. This could lead to a heavy bias in the results if, as seems plausible, both prices and quality changed over time.
+
+For the testable implications, the inference we are interested is in the contrasts, $\mu_{lease, yes} - \mu_{lease, no}$ and $\beta_{leased}- \beta{owned}$. Histograms representing the marginal distributions of these contrasts are presented in figure \ref{fig:contrasts}. The top panel shows the distribution of the contrast $\mu_{lease, yes} - \mu_{lease, no}$. Essentially all of the probability mass is located in the positive range. This reinforces the finding from the mixed effects model that leased panels due appear to have substantially higher quality, as the theory of asymmetric information of quality would suggest.
+
+The evidence for the second testable implication is less conclusive. The model estimates that there is approximately a 89\% probability that there is a higher correlation between quality and cost for the high information type owner of leased panels compared to the low information type owner of host-owned panels.
 
 \begin{figure}
-	\includegraphics[width=1\textwidth]{figures/solar_prod_bayes_diag.png}
-	\caption{The data and the research question combined suggest a hierarchical Bayesian model. The figure shows the structure of the model. Production data is grouped by individual solar panel systems (index i).}
-	\label{solar_prod_bayes_diag}
+  \includegraphics[width=1\linewidth]{figures/bayes_hypos.png}
+  \caption{Marginal posterior distributions for the contrasts of interest. The top panel shows that the distributions of the slope parameters, $b_s$, are estimated to have means that are significantly different from each other between leased and not leased systems as defined as the contrast, $\mu_{lease, yes} - \mu_{lease, no}$. The lower panel shows the marginal posterior distribution of the contrast between the $\beta$ parameter for leased and not-leased solar systems. The results indicate that there is an approximately 89\% probability that costs are more highly correlated with quality in leased systems compared to those that are host-owned.}
+  \label{fig:contrasts}
 \end{figure}
 
-To estimate the parameters of the model, I use the Stan Bayesian programming language and simulator \citep{stan_development_team_stan_2014} which uses Hamiltonian MCMC to estimate a joint posterior distribution of the parameters. \citet{kruschke_doing_2014} provides an accessible explanation of the Hamiltonian MCMC algorithm, while more detailed technical descriptions are provided by \citet{gelman_bayesian_2013} and \citet{stan_development_team_stan_2014}.
+A direct comparison of prices and costs between these groups is however complicated. The prices of host-owned panels are market prices: simply the purchase price that the owner of the solar panel system paid to the contractor. On the other hand, the price of leased systems is a reported price from the contractors consisting of the component and installation costs plus an estimated mark-up. If these costs were reported correctly, then the theory should still hold. The reported cost should reflect the ability of the high-information owners to judge quality of the panels that they purchase. In practice, the reliability of reported cost is a source of added uncertainty, and should be taken into consideration when interpreting the results.
 
-Bayesian simulation methods are still emerging - especially in Economics. So it is worth spending a moment to motivate their use in this case over more common asymptotic methods. As mentioned, the main reason for using the Bayesian model is the flexible treatment it allows for modeling the inherent hierarchy of the data and allowing for partial pooling in estimation.
+When that is said, if we assume that misreporting of the true costs will tend to lead to less variation in reported costs, then that should have the affect of attenuating the magnitude of the contrast, $\beta_{cost, l=yes} - \beta_{cost, l=no}$. In that case, the estimated contrast can be seen as being a conservative estimate.
 
-The usefulness of Bayesian models is most apparent in the estimation of complex hierarchical models with many parameters.
-In a hierarchical model, lower-level parameters within a certain group are themselves modeled as coming from a distribution characterized by ``meta-parameters''. Thus, the estimated group-level parameters are a weighted function of both the observations within the group as well as the full set of observations in the dataset. For example, the estimated mean parameter on a group with a few, outlying observations would be pulled towards the full sample mean. This partial pooling also serves as a natural form of parameter shrinkage, which mostly eliminates the need for using corrections for multiple comparisons in inference \citep{gelman_data_2006}.
+Other higher level parameters are reported in table \ref{table:higher_level_params}. The sector groups can be of interest in a discussion of the role of asymmetric information. Figure \ref{mu_sectors} shows the distributions of the contrasts relative to the residential host sector. The top panel represents the contrast with commercial sector hosts, the middle with government sector host and the bottom panel with non-profit sector host. All three contrasts indicate relatively lower quality for installations for these sectors compared to the residential sector.
 
-With Bayesian multilevel model, I also have greater flexibility in specifying the model without having to rely on assumptions like constant group-level variances and a Gaussian noise distribution.  Because Bayesian simulation techniques result in an estimate of the full joint probability distribution of the model, the inference has the potential to be more informative than the typical point estimates and p-values of of the standard hypothesis testing frameworks \citep{kruschke_doing_2014}.
+While it is not clear why this should be, an explanation consistent with the theory of asymmetric information of quality, is that there exists an agency problem. A homeowner will, in some form, have a direct financial incentive to acquire solar panels of good quality. On the other hand, A manager or employee of a firm, government agency or non-profit may not have any direct financial incentive in ensuring that a solar panel system is of high quality.
 
-Another advantage is that the posterior distributions of the parameters have a natural and direct interpretation as probabilities, as opposed to standard hypothesis testing where the concepts of p-values and significance are often ill-defined. See \citet{kruschke_doing_2014} or \citet{gelman_bayesian_2013} for further discussion.
+\begin{table}
+  \begin{tabular}{lrrrrrrrrr}
+  \toprule
+  {} &    mean &    std &     min &    2.5\% &     25\% &     50\% &     75\% &   97.5\% &     max \\
+  \midrule
+  $\mu^{meta}$     &  0.004' & 0.022' & -0.018' & -0.010' & -0.007' & -0.005' & -0.002' &  0.069' &  0.084' \\
+  $\beta^{meta}$   &  0.003' & 0.838' & -8.120' & -1.707' & -0.074' & -0.007' &  0.075' &  1.738' &  6.787' \\
+  $\mu^{meta,mon}$ &  0.005' & 0.036' & -0.138' & -0.065' & -0.019' &  0.006' &  0.030' &  0.075' &  0.146' \\
+  $\mu^{b_s}$      & -0.000' & 0.015' & -0.043' & -0.028' & -0.012' & -0.002' &  0.011' &  0.031' &  0.044' \\
+  $\mu^{jan}$      & -0.164' & 0.013' & -0.188' & -0.186' & -0.173' & -0.163' & -0.154' & -0.144' & -0.142' \\
+  $\mu^{feb}$      & -0.121' & 0.013' & -0.146' & -0.143' & -0.131' & -0.120' & -0.111' & -0.102' & -0.100' \\
+  $\mu^{mar}$      & -0.054' & 0.013' & -0.078' & -0.076' & -0.064' & -0.053' & -0.044' & -0.035' & -0.033' \\
+  $\mu^{apr}$     &  0.040' & 0.013' &  0.017' &  0.018' &  0.031' &  0.042' &  0.051' &  0.060' &  0.062' \\
+  $\mu^{may}$      &  0.087' & 0.013' &  0.063' &  0.064' &  0.077' &  0.088' &  0.097' &  0.106' &  0.108' \\
+  $\mu^{jun}$      &  0.111' & 0.013' &  0.087' &  0.089' &  0.102' &  0.113' &  0.121' &  0.131' &  0.133' \\
+  $\mu^{jul}$      &  0.108' & 0.013' &  0.084' &  0.086' &  0.099' &  0.110' &  0.118' &  0.128' &  0.130' \\
+  $\mu^{aug}$      &  0.101' & 0.013' &  0.077' &  0.079' &  0.092' &  0.103' &  0.112' &  0.121' &  0.123' \\
+  $\mu^{sep}$     &  0.082' & 0.013' &  0.058' &  0.060' &  0.072' &  0.083' &  0.092' &  0.102' &  0.103' \\
+  $\mu^{oct}$      &  0.026' & 0.013' &  0.002' &  0.004' &  0.016' &  0.027' &  0.036' &  0.045' &  0.047' \\
+  $\mu^{nov}$     & -0.031' & 0.013' & -0.056' & -0.053' & -0.041' & -0.030' & -0.021' & -0.011' & -0.010' \\
+  $\mu^{dec}$     & -0.123' & 0.013' & -0.147' & -0.146' & -0.133' & -0.122' & -0.113' & -0.104' & -0.101' \\
+  $\mu^{lease, no}$   & -0.030' & 0.045' & -0.193' & -0.159' & -0.015' & -0.011' & -0.008' & -0.002' &  0.015' \\
+  $\mu^{lease, yes}$   & -0.022' & 0.045' & -0.186' & -0.151' & -0.007' & -0.003' &  0.000' &  0.006' &  0.023' \\
+  $\mu^{sect, com}$      &  0.002' & 0.022' & -0.024' & -0.015' & -0.010' & -0.007' & -0.004' &  0.066' &  0.087' \\
+  $\mu^{sect, res}$       &  0.012' & 0.022' & -0.014' & -0.005' & -0.000' &  0.003' &  0.006' &  0.075' &  0.096' \\
+  $\mu^{sect, gov}$       &  0.006' & 0.022' & -0.017' & -0.010' & -0.005' & -0.003' &  0.001' &  0.071' &  0.092' \\
+  $\mu^{sect, npr}$      & -0.001' & 0.022' & -0.026' & -0.018' & -0.012' & -0.010' & -0.006' &  0.063' &  0.084' \\
+  $\beta^{cost, l=no}$  & -0.002' & 0.002' & -0.007' & -0.005' & -0.003' & -0.002' & -0.001' &  0.001' &  0.004' \\
+  $\beta^{cost, l=yes}$  &  0.001' & 0.001' & -0.002' & -0.001' &  0.000' &  0.001' &  0.001' &  0.002' &  0.003' \\
+  $\beta^{size}$  &  0.002' & 0.001' & -0.001' &  0.000' &  0.002' &  0.002' &  0.003' &  0.004' &  0.006' \\
+  $\beta^{fy}$    & -0.018' & 0.001' & -0.021' & -0.020' & -0.018' & -0.018' & -0.017' & -0.016' & -0.014' \\
+  $\sigma$      &  0.065' & 0.000' &  0.065' &  0.065' &  0.065' &  0.065' &  0.065' &  0.066' &  0.066' \\
+  $\sigma^{b_s}$    &  0.476' & 0.006' &  0.454' &  0.465' &  0.472' &  0.476' &  0.480' &  0.488' &  0.495' \\
+  $\sigma^{mon}$   &  0.114' & 0.030' &  0.059' &  0.074' &  0.094' &  0.108' &  0.128' &  0.185' &  0.341' \\
+  $\sigma^{\beta}$  &  0.833' & 1.773' &  0.001' &  0.006' &  0.047' &  0.195' &  0.836' &  5.675' & 19.879' \\
+  $\sigma^{mu}$   &  0.006' & 0.001' &  0.003' &  0.004' &  0.005' &  0.006' &  0.006' &  0.008' &  0.011' \\
+  \bottomrule
+  \end{tabular}
+\label{table:higher_level_params}
+\caption{Summary statistics of the estimated posterior distributions of higher level variables}
+\end{table}
 
+\begin{figure}
+  \includegraphics[width=1\linewidth]{figures/mu_sectors.png}
+  \caption{Distribution of the sector contrasts relative to residential sector. Installations for commercial, governmental and non-profit hosts are shown to have on average lower quality then installations in residential}
+  \label{mu_sectors}
+\end{figure}
+
+Summary statistics for the parameters on the manufacturer group means as well as the lower-level intercept and slope paramaters $a_s$ and $b_s$ are too numerous to present in a table. Visual summaries are presented in figures \ref{sfig:BayManPlot}, \ref{sfig:Bay_as} and \ref{sfig:Bay_bs}. Figure \ref{sfig:BayManPlot} shows box plots of the manufacturer distributions, with the box representing 70 percent of probability and the lines representing 95 percent of the probability. Mirroring earlier results, the plot shows most manufacturers with roughly equivalent quality, with handful with meaningfully lower quality. Figures \ref{sfig:Bay_as} and \ref{sfig:Bay_bs} show 95\% intervals of the distribution of the $a_s$ and $b_s$ parameters. The intercept terms are shown to have considerable variation between systems, as would be expected, but are individually estimated precisely.
+
+The slope parameters, $b_s$ are modelled explicitly and are also allowed to have varying variance parameters. This is evident in the plot. A similar pattern to the higher-level manufacturer group means is apparent: modest differences in quality are seen between most systems, with the exception of a lower tail of systems with particularly poor quality.
+
+\begin{figure}[!htb]
+\begin{minipage}{.48\textwidth}
+  \includegraphics[width=1\linewidth]{figures/BayManPlot.png}
+  \caption{Box plot of the the parameters $\mu^{manuf}$, representing the distributions of the mean parameter for manufacturer groupings.}
+  \label{sfig:BayManPlot}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+  \includegraphics[width=1\linewidth]{figures/Bay_as.png}
+  \caption{95\% interval of the distributions of the system level intercept parameters, $a_s$.}
+  \label{sfig:Bay_as}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+  \includegraphics[width=1\linewidth]{figures/Bay_bs.png}
+  \caption{95\% interval of the distributions of the system level slope parameter, $b_s$}
+  \label{sfig:Bay_bs}
+\end{minipage}\hfill
+%\caption{Simulated distribution of coefficients}
+%\label{fig:coeff_sim}
+\end{figure}
 
 \section{Discussion and Conclusion}
-The theoretical literature on information asymmetry and quality is established and deep. The empirical literature for consumer durable investments is, however, more sparse, reflecting the difficulty of getting reliable data on purchases and long-term reliability. This article provides one of few case studies that both identifies a market that could be expected to have issues of information asymmetry of quality, and provides an indirect empirical test for the presence of information asymmetry of quality.
+The theoretical literature on information asymmetry and quality is established and deep. The empirical literature for durable investments is, however, more sparse, reflecting the difficulty of getting reliable data on purchases and long-term reliability. This article provides one of few case studies that both identifies a market that could be expected to have issues of information asymmetry of quality, and provides an indirect empirical test for the presence of information asymmetry of quality.
 
 The structure of the emerging solar industry in the US, as well as other parts of the world suggests that issues of information asymmetry may play an important role. The established theory on the subject suggests that under information asymmetry of quality, poor quality products may push out good quality products, at least in some sub-markets. In this article I have tested an implication of that theory for the case of solar panels in California. The results provide some weak evidence for the existence of information asymmetry issues of quality.
 

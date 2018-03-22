@@ -93,8 +93,10 @@ def create_stan_data(solar_data):
 
     #sector categories
     owner_sect_dict = create_num_dict(system_level_df["owner_sector"])
+    print("owner_sect_dict", owner_sect_dict)
     #for varying effects
     owner_sect_id = system_level_df["owner_sector"].map(owner_sect_dict)
+
     #for dummy variables
     owner_sect_dummies = pd.get_dummies(system_level_df.owner_sector)
     S=4
@@ -421,7 +423,6 @@ def solar_stan_model2():
     """
     return(solar_stan_model1)
 
-
 #run:
 solar_data = load_data()
 solar_data = format_data(solar_data)
@@ -433,6 +434,8 @@ np.std(solar_data["months_operation"])
 
 
 solar_data[["log_prod_kwh", "months_operation", "month"]].apply(np.mean, axis=0)
+
+solar_data.head()
 
 solar_stan_data = create_stan_data(solar_data);
 
