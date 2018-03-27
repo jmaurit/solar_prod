@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.4)  17 MAR 2018 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.4)  23 MAR 2018 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -416,232 +416,86 @@ e
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3] [4] [5] [6]
-<tot_production.png, id=30, 578.16pt x 397.485pt>
-File: tot_production.png Graphic file (type png)
-<use tot_production.png>
-Package pdftex.def Info: tot_production.png  used on input line 115.
-(pdftex.def)             Requested size: 469.75502pt x 322.95576pt.
- [7] [8 <./tot_production.png>]
-<example_prod.png, id=41, 424.9476pt x 291.9708pt>
-File: example_prod.png Graphic file (type png)
-<use example_prod.png>
-Package pdftex.def Info: example_prod.png  used on input line 124.
-(pdftex.def)             Requested size: 469.75502pt x 322.75934pt.
-
-
-Package natbib Warning: Citation `bates_fitting_2015' on page 9 undefined on in
-put line 134.
-
-[9 <./example_prod.png>]
-
-Package natbib Warning: Citation `bates_fitting_2015' on page 10 undefined on i
-nput line 142.
-
-
-LaTeX Warning: Reference `eqn:system_level_rest' on page 10 undefined on input 
-line 144.
-
-[10] [11]
-<figures/sys_slope_fig.png, id=58, 3011.25pt x 1505.625pt>
-File: figures/sys_slope_fig.png Graphic file (type png)
-<use figures/sys_slope_fig.png>
-Package pdftex.def Info: figures/sys_slope_fig.png  used on input line 192.
-(pdftex.def)             Requested size: 225.4804pt x 112.7332pt.
-<figures/nested_manuf_fig_final.png, id=59, 2710.125pt x 1505.625pt>
-File: figures/nested_manuf_fig_final.png Graphic file (type png)
-<use figures/nested_manuf_fig_final.png>
-Package pdftex.def Info: figures/nested_manuf_fig_final.png  used on input line
- 197.
-(pdftex.def)             Requested size: 225.4804pt x 125.25401pt.
- [12 <./figures/sys_slope_fig.png> <./figures/nested_manuf_fig_final.png>]
-
-LaTeX Warning: Reference `eqn:observation_level_rest2' on page 13 undefined on 
-input line 223.
-
-[13]
-<figures/lease_sys_fig.png, id=70, 2710.125pt x 1505.625pt>
-File: figures/lease_sys_fig.png Graphic file (type png)
-<use figures/lease_sys_fig.png>
-Package pdftex.def Info: figures/lease_sys_fig.png  used on input line 249.
-(pdftex.def)             Requested size: 375.80544pt x 208.76436pt.
-
-./solar_commodities.tex:255: Missing $ inserted.
-<inserted text> 
-                $
-l.255 ...ated from one model. But also, citet{bar_
-                                                  random_2013} shows, using ...
-
-? 
-./solar_commodities.tex:255: Emergency stop.
-<inserted text> 
-                $
-l.255 ...ated from one model. But also, citet{bar_
-                                                  random_2013} shows, using ...
-End of file on the terminal!
-
- 
-Here is how much of TeX's memory you used:
- 4181 strings out of 492985
- 60741 string characters out of 6132587
- 130716 words of memory out of 5000000
- 7666 multiletter control sequences out of 15000+600000
- 13185 words of font info for 49 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,14n,32p,1323b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
-./solar_commodities.tex:255:  ==> Fatal error occurred, no output PDF file prod
-uced!
-f)             Requested size: 225.4804pt x 112.7332pt.
-<figures/nested_manuf_fig_final.png, id=59, 2710.125pt x 1505.625pt>
-File: figures/nested_manuf_fig_final.png Graphic file (type png)
-<use figures/nested_manuf_fig_final.png>
-Package pdftex.def Info: figures/nested_manuf_fig_final.png  used on input line
- 197.
-(pdftex.def)             Requested size: 225.4804pt x 125.25401pt.
-
-LaTeX Warning: Reference `sfig:nested_manuf_fig' on page 12 undefined on input 
-line 203.
-
-
-LaTeX Warning: Reference `tbl:lm_commodity' on page 12 undefined on input line 
-203.
-
-[12 <./figures/sys_slope_fig.png> <./figures/nested_manuf_fig_final.png>]
-
-LaTeX Warning: Reference `eqn:observation_level_rest2' on page 13 undefined on 
-input line 223.
-
-[13]
-
-LaTeX Warning: Reference `lease_sys_fig' on page 14 undefined on input line 246
-.
-
-<figures/lease_sys_fig.png, id=70, 2710.125pt x 1505.625pt>
-File: figures/lease_sys_fig.png Graphic file (type png)
-<use figures/lease_sys_fig.png>
-Package pdftex.def Info: figures/lease_sys_fig.png  used on input line 249.
-(pdftex.def)             Requested size: 375.80544pt x 208.76436pt.
-
-Package natbib Warning: Citation `bar_random_2013' on page 14 undefined on inpu
-t line 255.
-
-[14] [15 <./figures/lease_sys_fig.png>]
-
-Package natbib Warning: Citation `gelman_bayesian_2013' on page 16 undefined on
- input line 263.
-
-
-Package natbib Warning: Citation `kruschke_doing_2014' on page 16 undefined on 
-input line 263.
-
-
-Package natbib Warning: Citation `mcelreath_statistical_2017' on page 16 undefi
-ned on input line 263.
-
-
-LaTeX Warning: Reference `obslevel' on page 16 undefined on input line 265.
-
-
-LaTeX Warning: Reference `eqn:sysa' on page 16 undefined on input line 267.
-
-
-LaTeX Warning: Reference `eqnsysb' on page 16 undefined on input line 267.
-
-
-Overfull \hbox (20.14673pt too wide) detected at line 276
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 111--133
+[][]
  []
 
+[7]
+<figures/production.png, id=34, 903.375pt x 501.875pt>
+File: figures/production.png Graphic file (type png)
+<use figures/production.png>
+Package pdftex.def Info: figures/production.png  used on input line 146.
+(pdftex.def)             Requested size: 469.75502pt x 260.9765pt.
+ [8] [9 <./figures/production.png>] [10] [11]
+<figures/sys_slope_fig.png, id=57, 3011.25pt x 1505.625pt>
+File: figures/sys_slope_fig.png Graphic file (type png)
+<use figures/sys_slope_fig.png>
+Package pdftex.def Info: figures/sys_slope_fig.png  used on input line 224.
+(pdftex.def)             Requested size: 225.4804pt x 112.7332pt.
+<figures/nested_manuf_fig_final.png, id=58, 2710.125pt x 1505.625pt>
+File: figures/nested_manuf_fig_final.png Graphic file (type png)
+<use figures/nested_manuf_fig_final.png>
+Package pdftex.def Info: figures/nested_manuf_fig_final.png  used on input line
+ 229.
+(pdftex.def)             Requested size: 225.4804pt x 125.25401pt.
+ [12] [13 <./figures/sys_slope_fig.png> <./figures/nested_manuf_fig_final.png>]
+<figures/lease_sys_fig.png, id=69, 2710.125pt x 1505.625pt>
+File: figures/lease_sys_fig.png Graphic file (type png)
+<use figures/lease_sys_fig.png>
+Package pdftex.def Info: figures/lease_sys_fig.png  used on input line 283.
+(pdftex.def)             Requested size: 375.80544pt x 208.76436pt.
+ [14] [15 <./figures/lease_sys_fig.png>]
+
+LaTeX Warning: Reference `obslevel' on page 16 undefined on input line 299.
+
 [16]
+Overfull \hbox (30.02672pt too wide) detected at line 312
+[][]
+ []
 
-Package natbib Warning: Citation `gelman_weakly_2008' on page 17 undefined on i
-nput line 280.
-
-
-Package natbib Warning: Citation `stan_development_team_stan_2014' on page 17 u
-ndefined on input line 293.
-
-[17]
-
-LaTeX Warning: Reference `fig:contrasts' on page 18 undefined on input line 299
-.
-
-[18]
-<figures/bayes_hypos.png, id=87, 542.025pt x 541.3023pt>
+[17] [18]
+<figures/bayes_hypos.png, id=86, 542.025pt x 541.3023pt>
 File: figures/bayes_hypos.png Graphic file (type png)
 <use figures/bayes_hypos.png>
-Package pdftex.def Info: figures/bayes_hypos.png  used on input line 304.
-(pdftex.def)             Requested size: 469.75502pt x 469.14513pt.
-
-
-LaTeX Warning: Reference `table:higher_level_params' on page 19 undefined on in
-put line 313.
-
-
-LaTeX Warning: Reference `mu_sectors' on page 19 undefined on input line 313.
-
-<figures/mu_sectors.png, id=88, 1072.005pt x 566.115pt>
+Package pdftex.def Info: figures/bayes_hypos.png  used on input line 342.
+(pdftex.def)             Requested size: 281.85587pt x 281.48708pt.
+ [19 <./figures/bayes_hypos.png>]
+<figures/mu_sectors.png, id=92, 1072.005pt x 566.115pt>
 File: figures/mu_sectors.png Graphic file (type png)
 <use figures/mu_sectors.png>
-Package pdftex.def Info: figures/mu_sectors.png  used on input line 360.
-(pdftex.def)             Requested size: 469.75502pt x 248.07205pt.
-
-LaTeX Warning: Reference `sfig:BayManPlot' on page 19 undefined on input line 3
-65.
-
-
-LaTeX Warning: Reference `sfig:Bay_as' on page 19 undefined on input line 365.
-
-
-LaTeX Warning: Reference `sfig:Bay_bs' on page 19 undefined on input line 365.
-
-
-LaTeX Warning: Reference `sfig:BayManPlot' on page 19 undefined on input line 3
-65.
-
-
-LaTeX Warning: Reference `sfig:Bay_as' on page 19 undefined on input line 365.
-
-
-LaTeX Warning: Reference `sfig:Bay_bs' on page 19 undefined on input line 365.
-
-[19] [20 <./figures/bayes_hypos.png>] [21]
-<figures/BayManPlot.png, id=100, 898.7979pt x 450.7239pt>
+Package pdftex.def Info: figures/mu_sectors.png  used on input line 399.
+(pdftex.def)             Requested size: 281.85587pt x 148.84496pt.
+ [20] [21]
+<figures/BayManPlot.png, id=99, 898.7979pt x 450.7239pt>
 File: figures/BayManPlot.png Graphic file (type png)
 <use figures/BayManPlot.png>
-Package pdftex.def Info: figures/BayManPlot.png  used on input line 371.
+Package pdftex.def Info: figures/BayManPlot.png  used on input line 410.
 (pdftex.def)             Requested size: 225.4804pt x 113.07271pt.
-<figures/Bay_as.png, id=101, 895.9071pt x 450.7239pt>
+<figures/Bay_as.png, id=100, 895.9071pt x 450.7239pt>
 File: figures/Bay_as.png Graphic file (type png)
 <use figures/Bay_as.png>
-Package pdftex.def Info: figures/Bay_as.png  used on input line 376.
+Package pdftex.def Info: figures/Bay_as.png  used on input line 415.
 (pdftex.def)             Requested size: 225.4804pt x 113.43721pt.
-<figures/Bay_bs.png, id=102, 901.9296pt x 450.7239pt>
+<figures/Bay_bs.png, id=101, 901.9296pt x 450.7239pt>
 File: figures/Bay_bs.png Graphic file (type png)
 <use figures/Bay_bs.png>
-Package pdftex.def Info: figures/Bay_bs.png  used on input line 381.
+Package pdftex.def Info: figures/Bay_bs.png  used on input line 420.
 (pdftex.def)             Requested size: 225.4804pt x 112.67381pt.
- [22 <./figures/mu_sectors.png>]
-[23 <./figures/BayManPlot.png> <./figures/Bay_as.png> <./figures/Bay_bs.png>]
-(./solar_commodities.bbl
+ (./solar_commodities.bbl
+[22 <./figures/mu_sectors.png>]
+Missing character: There is no √ in font cmr12!
+Missing character: There is no § in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
+ [23 <./figures/BayManPlot.png> <./figures/Bay_as.png> <./figures/Bay_bs.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
- [24])
-
-Package natbib Warning: There were undefined citations.
-
-[25] (./solar_commodities.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ [24]) [25] (./solar_commodities.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -650,13 +504,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 4254 strings out of 492985
- 62495 string characters out of 6132587
- 142984 words of memory out of 5000000
+ 4253 strings out of 492985
+ 62546 string characters out of 6132587
+ 142912 words of memory out of 5000000
  7728 multiletter control sequences out of 15000+600000
  13532 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,32p,1323b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,32p,1324b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -668,18 +522,19 @@ ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on solar_commodities.pdf (25 pages, 1683527 bytes).
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on solar_commodities.pdf (25 pages, 1670831 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 182 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

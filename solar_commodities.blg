@@ -3,48 +3,48 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: solar_commodities.aux
 The style file: plainnat.bst
 Database file #1: solar_prod.bib
-Warning--I didn't find a database entry for "bates_fitting_2015"
-Warning--I didn't find a database entry for "mcelreath_statistical_2017"
+Warning--empty year in bates_fitting_2015
+Warning--empty year in bates_fitting_2015
 Warning--empty publisher in stan_development_team_stan_2014
-You've used 15 entries,
+You've used 18 entries,
             2773 wiz_defined-function locations,
-            724 strings with 8581 characters,
-and the built_in function-call counts, 6856 in all, are:
-= -- 671
-> -- 321
-< -- 12
-+ -- 111
-- -- 96
-* -- 582
-:= -- 1093
-add.period$ -- 78
-call.type$ -- 15
-change.case$ -- 76
-chr.to.int$ -- 15
-cite$ -- 31
-duplicate$ -- 302
-empty$ -- 557
-format.name$ -- 123
-if$ -- 1419
+            745 strings with 9259 characters,
+and the built_in function-call counts, 8276 in all, are:
+= -- 800
+> -- 409
+< -- 13
++ -- 141
+- -- 123
+* -- 713
+:= -- 1323
+add.period$ -- 93
+call.type$ -- 18
+change.case$ -- 94
+chr.to.int$ -- 18
+cite$ -- 39
+duplicate$ -- 363
+empty$ -- 662
+format.name$ -- 153
+if$ -- 1708
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 19
-newline$ -- 116
-num.names$ -- 60
-pop$ -- 114
+missing$ -- 23
+newline$ -- 137
+num.names$ -- 72
+pop$ -- 147
 preamble$ -- 1
-purify$ -- 62
+purify$ -- 77
 quote$ -- 0
-skip$ -- 211
+skip$ -- 251
 stack$ -- 0
-substring$ -- 265
-swap$ -- 25
+substring$ -- 296
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 145
-warning$ -- 1
-while$ -- 65
+type$ -- 173
+warning$ -- 3
+while$ -- 76
 width$ -- 0
-write$ -- 268
+write$ -- 319
 (There were 3 warnings)

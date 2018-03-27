@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,6 +13,24 @@ George~A. Akerlof.
   488--500, August 1970.
 \newblock \doi{10.2307/1879431}.
 \newblock URL \url{http://www.jstor.org/stable/1879431}.
+
+\bibitem[Barr et~al.(2013)Barr, Levy, Scheepers, and Tily]{barr_random_2013}
+Dale~J. Barr, Roger Levy, Christoph Scheepers, and Harry~J. Tily.
+\newblock Random effects structure for confirmatory hypothesis testing: {Keep}
+  it maximal.
+\newblock \emph{Journal of Memory and Language}, 68\penalty0 (3):\penalty0
+  255--278, April 2013.
+\newblock ISSN 0749-596X.
+\newblock \doi{10.1016/j.jml.2012.11.001}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0749596X12001180}.
+
+\bibitem[Bates et~al.()Bates, Mächler, Walker, and Bolker]{bates_fitting_2015}
+Douglas Bates, Martin Mächler, Steven~C. Walker, and Benjamin Bolker.
+\newblock Fitting {Linear} {Mixed}-{Effects} {Models} {Using} lme4.
+\newblock \emph{Journal of Statistical Software}.
+\newblock \doi{10.18637/jss.v067.i01}.
+\newblock URL \url{https://www.jstatsoft.org/article/view/v067i01/0}.
 
 \bibitem[Bollinger and Gillingham(2012)]{bollinger_peer_2012}
 Bryan Bollinger and Kenneth Gillingham.
@@ -90,12 +108,19 @@ John~K. Kruschke.
 \newblock Academic Press, Boston, 2 edition edition, November 2014.
 \newblock ISBN 978-0-12-405888-0.
 
-\bibitem[Mauritzen(2015)]{mauritzen_whats_2015}
+\bibitem[Mauritzen(2017)]{mauritzen_cost_2017}
 Johannes Mauritzen.
-\newblock What's behind the surge in the {California} rooftop solar market?
-  {The} role of {Chinese} panels, uncertainty and new business models.
-\newblock \emph{Working Paper}, July 2015.
-\newblock URL \url{http://jmaurit.github.io/#solar_lemons}.
+\newblock Cost, {Contractors} and {Scale}: {An} {Empirical} {Analysis} of the
+  {California} {Solar} {Market}.
+\newblock \emph{The Energy Journal}, Volume 38\penalty0 (Number 6), 2017.
+\newblock URL \url{https://ideas.repec.org/a/aen/journl/ej38-6-mauritzen.html}.
+
+\bibitem[McElreath(2015)]{mcelreath_statistical_2015}
+Richard McElreath.
+\newblock \emph{Statistical {Rethinking}: {A} {Bayesian} {Course} with
+  {Examples} in {R} and {Stan}}.
+\newblock Chapman and Hall/CRC, Boca Raton, 1 edition edition, December 2015.
+\newblock ISBN 978-1-4822-5344-3.
 
 \bibitem[Michaely and Shaw(1994)]{michaely_pricing_1994}
 Roni Michaely and Wayne~H. Shaw.

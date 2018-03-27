@@ -73,7 +73,10 @@ def create_stan_data(solar_data):
     sys_dict = create_num_dict(solar_data["app_num"])
     system_id =app_num.map(sys_dict)
 
-    system_level_df = solar_data[["app_num", "owner_sector", "log_csi_rating", "third_party_owned","module_manufacturer", "first_prod_year", "incentive_step", "log_cost_per_kw"]][~solar_data.app_num.duplicated()]
+    system_level_df = solar_data[["app_num", "host_sector", "owner_sector", "log_csi_rating", "third_party_owned","module_manufacturer", "first_prod_year", "incentive_step", "log_cost_per_kw"]][~solar_data.app_num.duplicated()]
+
+    system_level_df["owner_sector"].value_counts()
+    system_level_df["host_sector"].value_counts()
 
     unique_system_id = system_level_df["app_num"].map(sys_dict)
     J = unique_system_id.size
@@ -128,6 +131,7 @@ def create_stan_data(solar_data):
     "leased":leased
     }
     return(solar_stan_data)
+
 
 def solar_stan_model():
     solar_stan_model1 = """

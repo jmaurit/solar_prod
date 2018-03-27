@@ -140,45 +140,12 @@ Uses regression discontinuities to give causal interpretation - loans are given
 
 
 
-As the correlation between default and loan size combines the selection and incentive effects of loan size, we can, under reasonable assumptions, obtain an estimate of adverse selection by subtracting our moral-hazard estimates from the cross-sectional coefficient relating loan size and borrower default. 
+As the correlation between default and loan size combines the selection and incentive effects of loan size, we can, under reasonable assumptions, obtain an estimate of adverse selection by subtracting our moral-hazard estimates from the cross-sectional coefficient relating loan size and borrower default.
  
 
 
 
-we find that a \$50 increase in payday credit leads to a \$19.73 to \$22.02 increase in average loan size. Thus, payday borrowers borrow 39 to 44 cents per additional dollar of credit. These estimates are larger than previous findings using data from different types of debtors, likely reflecting the fact that payday borrowers are particularly credit constrained. 
-
-
-
- 
-
-
-
-
-
-
-Surprisingly, both our regression discontinuity and regression kink empirical strategies suggest that relaxing these credit constraints lowers the probability that a payday borrower defaults. A \$50 increase in payday-loan size leads to a 4.4 to 6.4 percentage point decrease in the probability of default in our regression discontinu- ity strategy sample, a 22 to 33 percent decrease. 
- 
-
-
-
-The finding that larger loans lower the rate of default is surprising given the prominence of moral hazard in the theoretical literature and the empirical relevance of moral hazard in other consumer-lending markets (Adams, Einav, and Levin, 2009). 
- 
-
-
-
-Conversely, we find economically and statistically significant adverse selection into larger payday loans. In our OLS results, which combine both adverse selection and moral hazard, a \$50 increase in loan size is associated with a 1.0 to 2.3 per- centage point increase in the probability of default in our regression discontinuity sample. 
- 
-
-
-
-Taken together with our estimates of moral hazard, this suggests that bor- rowers who choose a loan that is \$50 larger are 5.4 to 8.7 percentage points more likely to default, a 28 to 44 percent increase. In our regression kink sample, the OLS results suggest that borrowers who choose a \$50 larger loan are 16 to 47 per- cent more likely to default. Our results are therefore consistent with the view that adverse selection alone can lead to credit constraints in equilibrium. 
-
-
-
-
-
-
-Adams, Einav, and Levin (2009), whose work is most closely related to ours, use price and down-payment variation across time, credit categories, and regions to identify the impact of moral hazard. 
+we find that a \$50 increase in payday credit leads to a \$19.73 to \$22.02 increase in average loan size. Thus, payday borrowers borrow 39 to 44 cents per additional dollar of credit. These estimates are larger than previous findings using data from different types of debtors, likely reflecting the fact that payday borrowers are particularly credit constrained.
 
 
 
@@ -186,23 +153,56 @@ Adams, Einav, and Levin (2009), whose work is most closely related to ours, use 
 
 
 
-Models of asymmetric information predict that information frictions will produce a positive correlation between loan default and the size or price of that loan.3 In the moral-hazard version of the model, individual borrowers are more likely to default on larger or more expensive loans. 
+
+
+
+Surprisingly, both our regression discontinuity and regression kink empirical strategies suggest that relaxing these credit constraints lowers the probability that a payday borrower defaults. A \$50 increase in payday-loan size leads to a 4.4 to 6.4 percentage point decrease in the probability of default in our regression discontinu- ity strategy sample, a 22 to 33 percent decrease.
+ 
+
+
+
+The finding that larger loans lower the rate of default is surprising given the prominence of moral hazard in the theoretical literature and the empirical relevance of moral hazard in other consumer-lending markets (Adams, Einav, and Levin, 2009).
+ 
+
+
+
+Conversely, we find economically and statistically significant adverse selection into larger payday loans. In our OLS results, which combine both adverse selection and moral hazard, a \$50 increase in loan size is associated with a 1.0 to 2.3 per- centage point increase in the probability of default in our regression discontinuity sample.
+ 
+
+
+
+Taken together with our estimates of moral hazard, this suggests that bor- rowers who choose a loan that is \$50 larger are 5.4 to 8.7 percentage points more likely to default, a 28 to 44 percent increase. In our regression kink sample, the OLS results suggest that borrowers who choose a \$50 larger loan are 16 to 47 per- cent more likely to default. Our results are therefore consistent with the view that adverse selection alone can lead to credit constraints in equilibrium.
+
+
+
+
+
+
+Adams, Einav, and Levin (2009), whose work is most closely related to ours, use price and down-payment variation across time, credit categories, and regions to identify the impact of moral hazard.
+
+
+
+ 
+
+
+
+Models of asymmetric information predict that information frictions will produce a positive correlation between loan default and the size or price of that loan.3 In the moral-hazard version of the model, individual borrowers are more likely to default on larger or more expensive loans.
  
  
 
 
 
-Consider the following model of the causal relationship between default (Di) and loan size (Li): 
-(1) Di =a+gLi+ei 
-The parameter of interest is g, which measures the causal effect of loan size on default (e.g., moral hazard). The problem for inference is that if individuals select a loan size because of important unobserved determinants of later outcomes, such estimates may be biased. In particular, it is plausible that people who select larger loans have a different probability of default even if loan size was held constant: E[ei{\textbar}Li] 6= 0. Since Li may be a function of default risk, this can lead to a bias in the direct estimation of g using OLS. 
-The key intuition of our first strategy is that this bias can be overcome if the conditional distribution of unobserved determinants of default E[ei{\textbar}payi] trends smoothly through the loan-eligibility cutoffs used by payday lenders. In this sce- nario, the distribution of unobserved characteristics of individuals who just barely qualified for a larger loan is the same as the distribution among those who just barely did not qualify: 
-(2) E[ei{\textbar}payi=cl+D]D!0+ =E[ei{\textbar}payi=clD]D!0+ 
+Consider the following model of the causal relationship between default (Di) and loan size (Li):
+(1) Di =a+gLi+ei
+The parameter of interest is g, which measures the causal effect of loan size on default (e.g., moral hazard). The problem for inference is that if individuals select a loan size because of important unobserved determinants of later outcomes, such estimates may be biased. In particular, it is plausible that people who select larger loans have a different probability of default even if loan size was held constant: E[ei{\textbar}Li] 6= 0. Since Li may be a function of default risk, this can lead to a bias in the direct estimation of g using OLS.
+The key intuition of our first strategy is that this bias can be overcome if the conditional distribution of unobserved determinants of default E[ei{\textbar}payi] trends smoothly through the loan-eligibility cutoffs used by payday lenders. In this sce- nario, the distribution of unobserved characteristics of individuals who just barely qualified for a larger loan is the same as the distribution among those who just barely did not qualify:
+(2) E[ei{\textbar}payi=cl+D]D!0+ =E[ei{\textbar}payi=clD]D!0+
  
 
 
 
-The two-stage least squares regression controls for the underlying relationship between pay and both default and loan size using f(payi), and instruments for loan size using loan eligibility 
-\{payi cl\} at each cutoff l. 
+The two-stage least squares regression controls for the underlying relationship between pay and both default and loan size using f(payi), and instruments for loan size using loan eligibility
+\{payi cl\} at each cutoff l.
 
 
 
@@ -457,35 +457,12 @@ Hendel and Lizzeri (2002) also show that leasing contracts, by increasing the av
 
 
 
-I test these predictions using data from the market for used business aircraft in North America over the period 1980–99. I find that qualitative uncertainty and leasing patterns exert a statistically significant effect on the relationship between depreciation and trading volume and that these effects are consistent with the predictions of the theory. 
+I test these predictions using data from the market for used business aircraft in North America over the period 1980–99. I find that qualitative uncertainty and leasing patterns exert a statistically significant effect on the relationship between depreciation and trading volume and that these effects are consistent with the predictions of the theory.
 
 
 
 
-First, evidence of the insights contained in Akerlof’s (1970) seminal work is mixed and inconclusive in contemporary durable goods markets. Bond (1984) finds weak evidence of adverse selection among older trucks only. Genesove (1993) finds only modest evidence of adverse selection in dealer auction markets for used cars. Fabel and Lehmann (2000) and Emons and Sheldon (2003) find stronger support for the existence of adverse se- lection in used automobile markets. 
-
-
-
-
-
-
-
-
-
-
-
-
-Porter and Sattler (1999) argue that their results are inconsistent with adverse selection in used automobile markets. 
-
-
-
-
-Second, counteracting or extramarket institutions are often under- stood as solving or mitigating problems of qualitative uncertainty and the asymmetric distribution of information. The market for business aircraft exhibits many of these features. For example, it is common for transactions of used business aircraft to carry some form of limited guarantee or warranty of serviceability and performance. 
-
-
-
-
- 
+First, evidence of the insights contained in Akerlof’s (1970) seminal work is mixed and inconclusive in contemporary durable goods markets. Bond (1984) finds weak evidence of adverse selection among older trucks only. Genesove (1993) finds only modest evidence of adverse selection in dealer auction markets for used cars. Fabel and Lehmann (2000) and Emons and Sheldon (2003) find stronger support for the existence of adverse se- lection in used automobile markets.
 
 
 
@@ -498,19 +475,12 @@ Second, counteracting or extramarket institutions are often under- stood as solv
 
 
 
-Hendel and Lizzeri (1999, 2002) constitute a framework for assessing the relevance of adverse selection and, when proxies for qualitative uncertainty are present, for testing broader classes of theory pertaining to patterns of trade in used durable goods. 
- 
+Porter and Sattler (1999) argue that their results are inconsistent with adverse selection in used automobile markets.
 
 
 
 
-Consumers with a strong preference for quality wish to frequently re- place durables that deteriorate rapidly. With full information, prices reflect this rapid deterioration, and brands with high trading volumes depreciate more quickly. 
- 
-
-
-
-
-Hendel and Lizzeri (2002) show that the percentage of durable good units returned to the lessor exceeds the percentage of units traded in the used market under standard selling contracts and, thus, that leasing contracts increase the volume of trade in used durable goods markets. 
+Second, counteracting or extramarket institutions are often under- stood as solving or mitigating problems of qualitative uncertainty and the asymmetric distribution of information. The market for business aircraft exhibits many of these features. For example, it is common for transactions of used business aircraft to carry some form of limited guarantee or warranty of serviceability and performance.
 
 
 
@@ -524,13 +494,43 @@ Hendel and Lizzeri (2002) show that the percentage of durable good units returne
 
 
 
-that the regulatory history of a particular aircraft is an important indicator of its potential qualitative uncertainty. 
+
+
+
+
+Hendel and Lizzeri (1999, 2002) constitute a framework for assessing the relevance of adverse selection and, when proxies for qualitative uncertainty are present, for testing broader classes of theory pertaining to patterns of trade in used durable goods.
  
 
 
 
 
-However, it is generally appreciated and easy to document that the cumulative number of airworthiness directives and the cumulative number of ac- cidents associated with any aircraft brand are highly correlated 
+Consumers with a strong preference for quality wish to frequently re- place durables that deteriorate rapidly. With full information, prices reflect this rapid deterioration, and brands with high trading volumes depreciate more quickly.
+ 
+
+
+
+
+Hendel and Lizzeri (2002) show that the percentage of durable good units returned to the lessor exceeds the percentage of units traded in the used market under standard selling contracts and, thus, that leasing contracts increase the volume of trade in used durable goods markets.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+that the regulatory history of a particular aircraft is an important indicator of its potential qualitative uncertainty.
+ 
+
+
+
+
+However, it is generally appreciated and easy to document that the cumulative number of airworthiness directives and the cumulative number of ac- cidents associated with any aircraft brand are highly correlated
  
 
 
@@ -542,7 +542,7 @@ Thus entering the cumulative number of airworthiness directives directly into es
 
 
 
-Thus the estimations reported below use aircraft age as a weight in the computation of standard errors and permit correlated (i.e., clustered) errors for given models of aircraft. 
+Thus the estimations reported below use aircraft age as a weight in the computation of standard errors and permit correlated (i.e., clustered) errors for given models of aircraft.
 
 
 
@@ -556,13 +556,13 @@ Thus the estimations reported below use aircraft age as a weight in the computat
 
 
 
-The parameter on the interaction between the volume of trade and the cu- mulative number of airworthiness directives variables is statistically less than zero (.0012 and p ! .05). 
+The parameter on the interaction between the volume of trade and the cu- mulative number of airworthiness directives variables is statistically less than zero (.0012 and p ! .05).
  
 
 
 
 
-All else equal, aircraft brands with higher levels of qualitative uncertainty (i.e., larger values of the cumulative number of airworthiness directives variables) exhibit a more negative relationship between trading volume and estimated depreciation. The parameter on the interaction between the volume of trade and the number of lease-operated aircraft variables is statistically greater than zero (.0006, p ! .05). All else equal, aircraft models with higher leasing frequencies exhibit a more direct relationship between trading volume and depreciation rates. Both of these findings are consistent with the notion that asymmetric information is a prominent feature of and that leasing mitigates adverse selection in the used aircraft market. 
+All else equal, aircraft brands with higher levels of qualitative uncertainty (i.e., larger values of the cumulative number of airworthiness directives variables) exhibit a more negative relationship between trading volume and estimated depreciation. The parameter on the interaction between the volume of trade and the number of lease-operated aircraft variables is statistically greater than zero (.0006, p ! .05). All else equal, aircraft models with higher leasing frequencies exhibit a more direct relationship between trading volume and depreciation rates. Both of these findings are consistent with the notion that asymmetric information is a prominent feature of and that leasing mitigates adverse selection in the used aircraft market.
 
 
 
@@ -849,15 +849,6 @@ Way a firm may signal unobersvable quality of products.},
 	file = {JSTOR Full Text PDF:/Users/johannesmauritzen/Library/Mobile Documents/com~apple~CloudDocs/zotero/storage/6IWQRFKS/Riordan - 1986 - Monopolistic Competition with Experience Goods.pdf:application/pdf}
 }
 
-@article{mauritzen_whats_2015,
-	title = {What's behind the surge in the {California} rooftop solar market? {The} role of {Chinese} panels, uncertainty and new business models},
-	url = {http://jmaurit.github.io/#solar_lemons},
-	journal = {Working Paper},
-	author = {Mauritzen, Johannes},
-	month = jul,
-	year = {2015}
-}
-
 @article{allen_reputation_1984,
 	title = {Reputation and {Product} {Quality}},
 	volume = {15},
@@ -967,24 +958,24 @@ Way a firm may signal unobersvable quality of products.},
 European Economic Review
 
 
-This study uses a large sample of homes in the San Diego area and Sacramento, California area to provide some of the first capitalization estimates of the sales value of homes with solar panels relative to comparable homes without solar panels. Although the residential solar home market continues to grow, there is little direct evidence on the market capitalization effect. Using both hedonics and a repeat sales index approach we find that solar panels are capitalized at roughly a 3.5\% premium. This premium is larger in communities with a greater share of college graduates and of registered Prius hybrid vehicles. 
+This study uses a large sample of homes in the San Diego area and Sacramento, California area to provide some of the first capitalization estimates of the sales value of homes with solar panels relative to comparable homes without solar panels. Although the residential solar home market continues to grow, there is little direct evidence on the market capitalization effect. Using both hedonics and a repeat sales index approach we find that solar panels are capitalized at roughly a 3.5\% premium. This premium is larger in communities with a greater share of college graduates and of registered Prius hybrid vehicles.
 
 
  
 
 
 
-In this paper, we examine two aspects of solar purchases. We provide new hedonic marginal valuation estimates for a large sample of solar homes based on recent real estate transactions in San Diego County and Sacramento County. We document evidence of a solar price premium and find that this premium is larger in environmentalist communities. In most mature housing markets, we expect that the econometrician knows less about the market than the decision makers. In the case of solar panels, our interactions with professionals in the field suggests that these professionals have little basis for estimating the pecuniary benefits of solar installation. Our second empirical contribution is to document what types of people, in terms of education, political ideology and demographic attributes do and do not live in solar homes. Most hedonic studies that use sales data (rather than Census data) know very little about the household who actually lives in the home, but we can observe household characteristics for a single year. 
+In this paper, we examine two aspects of solar purchases. We provide new hedonic marginal valuation estimates for a large sample of solar homes based on recent real estate transactions in San Diego County and Sacramento County. We document evidence of a solar price premium and find that this premium is larger in environmentalist communities. In most mature housing markets, we expect that the econometrician knows less about the market than the decision makers. In the case of solar panels, our interactions with professionals in the field suggests that these professionals have little basis for estimating the pecuniary benefits of solar installation. Our second empirical contribution is to document what types of people, in terms of education, political ideology and demographic attributes do and do not live in solar homes. Most hedonic studies that use sales data (rather than Census data) know very little about the household who actually lives in the home, but we can observe household characteristics for a single year.
  
 
 
 
-A distinctive feature of solar panels is that on a day to day basis they have no ‘‘use value’’ as compared to a new bathroom or kitchen. 
+A distinctive feature of solar panels is that on a day to day basis they have no ‘‘use value’’ as compared to a new bathroom or kitchen.
  
 
 
 
-For those households who derive pleasure from knowing that they are generating their own electricity, the solar panels will yield ‘‘existence value’’. Such households will recognize that they have reduced their greenhouse gas emissions and thus are providing world public goods. 
+For those households who derive pleasure from knowing that they are generating their own electricity, the solar panels will yield ‘‘existence value’’. Such households will recognize that they have reduced their greenhouse gas emissions and thus are providing world public goods.
 
 
 
@@ -1002,8 +993,8 @@ We find that households in which all voters are registered liberal and in which 
 
 
 
-This study used a large sample of homes in the San Diego and Sacramento areas to provide some of the first capitalization estimates of the resale value of homes with solar panels relative to comparable homes without solar panels. Although the residential solar home market continues to grow, there is little direct evidence on the market capitalization effect. Using both hedonics and a repeat sales index approach we find that solar panels are capitalized at roughly a 3\% to 4\% premium. This premium is larger in communities with more registered Prius hybrid vehicles and in communities featuring a larger share of college graduates. 
-Our new marginal valuation estimates inform the debate led by Borenstein (2008) on whether expenditure on residential solar is a ‘‘good investment.’’ His analysis evaluates residential solar installations solely as a ‘pure’ investment good judged in terms of upfront cost and subsequent power generation. Our evidence suggests that similar to other home investments such as a new kitchen, solar installation bundles both investment value and consumption value. Some households may take pride in knowing that they are producers of ‘‘green’’ electricity and ‘‘warm glow’’ may triumph over present discounted value calculations in determining a household’s install choice. 
+This study used a large sample of homes in the San Diego and Sacramento areas to provide some of the first capitalization estimates of the resale value of homes with solar panels relative to comparable homes without solar panels. Although the residential solar home market continues to grow, there is little direct evidence on the market capitalization effect. Using both hedonics and a repeat sales index approach we find that solar panels are capitalized at roughly a 3\% to 4\% premium. This premium is larger in communities with more registered Prius hybrid vehicles and in communities featuring a larger share of college graduates.
+Our new marginal valuation estimates inform the debate led by Borenstein (2008) on whether expenditure on residential solar is a ‘‘good investment.’’ His analysis evaluates residential solar installations solely as a ‘pure’ investment good judged in terms of upfront cost and subsequent power generation. Our evidence suggests that similar to other home investments such as a new kitchen, solar installation bundles both investment value and consumption value. Some households may take pride in knowing that they are producers of ‘‘green’’ electricity and ‘‘warm glow’’ may triumph over present discounted value calculations in determining a household’s install choice.
 
 
 
@@ -1031,45 +1022,36 @@ Our new marginal valuation estimates inform the debate led by Borenstein (2008) 
 
 
 
-social interaction (peer) effects are recognized as a potentially important factor in the diffusion of new prod- ucts. In the case of environmentally friendly goods or technologies, both marketers and policy makers are interested in the presence of causal peer effects as social spillovers can be used to expedite adoption. We provide a methodology for the simple, straightforward identification of peer effects with sufficiently rich data, avoiding the biases that occur with traditional fixed effects estimation when using the past installed base of consumers in the reference group. We study the diffusion of solar photovoltaic panels in California and find that at the average number of owner-occupied homes in a zip code, an additional installation increases the probability of an adoption in the zip code by 0.78 percentage points. Our results provide valuable guidance to marketers designing strategies to increase referrals and reduce customer acquisition costs. They also provide insights into the diffusion process of environmentally friendly technologies. 
+social interaction (peer) effects are recognized as a potentially important factor in the diffusion of new prod- ucts. In the case of environmentally friendly goods or technologies, both marketers and policy makers are interested in the presence of causal peer effects as social spillovers can be used to expedite adoption. We provide a methodology for the simple, straightforward identification of peer effects with sufficiently rich data, avoiding the biases that occur with traditional fixed effects estimation when using the past installed base of consumers in the reference group. We study the diffusion of solar photovoltaic panels in California and find that at the average number of owner-occupied homes in a zip code, an additional installation increases the probability of an adoption in the zip code by 0.78 percentage points. Our results provide valuable guidance to marketers designing strategies to increase referrals and reduce customer acquisition costs. They also provide insights into the diffusion process of environmentally friendly technologies.
  
 
 
 
 
-January 2006, the California Public Utilities Commission (CPUC) established the California Solar Initiative (CSI), a \$3.3-billion, 10-year rebate program aiming to “install 3,000 megawatts (MW) of new solar over the next decade and to transform the mar- ket for solar energy by reducing the cost of solar” 
+January 2006, the California Public Utilities Commission (CPUC) established the California Solar Initiative (CSI), a \$3.3-billion, 10-year rebate program aiming to “install 3,000 megawatts (MW) of new solar over the next decade and to transform the mar- ket for solar energy by reducing the cost of solar”
  
 
 
 
 
-We leverage the fact that in the solar PV market, the decision to install solar panels does not lead to an instantaneous instal- lation, as a result of the time needed to complete the necessary paperwork and perform the installation. 
+We leverage the fact that in the solar PV market, the decision to install solar panels does not lead to an instantaneous instal- lation, as a result of the time needed to complete the necessary paperwork and perform the installation.
  
 
 
 
 
-In our situation, we would not expect social interactions to have an effect until the solar PV panels have actually been installed, after which point the adopter would have experienced the benefits of the panels and neigh- bors may then be able to see the installation. 
+In our situation, we would not expect social interactions to have an effect until the solar PV panels have actually been installed, after which point the adopter would have experienced the benefits of the panels and neigh- bors may then be able to see the installation.
  
 
 
 
 
-In January 2006, the California Public Utilities Commission (CPUC) established the California Solar Initiative (CSI), a \$3.3-billion, 10-year rebate program aiming to “install 3,000 megawatts (MW) of new solar over the next decade and to transform the mar- ket for solar energy by reducing the cost of solar” 
+In January 2006, the California Public Utilities Commission (CPUC) established the California Solar Initiative (CSI), a \$3.3-billion, 10-year rebate program aiming to “install 3,000 megawatts (MW) of new solar over the next decade and to transform the mar- ket for solar energy by reducing the cost of solar”
 
 
 
 
-We further augment the installation data with zip code-level demographic data from Source- book America and American FactFinder, as well as data on hybrid vehicle registrations from R. L. Polk \& Co. 
-
-
-
-
-
-
-
-
-The presence of peer effects should also imply accel- erating adoption in regions with more installations. 
+We further augment the installation data with zip code-level demographic data from Source- book America and American FactFinder, as well as data on hybrid vehicle registrations from R. L. Polk \& Co.
 
 
 
@@ -1078,11 +1060,7 @@ The presence of peer effects should also imply accel- erating adoption in region
 
 
 
-
-
-
-
-quadratic term, implying increasing effects of new installations. In another specifica- tion we interact the installed base and year. Fig- ure 5 plots these coefficients9 with robust standard errors, again indicating that the installed base effect increases over time. Such an increase may derive from recent marketing efforts to leverage peer effects to induce adoptions. For example, one of the strate- gies employed by SolarCity (the largest installer in California) involves finding one or two vocal solar advocates in a neighborhood and giving the entire neighborhood a slightly lower price if enough adop- tions are made within that neighborhood. 
+The presence of peer effects should also imply accel- erating adoption in regions with more installations.
 
 
 
@@ -1095,18 +1073,31 @@ quadratic term, implying increasing effects of new installations. In another spe
 
 
 
+quadratic term, implying increasing effects of new installations. In another specifica- tion we interact the installed base and year. Fig- ure 5 plots these coefficients9 with robust standard errors, again indicating that the installed base effect increases over time. Such an increase may derive from recent marketing efforts to leverage peer effects to induce adoptions. For example, one of the strate- gies employed by SolarCity (the largest installer in California) involves finding one or two vocal solar advocates in a neighborhood and giving the entire neighborhood a slightly lower price if enough adop- tions are made within that neighborhood.
 
 
 
 
-The interaction with median income is economi- cally significant: running the regression on only the lower half of the zip code income distribution leads to a coefficient and standard error of 2.478 (0.680); for the top half, it is 1.243 (0.454). So although households with lower income may be less likely to adopt solar, they are more influenced by the peer effect. This is consistent with the high percentage of consumers naming finances as a primary reason for adopting solar, especially if the financial benefits of adoption are learned through information exchange.12 
-If peer effects are a major factor underlying the clus- tering pattern in the data, we might expect to see evi- dence of peer effects at a more localized level than the zip code. With 2001–2006 address-level data from the California Energy Commission Emerging Renewables Program, we can examine how solar PV system adop- tion decisions are affected by the previous decisions of others on the same street. We define a street here as a street within a zip code, so that a long street that is in several zip codes is considered several separate streets. We create a panel data set where an obser- vation is a street-month.18 Table 8 provides summary 
+
+
+
+
+
+
+
+
+
+
+
+
+The interaction with median income is economi- cally significant: running the regression on only the lower half of the zip code income distribution leads to a coefficient and standard error of 2.478 (0.680); for the top half, it is 1.243 (0.454). So although households with lower income may be less likely to adopt solar, they are more influenced by the peer effect. This is consistent with the high percentage of consumers naming finances as a primary reason for adopting solar, especially if the financial benefits of adoption are learned through information exchange.12
+If peer effects are a major factor underlying the clus- tering pattern in the data, we might expect to see evi- dence of peer effects at a more localized level than the zip code. With 2001–2006 address-level data from the California Energy Commission Emerging Renewables Program, we can examine how solar PV system adop- tion decisions are affected by the previous decisions of others on the same street. We define a street here as a street within a zip code, so that a long street that is in several zip codes is considered several separate streets. We create a panel data set where an obser- vation is a street-month.18 Table 8 provides summary
  
 
 
 
 
-This paper provides a straightforward methodology for consistently estimating peer effects in the adop- tion of new technologies that display a lag between the time of adoption and delivery, and then it quan- tifies the magnitude of those peer effects. We find strong evidence for causal peer effects, indicating that an extra installation in a zip code increases the probability of an adoption in the zip code by 0.78 per- centage points when evaluated at the average num- ber of owner-occupied homes in a zip code. These peer effects appear to increase in magnitude over time and are greater for larger installations and at the more localized street level. Our findings also indicate that peer effects appear to lead to larger installations. The results are suggestive of the pathways by which peer effects work: both visibility of the panels and word of mouth appear to contribute to social interac- tions that lead to further adoption. Accordingly, both image motivation and information transfer are likely to underlie the peer effects. These findings have clear implications for marketers who are striving to reduce the high cost of consumer acquisition in the solar PV market. 
+This paper provides a straightforward methodology for consistently estimating peer effects in the adop- tion of new technologies that display a lag between the time of adoption and delivery, and then it quan- tifies the magnitude of those peer effects. We find strong evidence for causal peer effects, indicating that an extra installation in a zip code increases the probability of an adoption in the zip code by 0.78 per- centage points when evaluated at the average num- ber of owner-occupied homes in a zip code. These peer effects appear to increase in magnitude over time and are greater for larger installations and at the more localized street level. Our findings also indicate that peer effects appear to lead to larger installations. The results are suggestive of the pathways by which peer effects work: both visibility of the panels and word of mouth appear to contribute to social interac- tions that lead to further adoption. Accordingly, both image motivation and information transfer are likely to underlie the peer effects. These findings have clear implications for marketers who are striving to reduce the high cost of consumer acquisition in the solar PV market.
  
 
 
@@ -1173,11 +1164,12 @@ This paper provides a straightforward methodology for consistently estimating pe
 	doi = {10.18637/jss.v067.i01},
 	language = {en-US},
 	urldate = {2018-01-28},
+	year = {2015},
 	keywords = {Cholesky decomposition, linear mixed models, penalized least squares, sparse matrix methods},
 	file = {Snapshot:/Users/johannesmauritzen/Library/Mobile Documents/com~apple~CloudDocs/zotero/storage/3KSQSS3X/0.html:text/html}
 }
 
-@article{bates_fitting_nodate,
+@article{bates_fitting_2015,
 	title = {Fitting {Linear} {Mixed}-{Effects} {Models} {Using} lme4},
 	url = {https://www.jstatsoft.org/article/view/v067i01/0},
 	doi = {10.18637/jss.v067.i01},
@@ -1220,4 +1212,47 @@ This paper provides a straightforward methodology for consistently estimating pe
 	author = {McElreath, Richard},
 	month = dec,
 	year = {2015}
+}
+
+@article{mauritzen_cost_2017,
+	title = {Cost, {Contractors} and {Scale}: {An} {Empirical} {Analysis} of the {California} {Solar} {Market}},
+	volume = {Volume 38},
+	shorttitle = {Cost, {Contractors} and {Scale}},
+	url = {https://ideas.repec.org/a/aen/journl/ej38-6-mauritzen.html},
+	abstract = {This paper presents an empirical analysis of the rapidly growing California rooftop solar photovoltaic market using detailed data of over 100,000 solar installations between 2007 and 2014. The rapid fall in the cost of solar panels stand central in the expansion of this market. I use a semi-parametric regression model to aid identification of cost factors by decomposing time-varying and cross-sectional components. I find that the use of Chinese manufactured panels are associated with costs that are 6\% lower. Economies of scale at the local level (number of yearly installations in a zip code) and at the installation level (size of the installation) are also associated with lower costs. Higher subsidies, and higher contractor market-share are associated with higher costs. I use an exploratory analysis of the dominant contractor, SolarCity, to discuss non-cost factors in the expansion of the solar photovoltaic market.},
+	language = {en},
+	number = {Number 6},
+	urldate = {2018-03-22},
+	journal = {The Energy Journal},
+	author = {Mauritzen, Johannes},
+	year = {2017},
+	file = {Snapshot:/Users/johannesmauritzen/Library/Mobile Documents/com~apple~CloudDocs/zotero/storage/SL8HJTBT/ej38-6-mauritzen.html:text/html}
+}
+
+@misc{noauthor_aej-article-meager-2018.pdf_nodate,
+	title = {{AEJ}-{Article}-{Meager}-2018.pdf},
+	url = {https://drive.google.com/file/d/1oSobxm75WJhH5Yr1oXCMB8684S8o2ARr/view?usp=sharing&usp=embed_facebook},
+	urldate = {2018-03-23},
+	journal = {Google Docs},
+	file = {Snapshot:/Users/johannesmauritzen/Library/Mobile Documents/com~apple~CloudDocs/zotero/storage/WMKQWS9N/view.html:text/html}
+}
+
+@article{meager_understanding_nodate,
+	title = {Understanding the {Average} {Impact} of {Microcredit} {Expansions}: {A} {Baysian} {Hierarchical} {Analysis} of {Seven} {Randomized} {Experiments}},
+	author = {Meager, Rachel},
+	file = {Meager - Understanding the Average Impact of Microcredit Ex.pdf:/Users/johannesmauritzen/Library/Mobile Documents/com~apple~CloudDocs/zotero/storage/ZMRJ6BRX/Meager - Understanding the Average Impact of Microcredit Ex.pdf:application/pdf}
+}
+
+@book{cronon_natures_1992,
+	address = {New York},
+	edition = {New Ed edition},
+	title = {Nature's {Metropolis}: {Chicago} and the {Great} {West}},
+	isbn = {978-0-393-30873-0},
+	shorttitle = {Nature's {Metropolis}},
+	abstract = {In this groundbreaking work, William Cronon gives us an environmental perspective on the history of nineteenth-century America. By exploring the ecological and economic changes that made Chicago America's most dynamic city and the Great West its hinterland, Mr. Cronon opens a new window onto our national past. This is the story of city and country becoming ever more tightly bound in a system so powerful that it reshaped the American landscape and transformed American culture. The world that emerged is our own. Winner of the Chicago Tribune Heartland Prize},
+	language = {English},
+	publisher = {W. W. Norton \& Company},
+	author = {Cronon, William},
+	month = aug,
+	year = {1992}
 }

@@ -1,15 +1,16 @@
 notes.txt
 
-Idea: What is the relationship between quality and price.  
-Has quality improved over time?
-Does manufacturing explain anything. 
+Check: host sector or owner sector: should be host sector
+Add county data
+Do posterior predictive check
 
-Theory: Since leasing systems don`t have the same agent problem, they 
-will use better components and have less ware over time. 
+Idea: What is the relationship between quality and price.
+Has quality improved over time?
+Does manufacturing explain anything.
+
+Theory: Since leasing systems don`t have the same agent problem, they
+will use better components and have less ware over time.
 
 Get what you pay for
 
-Compare prices paid with output. 
-
-
-
+Compare prices paid with output.

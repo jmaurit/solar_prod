@@ -1,8 +1,7 @@
 \relax 
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
-\citation{mauritzen_whats_2015}
 \citation{tirole_theory_1988}
-\citation{gelman_bayesian_2013}
+\citation{mauritzen_cost_2017}
 \citation{akerlof_market_1970}
 \citation{tirole_theory_1988}
 \citation{chan_prices_1982}
@@ -14,62 +13,67 @@
 \citation{dastrup_understanding_2012}
 \citation{bollinger_peer_2012}
 \@writefile{toc}{\contentsline {section}{\numberline {2}California Solar Initiative, Data}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Production over time from California solar panels, Host owned and leased. Production index reflects monthly production in kWh normalized by capacity multiplied by 30.5*12 to reflect a rough estimate of maximum day-light hours in a month.}}{8}}
-\newlabel{tot_production}{{1}{8}}
-\citation{bates_fitting_2015}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The main methodological task in this paper is to make an unbiased estimate of the slope of the average degradation of production over time. The figure demonstrates a straight line fitted to a time series from a single solar power system.}}{9}}
-\newlabel{example_prod}{{2}{9}}
+\newlabel{tbl:variables}{{2}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces }}{8}}
+\newlabel{eqn:descaled}{{1}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The figure shows the de-scaled production over time from the sample of solar panel systems. The red line represents the average degradation over time for all panels.}}{9}}
+\newlabel{fig:production}{{1}{9}}
 \citation{bates_fitting_2015}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Linear Mixed Effects Models Estimated by Maximum Likelihood}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Testing for differences between module manufacturer}{10}}
-\newlabel{equation:lme_simple}{{2}{10}}
+\citation{bates_fitting_2015}
+\newlabel{equation:lme_simple}{{3}{11}}
 \newlabel{eqn:observation_level_rest}{{4}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Approximate 95\% confidence intervals around maximum likelihood point estimates of system-level slope terms, ordered from lowest to highest.}}{12}}
-\newlabel{sfig:sys_slope_fig}{{3}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Approximate 95\% confidence intervals around maximum likelihood estimators of manufacturer-level slope terms $\mu _b$, ordered from lowest to highest.}}{12}}
-\newlabel{sfig:nested_manuf_fig}{{4}{12}}
+\newlabel{eqn:unrest}{{5}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Approximate 95\% confidence intervals around maximum likelihood point estimates of system-level slope terms, ordered from lowest to highest.}}{13}}
+\newlabel{sfig:sys_slope_fig}{{2}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Approximate 95\% confidence intervals around maximum likelihood estimators of manufacturer-level slope terms $\mu _b$, ordered from lowest to highest.}}{13}}
+\newlabel{sfig:nested_manuf_fig}{{3}{13}}
 \newlabel{tbl:lm_commodity}{{3.1}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces A likelihood ratio test indicates that the addition of manufacterer as a explanatory variable significantly improves the predictive power of the model}}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}testing for differences in quality between leased and host-owned solar power systems}{13}}
-\citation{bar_random_2013}
-\newlabel{eqn:observation_level_rest2}{{9}{14}}
-\newlabel{eqn:lease_model}{{11}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Full Bayesian multilevel model estimated by Markov Chain Monte Carlo}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A visual summary of the estimation results. The vertical lines again represent the estimated system-level slope coefficients.}}{15}}
-\newlabel{lease_sys_fig}{{5}{15}}
+\citation{barr_random_2013}
+\newlabel{eqn:fullmodel}{{6}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A visual summary of the estimation results. The vertical lines again represent the estimated system-level slope coefficients.}}{15}}
+\newlabel{lease_sys_fig}{{4}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Full Bayesian multilevel model estimated by Markov Chain Monte Carlo}{15}}
 \citation{gelman_bayesian_2013}
 \citation{kruschke_doing_2014}
-\citation{mcelreath_statistical_2017}
+\citation{mcelreath_statistical_2015}
 \citation{gelman_weakly_2008}
+\newlabel{eqn:bayesMod}{{7}{17}}
 \citation{stan_development_team_stan_2014}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Computation and Results from Bayesian multilevel model}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Marginal posterior distributions for the contrasts of interest. The top panel shows that the distributions of the slope parameters, $b_s$, are estimated to have means that are significantly different from each other between leased and not leased systems as defined as the contrast, $\mu _{lease, yes} - \mu _{lease, no}$. The lower panel shows the marginal posterior distribution of the contrast between the $\beta $ parameter for leased and not-leased solar systems. The results indicate that there is an approximately 89\% probability that costs are more highly correlated with quality in leased systems compared to those that are host-owned.}}{20}}
-\newlabel{fig:contrasts}{{6}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Marginal posterior distributions for the contrasts of interest. The top panel shows that the distributions of the slope parameters, $b_s$, are estimated to have means that are significantly different from each other between leased and not leased systems as defined as the contrast, $\mu _{lease, yes} - \mu _{lease, no}$. The lower panel shows the marginal posterior distribution of the contrast between the $\beta $ parameter for leased and not-leased solar systems. The results indicate that there is an approximately 89\% probability that costs are more highly correlated with quality in leased systems compared to those that are host-owned.}}{19}}
+\newlabel{fig:contrasts}{{5}{19}}
 \newlabel{table:higher_level_params}{{4.1}{21}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary statistics of the estimated posterior distributions of higher level variables}}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Distribution of the sector contrasts relative to residential sector. Installations for commercial, governmental and non-profit hosts are shown to have on average lower quality then installations in residential}}{22}}
-\newlabel{mu_sectors}{{7}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Box plot of the the parameters $\mu ^{manuf}$, representing the distributions of the mean parameter for manufacturer groupings.}}{23}}
-\newlabel{sfig:BayManPlot}{{8}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 95\% interval of the distributions of the system level intercept parameters, $a_s$.}}{23}}
-\newlabel{sfig:Bay_as}{{9}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces 95\% interval of the distributions of the system level slope parameter, $b_s$}}{23}}
-\newlabel{sfig:Bay_bs}{{10}{23}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion and Conclusion}{23}}
-\bibstyle{plainnat}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Summary statistics of the estimated posterior distributions of higher level variables}}{21}}
+\bibstyle{chicago}
 \bibdata{solar_prod}
 \bibcite{akerlof_market_1970}{{1}{1970}{{Akerlof}}{{}}}
-\bibcite{bollinger_peer_2012}{{2}{2012}{{Bollinger and Gillingham}}{{}}}
-\bibcite{chan_prices_1982}{{3}{1982}{{Chan and Leland}}{{}}}
-\bibcite{dastrup_understanding_2012}{{4}{2012}{{Dastrup et~al.}}{{Dastrup, Graff~Zivin, Costa, and Kahn}}}
-\bibcite{gelman_weakly_2008}{{5}{2008}{{Gelman et~al.}}{{Gelman, Jakulin, Pittau, and Su}}}
-\bibcite{gelman_bayesian_2013}{{6}{2013}{{Gelman et~al.}}{{Gelman, Carlin, Stern, Dunson, Vehtari, and Rubin}}}
-\bibcite{healy_information_2001}{{7}{2001}{{Healy and Palepu}}{{}}}
-\bibcite{kirmani_no_2000}{{8}{2000}{{Kirmani and Rao}}{{}}}
-\bibcite{kruschke_doing_2014}{{9}{2014}{{Kruschke}}{{}}}
-\bibcite{mauritzen_whats_2015}{{10}{2015}{{Mauritzen}}{{}}}
-\bibcite{michaely_pricing_1994}{{11}{1994}{{Michaely and Shaw}}{{}}}
-\bibcite{petersen_benefits_1994}{{12}{1994}{{Petersen and Rajan}}{{}}}
-\bibcite{shapiro_consumer_1982}{{13}{1982}{{Shapiro}}{{}}}
-\bibcite{stan_development_team_stan_2014}{{14}{2014}{{Stan Development Team}}{{}}}
-\bibcite{tirole_theory_1988}{{15}{1988}{{Tirole}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix: Tables}{25}}
+\bibcite{barr_random_2013}{{2}{2013}{{Barr et~al.}}{{Barr, Levy, Scheepers, and Tily}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Distribution of the sector contrasts relative to residential sector. Installations for commercial, governmental and non-profit hosts are shown to have on average lower quality then installations in residential}}{22}}
+\newlabel{mu_sectors}{{6}{22}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion and Conclusion}{22}}
+\bibcite{bates_fitting_2015}{{3}{}{{Bates et~al.}}{{Bates, Mächler, Walker, and Bolker}}}
+\bibcite{bollinger_peer_2012}{{4}{2012}{{Bollinger and Gillingham}}{{}}}
+\bibcite{chan_prices_1982}{{5}{1982}{{Chan and Leland}}{{}}}
+\bibcite{dastrup_understanding_2012}{{6}{2012}{{Dastrup et~al.}}{{Dastrup, Graff~Zivin, Costa, and Kahn}}}
+\bibcite{gelman_weakly_2008}{{7}{2008}{{Gelman et~al.}}{{Gelman, Jakulin, Pittau, and Su}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Box plot of the the parameters $\mu ^{manuf}$, representing the distributions of the mean parameter for manufacturer groupings.}}{23}}
+\newlabel{sfig:BayManPlot}{{7}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 95\% interval of the distributions of the system level intercept parameters, $a_s$.}}{23}}
+\newlabel{sfig:Bay_as}{{8}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 95\% interval of the distributions of the system level slope parameter, $b_s$}}{23}}
+\newlabel{sfig:Bay_bs}{{9}{23}}
+\bibcite{gelman_bayesian_2013}{{8}{2013}{{Gelman et~al.}}{{Gelman, Carlin, Stern, Dunson, Vehtari, and Rubin}}}
+\bibcite{healy_information_2001}{{9}{2001}{{Healy and Palepu}}{{}}}
+\bibcite{kirmani_no_2000}{{10}{2000}{{Kirmani and Rao}}{{}}}
+\bibcite{kruschke_doing_2014}{{11}{2014}{{Kruschke}}{{}}}
+\bibcite{mauritzen_cost_2017}{{12}{2017}{{Mauritzen}}{{}}}
+\bibcite{mcelreath_statistical_2015}{{13}{2015}{{McElreath}}{{}}}
+\bibcite{michaely_pricing_1994}{{14}{1994}{{Michaely and Shaw}}{{}}}
+\bibcite{petersen_benefits_1994}{{15}{1994}{{Petersen and Rajan}}{{}}}
+\bibcite{shapiro_consumer_1982}{{16}{1982}{{Shapiro}}{{}}}
+\bibcite{stan_development_team_stan_2014}{{17}{2014}{{Stan Development Team}}{{}}}
+\bibcite{tirole_theory_1988}{{18}{1988}{{Tirole}}{{}}}
