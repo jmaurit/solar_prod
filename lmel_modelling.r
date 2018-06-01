@@ -12,7 +12,6 @@ load_libraries = function(){
   library(mgcv)
   library(arm)
   library(stargazer)
-
 }
 
 #initial functions
@@ -167,11 +166,19 @@ main = function(){
   prod_fig = prod_fig + geom_abline(intercept=lm_coef[1], slope=lm_coef[2], color="red") + xlim(0,60) + ylim(-1.5,1.5) + labs(x="months",y="Production, de-scaled")
 
   ggsave("figures/production.png", plot=prod_fig, dpi=100,width = 9, height = 5)
+<<<<<<< HEAD
 
   #sum summary statistics
   solar_data[c("prod_kwh", "first_prod_year", "cost_per_kw", "csi_rating")]
   table(solar_data["third_party_owned"])
 
+=======
+
+  #sum summary statistics
+  solar_data[c("prod_kwh", "first_prod_year", "cost_per_kw", "csi_rating")]
+  table(solar_data["third_party_owned"])
+
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 
   59108/(111919+59108)
 

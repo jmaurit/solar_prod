@@ -1,3 +1,137 @@
+<<<<<<< HEAD
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{??}{bat}{2015}]{bates_fitting_2015}
+ (2015).
+\newblock Fitting {Linear} {Mixed}-{Effects} {Models} {Using} lme4.
+\newblock {\em Journal of Statistical Software\/}.
+
+\bibitem[\protect\citeauthoryear{Akerlof}{Akerlof}{1970}]{akerlof_market_1970}
+Akerlof, G.~A. (1970, August).
+\newblock The {Market} for "{Lemons}": {Quality} {Uncertainty} and the {Market}
+  {Mechanism}.
+\newblock {\em The Quarterly Journal of Economics\/}~{\em 84\/}(3), 488--500.
+
+\bibitem[\protect\citeauthoryear{Barr, Levy, Scheepers, and Tily}{Barr
+  et~al.}{2013}]{barr_random_2013}
+Barr, D.~J., R.~Levy, C.~Scheepers, and H.~J. Tily (2013, April).
+\newblock Random effects structure for confirmatory hypothesis testing: {Keep}
+  it maximal.
+\newblock {\em Journal of Memory and Language\/}~{\em 68\/}(3), 255--278.
+
+\bibitem[\protect\citeauthoryear{Bollinger and Gillingham}{Bollinger and
+  Gillingham}{2012}]{bollinger_peer_2012}
+Bollinger, B. and K.~Gillingham (2012, September).
+\newblock Peer {Effects} in the {Diffusion} of {Solar} {Photovoltaic} {Panels}.
+\newblock {\em Marketing Science\/}~{\em 31\/}(6), 900--912.
+
+\bibitem[\protect\citeauthoryear{Chan and Leland}{Chan and
+  Leland}{1982}]{chan_prices_1982}
+Chan, Y.-S. and H.~Leland (1982).
+\newblock Prices and {Qualities} in {Markets} with {Costly} {Information}.
+\newblock {\em The Review of Economic Studies\/}~{\em 49\/}(4), 499--516.
+
+\bibitem[\protect\citeauthoryear{Cronon}{Cronon}{1992}]{cronon_natures_1992}
+Cronon, W. (1992, August).
+\newblock {\em Nature's {Metropolis}: {Chicago} and the {Great} {West}\/} (New
+  Ed edition ed.).
+\newblock New York: W. W. Norton \& Company.
+
+\bibitem[\protect\citeauthoryear{Dastrup, Graff~Zivin, Costa, and Kahn}{Dastrup
+  et~al.}{2012}]{dastrup_understanding_2012}
+Dastrup, S.~R., J.~Graff~Zivin, D.~L. Costa, and M.~E. Kahn (2012, July).
+\newblock Understanding the {Solar} {Home} price premium: {Electricity}
+  generation and “{Green}” social status.
+\newblock {\em European Economic Review\/}~{\em 56\/}(5), 961--973.
+
+\bibitem[\protect\citeauthoryear{Gelman, Carlin, Stern, Dunson, Vehtari, and
+  Rubin}{Gelman et~al.}{2013}]{gelman_bayesian_2013}
+Gelman, A., J.~Carlin, H.~Stern, D.~Dunson, A.~Vehtari, and D.~Rubin (2013,
+  November).
+\newblock {\em Bayesian {Data} {Analysis}, {Third} {Edition}\/} (3 edition
+  ed.).
+\newblock Boca Raton: Chapman and Hall/CRC.
+
+\bibitem[\protect\citeauthoryear{Gelman, Jakulin, Pittau, and Su}{Gelman
+  et~al.}{2008}]{gelman_weakly_2008}
+Gelman, A., A.~Jakulin, M.~G. Pittau, and Y.-S. Su (2008, December).
+\newblock A weakly informative default prior distribution for logistic and
+  other regression models.
+\newblock {\em The Annals of Applied Statistics\/}~{\em 2\/}(4), 1360--1383.
+
+\bibitem[\protect\citeauthoryear{Healy and Palepu}{Healy and
+  Palepu}{2001}]{healy_information_2001}
+Healy, P.~M. and K.~G. Palepu (2001, September).
+\newblock Information asymmetry, corporate disclosure, and the capital markets:
+  {A} review of the empirical disclosure literature.
+\newblock {\em Journal of Accounting and Economics\/}~{\em 31\/}(1–3),
+  405--440.
+
+\bibitem[\protect\citeauthoryear{Kirmani and Rao}{Kirmani and
+  Rao}{2000}]{kirmani_no_2000}
+Kirmani, A. and A.~R. Rao (2000).
+\newblock No {Pain}, {No} {Gain}: {A} {Critical} {Review} of the {Literature}
+  on {Signaling} {Unobservable} {Product} {Quality}.
+\newblock {\em Journal of Marketing\/}~{\em 64\/}(2), 66--79.
+
+\bibitem[\protect\citeauthoryear{Kruschke}{Kruschke}{2014}]{kruschke_doing_2014}
+Kruschke, J.~K. (2014, November).
+\newblock {\em Doing {Bayesian} {Data} {Analysis}, {Second} {Edition}: {A}
+  {Tutorial} with {R}, {JAGS}, and {Stan}\/} (2 edition ed.).
+\newblock Boston: Academic Press.
+
+\bibitem[\protect\citeauthoryear{Mauritzen}{Mauritzen}{2017}]{mauritzen_cost_2017}
+Mauritzen, J. (2017).
+\newblock Cost, {Contractors} and {Scale}: {An} {Empirical} {Analysis} of the
+  {California} {Solar} {Market}.
+\newblock {\em The Energy Journal\/}~{\em Volume 38\/}(Number 6).
+
+\bibitem[\protect\citeauthoryear{McElreath}{McElreath}{2015}]{mcelreath_statistical_2015}
+McElreath, R. (2015, December).
+\newblock {\em Statistical {Rethinking}: {A} {Bayesian} {Course} with
+  {Examples} in {R} and {Stan}\/} (1 edition ed.).
+\newblock Boca Raton: Chapman and Hall/CRC.
+
+\bibitem[\protect\citeauthoryear{Meager}{Meager}{2018}]{meager_understanding_2018}
+Meager, R. (2018, January).
+\newblock Understanding the {Average} {Impact} of {Microcredit} {Expansions}:
+  {A} {Baysian} {Hierarchical} {Analysis} of {Seven} {Randomized}
+  {Experiments}.
+\newblock {\em American Economic Journal: Applied Economics\/}~{\em
+  Forthcoming}.
+
+\bibitem[\protect\citeauthoryear{Michaely and Shaw}{Michaely and
+  Shaw}{1994}]{michaely_pricing_1994}
+Michaely, R. and W.~H. Shaw (1994, April).
+\newblock The {Pricing} of {Initial} {Public} {Offerings}: {Tests} of
+  {Adverse}-{Selection} and {Signaling} {Theories}.
+\newblock {\em Review of Financial Studies\/}~{\em 7\/}(2), 279--319.
+
+\bibitem[\protect\citeauthoryear{Petersen and Rajan}{Petersen and
+  Rajan}{1994}]{petersen_benefits_1994}
+Petersen, M.~A. and R.~G. Rajan (1994, March).
+\newblock The {Benefits} of {Lending} {Relationships}: {Evidence} from {Small}
+  {Business} {Data}.
+\newblock {\em The Journal of Finance\/}~{\em 49\/}(1), 3--37.
+
+\bibitem[\protect\citeauthoryear{Shapiro}{Shapiro}{1982}]{shapiro_consumer_1982}
+Shapiro, C. (1982).
+\newblock Consumer {Information}, {Product} {Quality}, and {Seller}
+  {Reputation}.
+\newblock {\em The Bell Journal of Economics\/}~{\em 13\/}(1), 20--35.
+
+\bibitem[\protect\citeauthoryear{{Stan Development Team}}{{Stan Development
+  Team}}{2014}]{stan_development_team_stan_2014}
+{Stan Development Team} (2014).
+\newblock {\em Stan {Modeling} {Language} {Users} {Guide} and {Reference}
+  {Manual}, {Version} 2.2}.
+
+\bibitem[\protect\citeauthoryear{Tirole}{Tirole}{1988}]{tirole_theory_1988}
+Tirole, J. (1988).
+\newblock {\em The {Theory} of {Industrial} {Organization}\/} (1st edition
+  ed.).
+\newblock Cambridge, Mass: The MIT Press.
+=======
 \begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -165,5 +299,6 @@ Jean Tirole.
 \newblock \emph{The {Theory} of {Industrial} {Organization}}.
 \newblock The MIT Press, Cambridge, Mass, 1st edition edition, 1988.
 \newblock ISBN 978-0-262-20071-4.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 
 \end{thebibliography}

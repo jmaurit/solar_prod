@@ -1,6 +1,77 @@
 This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: solar_commodities.aux
+<<<<<<< HEAD
+The style file: chicago.bst
+Database file #1: solar_prod.bib
+I was expecting a `,' or a `}'---line 43 of file solar_prod.bib
+ :  
+ :  file = {Meager - Understanding the Average Impact of Microcredit Ex.pdf:/Users/johannesmauritzen/Library/Mobile Documents/com~apple~CloudDocs/zotero/storage/ZMRJ6BRX/Meager - Understanding the Average Impact of Microcredit Ex.pdf:application/pdf}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1206 of file solar_prod.bib
+ :  
+ :  author = {Bates, Douglas and Mächler, Martin and Walker, Steven C. and Bolker, Benjamin},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--no key, author in bates_fitting_2015
+Warning--no author, editor, or organization in bates_fitting_2015
+Warning--to sort, need author or key in bates_fitting_2015
+Warning--no key, author in bates_fitting_2015
+Warning--no author, editor, or organization in bates_fitting_2015
+Warning--no key, author in bates_fitting_2015
+Warning--no author, editor, or organization in bates_fitting_2015
+Warning--no key, author in bates_fitting_2015
+Warning--no author, editor, or organization in bates_fitting_2015
+Warning--empty author in bates_fitting_2015
+Warning--no number and no volume in bates_fitting_2015
+Warning--page numbers missing in bates_fitting_2015
+Warning--page numbers missing in mauritzen_cost_2017
+Warning--page numbers missing in meager_understanding_2018
+Warning--empty publisher in stan_development_team_stan_2014
+You've used 20 entries,
+            2861 wiz_defined-function locations,
+            738 strings with 8470 characters,
+and the built_in function-call counts, 12828 in all, are:
+= -- 1037
+> -- 892
+< -- 0
++ -- 268
+- -- 318
+* -- 1184
+:= -- 2360
+add.period$ -- 59
+call.type$ -- 20
+change.case$ -- 133
+chr.to.int$ -- 20
+cite$ -- 39
+duplicate$ -- 351
+empty$ -- 818
+format.name$ -- 358
+if$ -- 2319
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 26
+newline$ -- 102
+num.names$ -- 190
+pop$ -- 101
+preamble$ -- 1
+purify$ -- 259
+quote$ -- 0
+skip$ -- 376
+stack$ -- 0
+substring$ -- 674
+swap$ -- 107
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 340
+warning$ -- 15
+while$ -- 196
+width$ -- 0
+write$ -- 264
+(There were 2 error messages)
+=======
 The style file: plainnat.bst
 Database file #1: solar_prod.bib
 Warning--empty year in bates_fitting_2015
@@ -48,3 +119,4 @@ while$ -- 76
 width$ -- 0
 write$ -- 319
 (There were 3 warnings)
+>>>>>>> df0de029a7615344b408ad311170086016b230a0

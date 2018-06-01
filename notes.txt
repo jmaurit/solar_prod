@@ -1,5 +1,30 @@
 notes.txt
 
+<<<<<<< HEAD
+#Try:
+
+-only do descale transformation (no log)
+-let b_s also be random (let mu_b_s be dependent on all the other variables)
+=======
+Check: host sector or owner sector: should be host sector
+Add county data
+Do posterior predictive check
+
+Idea: What is the relationship between quality and price.
+Has quality improved over time?
+Does manufacturing explain anything.
+
+Theory: Since leasing systems don`t have the same agent problem, they
+will use better components and have less ware over time.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
+
+Should I really log transform it and then descale?
+
+<<<<<<< HEAD
+Use signal to noise ratio like in Korteweg?
+
+I don't think it makes sense to use log transformed data?
+
 Check: host sector or owner sector: should be host sector
 Add county data
 Do posterior predictive check
@@ -13,4 +38,6 @@ will use better components and have less ware over time.
 
 Get what you pay for
 
+=======
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 Compare prices paid with output.

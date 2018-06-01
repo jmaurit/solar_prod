@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.4)  28 MAR 2018 14:05
+=======
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.4)  23 MAR 2018 11:02
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -415,6 +419,24 @@ e
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<<<<<<< HEAD
+[2] [3] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 110--132
+[][]
+ []
+
+[8]
+<figures/production.png, id=39, 903.375pt x 501.875pt>
+File: figures/production.png Graphic file (type png)
+<use figures/production.png>
+Package pdftex.def Info: figures/production.png  used on input line 145.
+(pdftex.def)             Requested size: 469.75502pt x 260.9765pt.
+ [9 <./figures/production.png>] [10] [11]
+<figures/sys_slope_fig.png, id=57, 3011.25pt x 1505.625pt>
+File: figures/sys_slope_fig.png Graphic file (type png)
+<use figures/sys_slope_fig.png>
+Package pdftex.def Info: figures/sys_slope_fig.png  used on input line 223.
+=======
 [2] [3] [4] [5] [6]
 Underfull \hbox (badness 10000) in paragraph at lines 111--133
 [][]
@@ -431,17 +453,28 @@ Package pdftex.def Info: figures/production.png  used on input line 146.
 File: figures/sys_slope_fig.png Graphic file (type png)
 <use figures/sys_slope_fig.png>
 Package pdftex.def Info: figures/sys_slope_fig.png  used on input line 224.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 (pdftex.def)             Requested size: 225.4804pt x 112.7332pt.
 <figures/nested_manuf_fig_final.png, id=58, 2710.125pt x 1505.625pt>
 File: figures/nested_manuf_fig_final.png Graphic file (type png)
 <use figures/nested_manuf_fig_final.png>
 Package pdftex.def Info: figures/nested_manuf_fig_final.png  used on input line
+<<<<<<< HEAD
+ 228.
+=======
  229.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 (pdftex.def)             Requested size: 225.4804pt x 125.25401pt.
  [12] [13 <./figures/sys_slope_fig.png> <./figures/nested_manuf_fig_final.png>]
 <figures/lease_sys_fig.png, id=69, 2710.125pt x 1505.625pt>
 File: figures/lease_sys_fig.png Graphic file (type png)
 <use figures/lease_sys_fig.png>
+<<<<<<< HEAD
+Package pdftex.def Info: figures/lease_sys_fig.png  used on input line 282.
+(pdftex.def)             Requested size: 375.80544pt x 208.76436pt.
+ [14] [15 <./figures/lease_sys_fig.png>] [16]
+Overfull \hbox (30.02672pt too wide) detected at line 311
+=======
 Package pdftex.def Info: figures/lease_sys_fig.png  used on input line 283.
 (pdftex.def)             Requested size: 375.80544pt x 208.76436pt.
  [14] [15 <./figures/lease_sys_fig.png>]
@@ -450,6 +483,7 @@ LaTeX Warning: Reference `obslevel' on page 16 undefined on input line 299.
 
 [16]
 Overfull \hbox (30.02672pt too wide) detected at line 312
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 [][]
  []
 
@@ -457,40 +491,102 @@ Overfull \hbox (30.02672pt too wide) detected at line 312
 <figures/bayes_hypos.png, id=86, 542.025pt x 541.3023pt>
 File: figures/bayes_hypos.png Graphic file (type png)
 <use figures/bayes_hypos.png>
+<<<<<<< HEAD
+Package pdftex.def Info: figures/bayes_hypos.png  used on input line 341.
+=======
 Package pdftex.def Info: figures/bayes_hypos.png  used on input line 342.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 (pdftex.def)             Requested size: 281.85587pt x 281.48708pt.
  [19 <./figures/bayes_hypos.png>]
 <figures/mu_sectors.png, id=92, 1072.005pt x 566.115pt>
 File: figures/mu_sectors.png Graphic file (type png)
 <use figures/mu_sectors.png>
+<<<<<<< HEAD
+Package pdftex.def Info: figures/mu_sectors.png  used on input line 398.
+=======
 Package pdftex.def Info: figures/mu_sectors.png  used on input line 399.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 (pdftex.def)             Requested size: 281.85587pt x 148.84496pt.
  [20] [21]
 <figures/BayManPlot.png, id=99, 898.7979pt x 450.7239pt>
 File: figures/BayManPlot.png Graphic file (type png)
 <use figures/BayManPlot.png>
+<<<<<<< HEAD
+Package pdftex.def Info: figures/BayManPlot.png  used on input line 409.
+=======
 Package pdftex.def Info: figures/BayManPlot.png  used on input line 410.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 (pdftex.def)             Requested size: 225.4804pt x 113.07271pt.
 <figures/Bay_as.png, id=100, 895.9071pt x 450.7239pt>
 File: figures/Bay_as.png Graphic file (type png)
 <use figures/Bay_as.png>
+<<<<<<< HEAD
+Package pdftex.def Info: figures/Bay_as.png  used on input line 414.
+=======
 Package pdftex.def Info: figures/Bay_as.png  used on input line 415.
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 (pdftex.def)             Requested size: 225.4804pt x 113.43721pt.
 <figures/Bay_bs.png, id=101, 901.9296pt x 450.7239pt>
 File: figures/Bay_bs.png Graphic file (type png)
 <use figures/Bay_bs.png>
+<<<<<<< HEAD
+Package pdftex.def Info: figures/Bay_bs.png  used on input line 419.
+(pdftex.def)             Requested size: 225.4804pt x 112.67381pt.
+ [22 <./figures/mu_sectors.png>] [23 <./figures/BayManPlot.png> <./figures/Bay_
+as.png> <./figures/Bay_bs.png>] (./solar_commodities.bbl [24]
+=======
 Package pdftex.def Info: figures/Bay_bs.png  used on input line 420.
 (pdftex.def)             Requested size: 225.4804pt x 112.67381pt.
  (./solar_commodities.bbl
 [22 <./figures/mu_sectors.png>]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no § in font cmr12!
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
+<<<<<<< HEAD
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+ [25]) [26] (./solar_commodities.aux) ) 
+Here is how much of TeX's memory you used:
+ 4258 strings out of 492985
+ 62723 string characters out of 6132587
+ 143123 words of memory out of 5000000
+ 7733 multiletter control sequences out of 15000+600000
+ 13532 words of font info for 50 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,13n,32p,1354b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/font
+s/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2017/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
+12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200
+.pfb>
+Output written on solar_commodities.pdf (26 pages, 1672353 bytes).
+PDF statistics:
+ 185 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+=======
  [23 <./figures/BayManPlot.png> <./figures/Bay_as.png> <./figures/Bay_bs.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
@@ -535,6 +631,7 @@ Output written on solar_commodities.pdf (25 pages, 1670831 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  116 compressed objects within 2 object streams
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

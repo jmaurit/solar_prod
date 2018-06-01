@@ -1,5 +1,9 @@
 #stan_analysis_new.py
+<<<<<<< HEAD
+#stan MCMC analysis from 6.2.2018
+=======
 #stan MCMC analysis from 2.6.2017
+>>>>>>> df0de029a7615344b408ad311170086016b230a0
 
 import pandas as pd
 import tabulate as tab
