@@ -1,0 +1,3 @@
+
+
+Reviewer #2: The paper is an applied statistics paper with financial/economics background (something like financial econometrics).  The focus is on testing for properties of a market. As far as I can see, any decision making perspective is missing, which would be important, given that EJOR is an OR journal.  Moreover there seems to be no real methodological novelty in this paper. Just applying some more or less standard approaches to some question is not enough. (Maybe the paper fits better into some financial/financial econometrics journal, where the analyzed economic question might be seen as a novelty, suiting into the main topics of the journal)
