@@ -8,11 +8,11 @@ The answers have implications for where we would expect pricing to go in the fut
 However, the authors hedge at the end, saying that maybe they will be commodities in the future. I found this last part a little weak – I would suggest the authors discuss this in a richer way, as it seems to poke the air out of their bubble at the very end of the paper.
 
 Answer:
-I agree that this point deserves a richer discussion. In the revised version, I conclude with the following two paragraphs:
+I agree that this point deserves a richer discussion. In the revised version, I conclude with the following two paragraphs (p.25):
 
   The market for solar panels and solar panel systems is however still young and dynamic. One of the advantages of the linear mixed-effects models and the hierarchical models is that we can also get an idea of the degree of differentiation in quality between different manufacturers. Only about 20% of producers accounted for the worst quality panels, while the majority of panels had similar quality. If low-quality producers either are forced to exit the market or improve their quality to match standards in the industry, then it is possible that solar panels could indeed become commodities in the future.
 
-  However, optimism should be tempered by both theory and experience from other industries. Markets that are subject to informational problems have a tendency to experience stasis. As Akerlof (1970) notes, poor quality producers will tend to push out high quality producers in the presence of asymmetric information. In a long-term study of the used car market in Switzerland, Emons et. al. (2009) find evidence of sustained quality uncertainty among buyers. Evidence of long-term quality uncertainty is also found in the market for business aircraft Gilligan (2004). The market for solar panels may long be characterized by producers differentiated by quality. In consequence, the buyers of solar panels will need to take steps to ensure high quality such as paying a premium for panels from a reputed producer or making use of engineering firms specializing in certifying panel quality.
+  However, optimism should be tempered by both theory and experience from other industries. Markets that are subject to informational problems have a tendency to experience stasis. As Akerlof (1970) notes, poor quality producers will tend to push out high quality producers in the presence of asymmetric information. In a long-term study of the used car market in Switzerland, Emons et. al. (2009) find evidence of sustained quality uncertainty among buyers. Evidence of long-term quality uncertainty is also found in the market for business aircraft Gilligan (2004). The market for solar panels may long be characterised by producers differentiated by quality. In consequence, the buyers of solar panels will need to take steps to ensure high quality such as paying a premium for panels from a reputed producer or making use of engineering firms specialising in certifying panel quality.
 
 Comment:
 
@@ -20,7 +20,7 @@ Equation 1: please define all symbols before the equation is presented. Define t
 
 Answer:
 
-A good suggestion. I now present tables with detailed definitions of all symbols alongside the presentation of each model. Please see Tables 2,3 and 5 on  P.9, P.10 and P.15.
+A good suggestion. I now present tables with detailed definitions of all symbols alongside the presentation of each model. Please see Tables 2,3 and 5 on  P.10, P.11 and P.17.
 
 Comment:
 
@@ -30,6 +30,9 @@ Answer:
 
 I have increased the size of the font.
 
+Comment:
+
 In the conclusion it says: “It appears that a relatively small tail of producers accounted for the worst quality panels, while the majority of panels had similar quality.” It would be helpful to the reader to quantify this in some way.
 
-I have now changed this sentence to say: "About 20\% of producers accounted for the worst quality panels, while the majority of panels had similar quality."
+Answer:
+I have now changed this sentence to say: "About 20% of producers accounted for the worst quality panels, while the majority of panels had similar quality."

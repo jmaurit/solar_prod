@@ -1,28 +1,28 @@
 Reply to referee 3
 
-I thank the referee for their thoughtful critique. I have tried to address all of the referees suggestions, which I detail below.
+I thank the referee for their thoughtful critique. I have tried to address all of the referee's suggestions, which I detail below.
 
 
 Comment 1.	This article should explain the definition of the commodity. Then explain the relevance of the commodity definition and the results of this article.
 
-I agree, and I have substantially altered the discussion of the importance of commoditisation in the introduction. In particular, I write:
+I agree, and I have substantially altered the discussion of the importance of commodification the introduction. In particular, I write (p.1):
 
-  More formally, a commodity is generally defined by a certain degree of fungibility. That is, the good from a certain producer will be largely interchangeable with the good of another producer. Already in 1873 the German economist A.E.F. Schäffle distinguished between a popular understanding of a commodity as a material input in manufacturing, to the scientific understanding as "exchangeable material goods" \citep{menger_principles_2007}. Despite the relative simplicity of this definition, \citet{gordon_what_1999} show the difficulty in practice of determining whether a product is in fact a commodity. A product can be differentiated in a host of ways, some of which are difficult to observe at the time of transaction.
+  More formally, a commodity is generally defined by a certain degree of fungibility. That is, the good from a certain producer will be largely interchangeable with the good of another producer. Already in 1873 the German economist A.E.F. Schäffle distinguished between a popular understanding of a commodity as a material input in manufacturing, to the scientific understanding as "exchangeable material goods" (Menger, 2007). Despite the relative simplicity of this definition, (Gordon and Hannesson, 1999) show the difficulty in practice of determining whether a product is in fact a commodity. The root problem is that a good can be differentiated in a host of ways, some of which are difficult to observe at the time of transaction.
 
-  Determining whether a product is a commodity is of more than just theoretical importance. Historically, the commoditization of goods was a necessary condition for the establishment of sophisticated financial markets for those goods. A well-documented example: The invention of grain elevators for mixing and standardizing grain was a necessary precursor to the establishment of a futures markets with receipts of delivery traded on the Chicago Board of Trade \citep{cronon_natures_1992}. The abstraction between producer and end purchaser of goods was necessary for the functioning of these markets. A trader could fulfill a promise to deliver grain of a certain grade by simply buying it on the market or with cash settlement, rather than having produced it oneself.
+  Determining whether a product is a commodity is of more than just theoretical importance. Historically, the commodification of goods was a necessary condition for the establishment of sophisticated financial markets for those goods. A well-documented example: The invention of grain elevators for mixing and standardising grain was a necessary precursor to the establishment of a futures markets with receipts of delivery traded on the Chicago Board of Trade (Cronon, 1992). The abstraction between producer and end purchaser of goods was necessary for the functioning of these markets. A trader could fulfil a promise to deliver grain of a certain grade by simply buying it on the market or with cash settlement, rather than having produced it oneself.
 
   An important differentiating characteristic between solar panels is the quality of these solar panels. This can be measured as both the failure rate of these panels as well as the degree of degradation of the panels over time. If there were significant differences in quality between manufacturers, then this has implications for the structure and development of the solar panel market. Manufacturers with superior quality could differentiate themselves and extract a premium in the market. A reputation for quality among established manufacturers could also act as a barrier to entry, thereby reducing long-term pricing pressure.
 
-  From the perspective of a purchasing manager responsible for acquiring solar panels, whether panels can be considered a commodity or not is of great importance. If panels are known to be commodities with standardized quality and similar pricing, then the decision for purchasing manager is substantially simplified. They need only to decide on the observable form factor, for example dimension and capacity. In addition, purchasing managers responsible for large projects with long lead times could make use of forward markets to hedge price movements. On the other hand, if solar panels are known to vary significantly by quality, then the decision becomes substantially more complex and costly. Purchasing managers would need to weigh costs of panels against expected quality. They may also need to make use of specialized engineering firms that test and certify panel quality. Since the purchasing decision would be linked to a specific manufacturer, the purchasing manager becomes subject to risks such as bankruptcy or other supply disruption associated with that firm.
+  From the perspective of a purchasing manager responsible for procuring solar panels, whether panels can be considered a commodity is of great importance. If panels are known to be commodities with standardised quality and similar pricing, then the decision for purchasing manager is substantially simplified. They need only to decide on the observable form factor, for example dimension and capacity. In addition, purchasing managers responsible for large projects with long lead times could make use of forward markets to hedge price movements. On the other hand, if solar panels are known to vary significantly by quality, then the decision becomes substantially more complex and costly. Purchasing managers would need to weigh the price of panels against expected quality. They may also need to make use of specialised engineering firms that test and certify panel quality. Since the purchasing decision is likely to be linked to a specific manufacturer, the purchasing manager is subject to risks such as bankruptcy or other supply disruption associated with that firm.
 
 Comment 2.	The abstract and conclusion need to be written more briefly and clearly what contribution of the manuscript you have.
 
 Answer:
 I agree. I have shortened the abstract, and in addition to stating my findings, I have added the following statement highlighting the methodological contribution:
 
-"Methodologically, the article demonstrates a novel application of Bayesian hierarchical regression models that have been commonly used in operations research and the decision sciences."
+    "Methodologically, the article demonstrates a novel application of Bayesian hierarchical regression models that have been commonly used in operations research and the decision sciences."
 
-Likewise, I have shortened the conclusion, focusing on summarizing the results of the research and discussing potential implications of the research.
+Likewise, I have shortened the conclusion, focusing on summarising the results of the research and discussing potential implications of the research.
 
 Comment 3.	This article should define research hypotheses.
 
@@ -38,4 +38,4 @@ Comment 4.
 The quality of the whole written text should be improved.
 
 Answer:
-I agree that the quality of the text needed improvement. I have had the article copy-edited, and have tried to carefully edit the manuscript for clarity. I have re-organized sections, especially the introduction and conclusion, to emphasize the contributions of the paper.
+I agree that the quality of the text needed improvement. I have had the article copy-edited, and have tried to carefully edit the manuscript for clarity. I have re-organized sections, especially the introduction and conclusion, to emphasize the contributions of the paper. I have also added tables explaining precisely the symbols used in the the models (P.10,11 and 17)
